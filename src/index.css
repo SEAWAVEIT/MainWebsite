@@ -1,0 +1,1346 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+
+
+
+/* =========================================================================================================== */
+/* scrollbar */
+/* Scrollbar */
+
+
+
+
+/* =========================================================================================== */
+
+
+/* scrolltotop */
+
+.scroll-to-top-button {
+	position: fixed;
+	bottom: 40px;
+	right: 20px;
+	background-color: #ffffff;
+	color: rgb(2, 2, 2);
+	border: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 34px;
+	cursor: pointer;
+	z-index: 1000;
+	transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	/* Ensure the button is on top of other elements */
+}
+
+.scroll-to-top-button:hover {
+	background-color: hsla(286, 42%, 21%, 0.761);
+	color: white;
+}
+
+.scroll-to-top-button.hidden {
+	opacity: 0;
+	pointer-events: none;
+	/* Prevent clicks when hidden */
+}
+
+
+/* =========================================================================================== */
+
+
+/* Chat Button */
+.chat-button {
+	position: fixed;
+	bottom: 40px;
+	left: 20px;
+	background-color: #007bff;
+	/* Change to your preferred color */
+	color: #ffffff;
+	border: none;
+	border-radius: 50%;
+	/* width: 50px;
+	height: 50px; */
+	display: flex;
+	padding: 12px 22px;
+	align-items: center;
+	justify-content: center;
+
+	cursor: pointer;
+	gap: 12px;
+	border-radius: 50px;
+	z-index: 1000;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.chat-button:hover {
+	background-color: #0056b3;
+}
+
+/* =========================================================================================== */
+
+
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	background: white;
+	color: black;
+	font-family: "Montserrat", sans-serif;
+
+	/* font-family: sans-serif; */
+	::-webkit-scrollbar {
+		width: 20px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 5px grey;
+		border-radius: 10px;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: red;
+		border-radius: 10px;
+	}
+}
+
+body {
+	margin-top: 60px;
+	/* Adjust this value based on your header height */
+}
+
+.App {
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.header {
+	position: fixed;
+	/* Make the header fixed */
+	top: 0;
+	/* Align it to the top */
+	left: 0;
+	/* Align it to the left */
+	right: 0;
+	/* Align it to the right */
+	z-index: 1000;
+	/* Ensure it's above other content */
+	/* background-color: white; /* Default background color */
+	/* color: black; /* Default text color */
+	background-color: black;
+	color: white;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+	/* Smooth transition for background and text color */
+}
+
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.borderDivider {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.serviceBorder {
+	width: 52px;
+	height: 1px;
+	background: slategray;
+	opacity: 0.3;
+}
+
+.header.scrolled {
+	background-color: black;
+	/* Background color when scrolled */
+	color: white;
+	/* Text color when scrolled  */
+}
+
+.header.scrolled svg {
+	stroke: white;
+}
+
+.header .navbar a {
+	color: inherit;
+	/* Make sure text color inherits from the header */
+}
+
+
+.socialMedia {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 1rem 1rem 4rem 1rem;
+	gap: 0.5rem;
+}
+
+.socialIcon img {
+	transition: transform 0.3s;
+}
+
+.socialIcon img:hover {
+	transform: scale(1.1);
+	/* Slightly increase size on hover */
+}
+
+.footerDividerLine {
+	height: 1px;
+	width: 75vw;
+	background-color: cyan;
+	opacity: 0.5;
+}
+
+/* ============================================================== */
+
+/* Background image with dark overlay */
+.centerHeroWhole {
+	position: relative;
+	overflow: hidden;
+	height: 91vh;
+	width: 100%;
+	background-image: url("./assets/backgroundImages/1.webp");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.centerHeroWhole::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	/* Dark overlay with 50% opacity */
+	z-index: 0;
+}
+
+.centerHeroWhole>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Animation for background image transition */
+@keyframes slideImages {
+	0% {
+		background-image: url("./assets/backgroundImages/1.webp");
+	}
+
+	20% {
+		background-image: url("./assets/backgroundImages/2.webp");
+	}
+
+	40% {
+		background-image: url("./assets/backgroundImages/3.webp");
+	}
+
+	60% {
+		background-image: url("./assets/backgroundImages/4.webp");
+	}
+
+	80% {
+		background-image: url("./assets/backgroundImages/5.webp");
+	}
+
+	100% {
+		background-image: url("./assets/backgroundImages/6.webp");
+	}
+}
+
+/* Apply the animation */
+.centerHeroWhole {
+	animation: slideImages 30s infinite;
+	transition: background-image 1s ease-in-out;
+}
+
+
+/* ============================================================== */
+
+/* .Hero01,
+.Hero02,
+.Hero03,
+.Hero08{
+	height: 100%;
+	width: 100%;
+} */
+
+/* scroll animation */
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+.animate-loop-scroll {
+	animation: scroll 20s linear infinite;
+}
+
+.group:hover .animate-loop-scroll {
+	animation-play-state: paused;
+}
+
+/* In your CSS file (e.g., styles.css) */
+
+/* =========================================================================================================== */
+/* previous code */
+/* Add this to make the images scroll continuously */
+/* .Hero02{
+	display: none;
+}
+.Hero02>div {
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+} */
+
+/* .Hero02 img { */
+/* width: 100%; */
+/* adjust the width to your liking */
+/* height: 100px; */
+/* adjust the height to your liking */
+/* object-fit: cover; */
+/* margin: 10px;
+	scroll-snap-align: start;
+} */
+
+/* =========================================================================================================== */
+/* new hero02 code */
+/* .scrollContainer {
+	height: 30%;
+
+	width: 100%;
+
+	position: relative;
+}
+
+#container {
+	height: 350px;
+	position: relative;
+	overflow: hidden;
+}
+
+.photobanner {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	white-space: nowrap;
+	animation: bannermove 10s linear infinite;
+}
+
+.photobanner img {
+	margin: 0 0.5em;
+}
+
+@keyframes bannermove {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(-50%, 0);
+	}
+} */
+
+/* =========================================================================================================== */
+
+/* Hero03.css */
+
+/* Keyframes for sliding out and in */
+/* @keyframes slideOutLeft {
+	0% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
+@keyframes slideInRight {
+	0% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+}
+
+/* Applying animations to the image on hover */
+.roll-out-in {
+	position: relative;
+	transition:
+		transform 0.3s,
+		opacity 0.3s;
+	/* Smooth transition */
+}
+
+.roll-out-in:hover {
+	animation: slideOutLeft 1s forwards;
+	/* Animation for sliding out on hover */
+}
+
+.roll-out-in:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	background-image: inherit;
+	background-size: cover;
+	background-position: center;
+	animation: slideInBottom 1s forwards;
+	/* Animation for sliding in new image */
+}
+
+*/
+
+/* section active  */
+.active {
+	opacity: 1;
+	animation: slidein 0.5s ease forwards;
+}
+
+@keyframes slidein {
+	from {
+		transform: translateY(20px);
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}
+
+/* =========================================================================================================== */
+
+/* Hero 06 */
+.CustomBorder-main {
+	height: 252px;
+	width: 2px;
+	background-color: rgba(104, 104, 104, 0.521);
+
+	/* margin: auto; */
+}
+
+.CustomBorder-Sub {
+	height: 1px;
+	width: 222px;
+	background-color: rgba(104, 104, 104, 0.534);
+}
+
+.serviceText {
+	margin-left: 34px;
+}
+
+/* ================================= */
+/* .btn {
+	padding: 12px 24px;
+	font-size: 16px;
+	font-weight: bold;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+	background-color: #0056b3;
+}
+*/
+
+/* rolling button on contact page */
+/* customm Button */
+
+/* =========================================================================================================== */
+
+/* =========================================================================================================== */
+/* Hero07 */
+/* customs */
+.GradientText {
+	background: linear-gradient(to right,
+			#7953cd 20%,
+			#00affa 30%,
+			#0190cd 70%,
+			#764ada 80%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+	background-size: 500% auto;
+	animation: textShine 5s ease-in-out infinite alternate;
+}
+
+.GradientText2 {
+	font-size: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes textShine {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+/* CustomLine  */
+.CustomLine {
+	width: 400px;
+	height: 12px;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.lino {
+	height: 4px;
+	width: 90px;
+	background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+	-webkit-text-fill-color: transparent;
+	/* -webkit-background-clip: text; */
+	background-size: 500% auto;
+	animation: textShine 5s ease-in-out infinite alternate;
+}
+
+.CustomLine::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: green;
+	animation: animateLine 5s linear infinite;
+}
+
+@keyframes animateLine {
+	0% {
+		left: 0;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+/* customcheck
+ .check:hover {
+	color: green;
+} */
+.hover-effect {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	/* Adjust if needed */
+	padding: 4px;
+	/* Adjust if needed */
+}
+
+.icon {
+	transition:
+		transform 0.3s ease,
+		fill 0.3s ease,
+		filter 0.3s ease;
+}
+
+.hover-effect:hover .icon {
+	transform: rotate(16deg);
+	fill: green;
+	filter: drop-shadow(0 0 8px green);
+	/* Creates a glowing effect */
+}
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+.animate-charcter {
+	text-transform: uppercase;
+	background-image: linear-gradient(-225deg,
+			#231557 0%,
+			#44107a 29%,
+			#ff1361 67%,
+			#fff800 100%);
+	background-size: auto auto;
+	background-clip: border-box;
+	background-size: 200% auto;
+	color: #fff;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: textclip 2s linear infinite;
+	display: inline-block;
+}
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
+/* wavily for free quote  */
+
+.waviy {
+	position: relative;
+	-webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+	font-size: 60px;
+}
+
+.waviy span {
+	font-family: "Alfa Slab One", cursive;
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	text-transform: uppercase;
+	animation: waviy 1s infinite;
+	animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes waviy {
+
+	0%,
+	40%,
+	100% {
+		transform: translateY(0);
+	}
+
+	20% {
+		transform: translateY(-20px);
+	}
+}
+
+/* contact animation text  */
+.title-word {
+	animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+	--color-1: #df8453;
+	--color-2: #3d8dae;
+	--color-3: #e4a9a8;
+}
+
+.title-word-2 {
+	--color-1: #dbad4a;
+	--color-2: #accfcb;
+	--color-3: #17494d;
+}
+
+.title-word-3 {
+	--color-1: #accfcb;
+	--color-2: #e4a9a8;
+	--color-3: #accfcb;
+}
+
+.title-word-4 {
+	--color-1: #3d8dae;
+	--color-2: #df8453;
+	--color-3: #e4a9a8;
+}
+
+@keyframes color-animation {
+	0% {
+		color: var(--color-1);
+	}
+
+	32% {
+		color: var(--color-1);
+	}
+
+	33% {
+		color: var(--color-2);
+	}
+
+	65% {
+		color: var(--color-2);
+	}
+
+	66% {
+		color: var(--color-3);
+	}
+
+	99% {
+		color: var(--color-3);
+	}
+
+	100% {
+		color: var(--color-1);
+	}
+}
+
+/* services text animation */
+
+.logo-container {
+	position: relative;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: calc(100% - 2px);
+		width: 100%;
+		height: 4px;
+		background-color: #cf0000;
+		transform-origin: center center;
+		transform: scaleX(0);
+		animation: line-animation 3s ease infinite alternate;
+	}
+
+	h1#page-logo {
+		padding: 20px 8px;
+		animation: clip-path-reveal-1 3s ease infinite alternate;
+	}
+}
+
+@keyframes line-animation {
+	0% {
+		transform: scaleX(0);
+	}
+
+	15% {
+		transform: scaleX(0);
+	}
+
+	20%,
+	25% {
+		transform: scaleX(1);
+		top: calc(100% - 2px);
+	}
+
+	50% {
+		transform: scaleX(1);
+		top: 0px;
+	}
+
+	70% {
+		transform: scaleX(0.2);
+		top: 0px;
+	}
+
+	80%,
+	100% {
+		transform: scaleX(0.2);
+		top: 0px;
+	}
+}
+
+@keyframes clip-path-reveal-1 {
+
+	0%,
+	25% {
+		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+	}
+
+	50% {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+}
+
+/* =========================================================================================================== */
+
+/* Faq */
+/* General Faq Styles */
+.faq-details {
+	transition: all 0.45s ease;
+}
+
+.faq-details[open] {
+	padding-bottom: 1rem;
+	color: white;
+	background-color: black;
+	transition: all 0.45s ease;
+}
+
+.faq-details[open] .question {
+	color: rgba(179, 179, 179, 0.37);
+}
+
+.faq-details[open] .answer {
+	color: white;
+	/* background-color: black; */
+}
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 600px) {
+	.container {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	/* Adjust the width of FAQ details for mobile */
+	.faq-details {
+		width: 100%;
+	}
+
+	.faq-details .question {
+		font-size: 1.2rem;
+		/* Adjust font size if needed */
+	}
+
+	.faq-details .answer {
+		font-size: 1rem;
+		/* Adjust font size if needed */
+	}
+}
+
+@media (min-width: 601px) {
+
+	/* Desktop-specific styles */
+	.container {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.faq-details {
+		width: 80%;
+		/* Adjust width for desktop */
+		max-width: 800px;
+		/* Limit max-width */
+	}
+}
+
+/* =========================================================================================================== */
+
+/* 12 */
+.btn-12 {
+	position: relative;
+	color: white;
+	right: 20px;
+	bottom: 20px;
+	border: none;
+	box-shadow: none;
+	width: 180px;
+	height: 40px;
+	line-height: 42px;
+	-webkit-perspective: 230px;
+	perspective: 230px;
+}
+
+.btn-12 span {
+	background: rgb(0, 172, 238);
+	background: linear-gradient(0deg,
+			rgba(0, 172, 238, 1) 0%,
+			rgba(2, 126, 251, 1) 100%);
+	display: block;
+	position: absolute;
+	width: 130px;
+	height: 40px;
+	box-shadow:
+		inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+		7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+		4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	margin: 0;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-12 span:nth-child(1) {
+	box-shadow:
+		-7px -7px 20px 0px #fff9,
+		-4px -4px 5px 0px #fff9,
+		7px 7px 20px 0px #0002,
+		4px 4px 5px 0px #0001;
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+	-webkit-transform-origin: 50% 50% -20px;
+	-moz-transform-origin: 50% 50% -20px;
+	transform-origin: 50% 50% -20px;
+}
+
+.btn-12 span:nth-child(2) {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+	-webkit-transform-origin: 50% 50% -20px;
+	-moz-transform-origin: 50% 50% -20px;
+	transform-origin: 50% 50% -20px;
+}
+
+.btn-12:hover span:nth-child(1) {
+	box-shadow:
+		inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+		7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+		4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.btn-12:hover span:nth-child(2) {
+	box-shadow:
+		inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+		7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+		4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+	color: transparent;
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+}
+
+/* =========================================================================================================== */
+
+/* uncomment card  */
+/*
+.container {
+	position: relative;
+	width: 1100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-warp: warp;
+	padding: 30px;
+}
+
+.container .card {
+	position: relative;
+	max-width: 300px;
+	height: 215px;
+	background-color: #fff;
+	margin: 30px 10px;
+	padding: 20px 15px;
+
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+	transition: 0.3s ease-in-out;
+	border-radius: 15px;
+}
+.container .card:hover {
+	height: 320px;
+}
+
+.container .card .image {
+	position: relative;
+	width: 260px;
+	height: 260px;
+
+	top: -40%;
+	left: 8px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.container .card .image img {
+	max-width: 100%;
+	border-radius: 15px;
+}
+
+.container .card .content {
+	position: relative;
+	top: -140px;
+	padding: 10px 15px;
+	color: #111;
+	text-align: center;
+
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+	margin-top: 30px;
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0.2s;
+} */
+/* =========================================================================================================== */
+.Hero07 {
+	padding: 2em;
+	background-color: #fff;
+}
+
+.Hero07 .ServiceCard {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	/* Ensures vertical alignment */
+	justify-content: center;
+	/* Centers content vertically */
+	align-items: center;
+	/* Centers content horizontally */
+	cursor: pointer;
+	width: 100%;
+	max-width: 22em;
+	padding: 2em;
+	background: #fff;
+	border: 1px solid #d1d5db;
+	border-radius: 0.5em;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+	transition:
+		transform 0.35s ease,
+		box-shadow 0.35s ease;
+	overflow: hidden;
+	opacity: 0.9;
+}
+
+.Hero07 .ServiceCard::before,
+.Hero07 .ServiceCard::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #000;
+	height: 4px;
+}
+
+.Hero07 .ServiceCard::before {
+	width: 0;
+	opacity: 0;
+	transition:
+		opacity 0.2s ease,
+		width 0.5s ease;
+	transition-delay: 0.5s;
+}
+
+.Hero07 .ServiceCard::after {
+	width: 100%;
+	background: white;
+	transition: width 0.5s ease;
+}
+
+.Hero07 .ServiceCard .icon {
+	margin-bottom: 1em;
+	/* Space below the icon */
+}
+
+.Hero07 .ServiceCard h2 {
+	color: #111;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 0.5em 0;
+	/* Space around the h2 */
+}
+
+.Hero07 .ServiceCard .hover_content {
+	overflow: hidden;
+	max-height: 0;
+	transform: translateY(1em);
+	transition:
+		max-height 0.55s ease,
+		transform 0.55s ease;
+}
+
+.Hero07 .ServiceCard .hover_content p {
+	margin: 1.5em 0 0;
+	/* color: #6e6e70; */
+	line-height: 1.4em;
+}
+
+.Hero07 .ServiceCard:hover {
+	transform: scale(1.05);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.Hero07 .ServiceCard:hover::before {
+	width: 100%;
+	opacity: 1;
+	transition:
+		opacity 0.5s ease,
+		width 0.5s ease;
+}
+
+.Hero07 .ServiceCard:hover::after {
+	width: 0;
+	opacity: 0;
+	transition: width 0.5s ease;
+}
+
+.Hero07 .ServiceCard:hover .hover_content {
+	max-height: 10em;
+	transform: none;
+}
+
+/* Media Query for Smaller Devices */
+@media (max-width: 768px) {
+	.Hero07 .ServiceCard {
+		padding: 1.5em;
+	}
+
+	.Hero07 .ServiceCard .icon {
+		margin-bottom: 1em;
+	}
+
+	.Hero07 .ServiceCard h2 {
+		margin: 0.5em 0;
+	}
+}
+
+/* =========================================================================================================== */
+/* =========================================================================================================== */
+/* Base Styles */
+.SpecializationCard {
+	width: 360px;
+	height: 280px;
+	background-color: #fafafa;
+	border-radius: 7px;
+	box-shadow: 0px 20px 20px -17px rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 1em;
+	transition: all 0.3s ease-in-out;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+.SpecializationImage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.SpecializationImage img {
+	/* width: 3em;
+	height: 3em; */
+	transition: opacity 0.3s ease-in-out;
+	opacity: 1;
+	margin: 0 auto;
+}
+
+.SpecializationImage h3 {
+	margin: 0.5em 0;
+	font-size: 1.25em;
+	color: #333;
+	font-weight: 400;
+	transition: opacity 0.3s ease-in-out;
+	opacity: 1;
+}
+
+.SpecializationContent {
+	text-align: center;
+	font-size: 0.9em;
+	color: #f5f5f5;
+	transition: opacity 0.3s ease-in-out;
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	padding: 1em;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+}
+
+/* Hover effect to turn background black */
+.SpecializationCard:hover {
+	background-color: #000;
+	transform: translateY(-5px);
+	box-shadow: 0px 20px 35px -16px rgba(0, 0, 0, 0.3);
+}
+
+/* Change text color on hover to ensure readability */
+.SpecializationCard:hover .SpecializationImage {
+	opacity: 0;
+}
+
+.SpecializationCard:hover .SpecializationImage {
+	opacity: 0;
+}
+
+.SpecializationCard:hover .SpecializationContent {
+	opacity: 1;
+}
+
+/* .SpecializationCard.wiide {
+	width: 600px;
+} */
+@media only screen and (max-width: 600px) {
+	.SpecializationCard.wiide {
+		width: 360px;
+	}
+}
+
+/* =========================================================================================================== */
+
+/* admin */
+.adminbg {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: customBG 15s ease infinite;
+	/* 	height: 100vh; */
+}
+
+@keyframes customBG {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/*
+:root {
+	--font1: "Poppins", sans-serif;
+	--font2: "Lobster Two", cursive;
+	--white: #fff;
+	--black: #000;
+	--primary-light: #f9fafb;
+	--second-light: #f0f0f0;
+	--third-light: #dadbdb;
+	--primary-dark: #222;
+	--second-grey: #4f4f4f;
+	--first-shadow: rgba(0, 0, 0, 0.3);
+	--success: rgba(61, 168, 102, 0.6);
+	--error: rgba(168, 30, 14, 0.6);
+	--primary-color: #5c5fc4;
+	--second-color: #c4c15c;
+} */
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	position: relative;
+	transform-style: preserve-3d;
+	animation: animate 7s ease-in-out infinite alternate;
+
+	span {
+		background: linear-gradient(90deg,
+				rgba(0, 0, 0, 0.1),
+				rgba(0, 0, 0, 0.5) 90%,
+				transparent);
+		text-transform: uppercase;
+		line-height: 0.76em;
+		position: absolute;
+		color: var(--white);
+		font-size: 3.5em;
+		white-space: nowrap;
+		font-weight: bold;
+		padding: 0px 10px;
+		transform-style: preserve-3d;
+		text-shadow: 0 10px 15px var(--first-shadow);
+		transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(109px);
+	}
+
+	span i {
+		font-style: initial;
+	}
+
+	span i:nth-child(1) {
+		color: var(--primary-color);
+	}
+
+	span i:nth-child(2) {
+		color: var(--second-color);
+	}
+}
+
+@keyframes animate {
+	0% {
+		transform: perspective(500px) rotateX(0deg) rotate(5deg);
+	}
+
+	100% {
+		transform: perspective(50px) rotateX(360deg) rotate(5deg);
+	}
+}
+
+@media (max-width: 800px) {
+	/* Media queries for responsiveness, if needed */
+}
+
+/* =========================================================================================================== */
+
+/* fixes */
+.paraContactDiv li,
+svg {
+	color: black;
+	/* or any color you prefer */
+	text-decoration: none;
+	/* Remove underline */
+}
+
+/*
+============================================================================================================
+*/
+/* cargo solution text animate Gradient Text2 */
+svg text {
+	font-family: Lora;
+	letter-spacing: 10px;
+	stroke: #998e28;
+	/* font-size: 150px;
+	font-weight: 700; */
+	stroke-width: 1;
+	animation: textAnimate2 5s infinite alternate;
+}
+
+@keyframes textAnimate2 {
+	0% {
+		stroke-dasharray: 0 50%;
+		stroke-dashoffset: 20%;
+		fill: #e26274;
+	}
+
+	100% {
+		stroke-dasharray: 50% 0;
+		stroke-dashoffstet: -20%;
+		fill: hsla(189, 68%, 75%, 0%);
+	}
+}

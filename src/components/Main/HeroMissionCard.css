@@ -1,0 +1,291 @@
+/* General styles for all cards */
+.motivationCard,
+.visionCard,
+.purposeCard {
+    width: 280px;
+    height: 280px;
+    background: white;
+    border-radius: 32px;
+    padding: 3px;
+    position: relative;
+    box-shadow: #604b4a30 0px 70px 30px -50px;
+    transition: all 0.5s ease-in-out;
+}
+
+.motivationCard .profile-pic,
+.visionCard .profile-pic,
+.purposeCard .profile-pic {
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    top: 3px;
+    left: 3px;
+    border-radius: 29px;
+    z-index: 1;
+    border: 0px solid;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+}
+
+.motivationCard .profile-pic {
+    border-color: #fbb9b6;
+}
+
+.visionCard .profile-pic {
+    border-color: #83c3ee;
+}
+
+.purposeCard .profile-pic {
+    border-color: #b8f7ba;
+}
+
+.profile-pic img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.motivationBottom,
+.visionBottom,
+.purposeBottom {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    background: inherit;
+    /* Use background color from card type */
+    top: 80%;
+    border-radius: 29px;
+    z-index: 2;
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px inset;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.motivationBottom {
+    background: #fbb9b6;
+}
+
+.visionBottom {
+    background: #83c3ee;
+}
+
+.purposeBottom {
+    background: #C8E6C9;
+}
+
+.motivationContent,
+.visionContent,
+.purposeContent {
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    opacity: 0;
+    height: 160px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.motivationCard:hover .motivationContent,
+.visionCard:hover .visionContent,
+.purposeCard:hover .purposeContent {
+    opacity: 1;
+}
+
+.bottom-bottom {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+}
+
+/* Mission Card Specific Styles */
+.missionCard:hover {
+    border-top-left-radius: 55px;
+}
+
+.missionCard:hover .motivationBottom {
+    top: 20%;
+    border-radius: 80px 29px 29px 29px;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+
+.missionCard:hover .profile-pic {
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    z-index: 3;
+    border: 7px solid #fbb9b6;
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+    transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+}
+
+.missionCard:hover .profile-pic img {
+    transform: scale(1.5);
+    object-position: 0px 25px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Vision Card Specific Styles */
+.visionCard:hover {
+    border-top-left-radius: 55px;
+}
+
+.visionCard:hover .visionBottom {
+    top: 20%;
+    border-radius: 80px 29px 29px 29px;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+
+.visionCard:hover .profile-pic {
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    z-index: 3;
+    border: 7px solid #83c3ee;
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+    transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+}
+
+.visionCard:hover .profile-pic img {
+    transform: scale(1.5);
+    object-position: 0px 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Purpose Card Specific Styles */
+.purposeCard:hover {
+    border-top-left-radius: 55px;
+}
+
+.purposeCard:hover .purposeBottom {
+    top: 20%;
+    border-radius: 80px 29px 29px 29px;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+
+.purposeCard:hover .profile-pic {
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    z-index: 3;
+    border: 7px solid #C8E6C9;
+    box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+    transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+}
+
+.purposeCard:hover .profile-pic img {
+    transform: scale(1.0);
+    object-position: -20px 0px;
+    transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 480px) {
+
+    .motivationCard:hover .motivationContent,
+    .visionCard:hover .visionContent,
+    .purposeCard:hover .purposeContent {
+        opacity: 1;
+    }
+
+    .bottom-bottom {
+        position: absolute;
+        bottom: 1rem;
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+
+    /* Mission Card Specific Styles */
+    .missionCard:hover {
+        border-top-left-radius: 55px;
+    }
+
+    .missionCard:hover .motivationBottom {
+        top: 20%;
+        border-radius: 80px 29px 29px 29px;
+        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+    }
+
+    .missionCard:hover .profile-pic {
+        width: 100px;
+        height: 100px;
+        top: 10px;
+        left: 10px;
+        border-radius: 50%;
+        z-index: 3;
+        border: 7px solid #fbb9b6;
+        box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+        transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+    }
+
+    .missionCard:hover .profile-pic img {
+        transform: scale(1.5);
+        object-position: 0px 25px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    /* Vision Card Specific Styles */
+    .visionCard:hover {
+        border-top-left-radius: 55px;
+    }
+
+    .visionCard:hover .visionBottom {
+        top: 20%;
+        border-radius: 80px 29px 29px 29px;
+        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+    }
+
+    .visionCard:hover .profile-pic {
+        width: 100px;
+        height: 100px;
+        top: 10px;
+        left: 10px;
+        border-radius: 50%;
+        z-index: 3;
+        border: 7px solid #83c3ee;
+        box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+        transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+    }
+
+    .visionCard:hover .profile-pic img {
+        transform: scale(1.5);
+        object-position: 0px 8px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    /* Purpose Card Specific Styles */
+    .purposeCard:hover {
+        border-top-left-radius: 55px;
+    }
+
+    .purposeCard:hover .purposeBottom {
+        top: 20%;
+        border-radius: 80px 29px 29px 29px;
+        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+    }
+
+    .purposeCard:hover .profile-pic {
+        width: 100px;
+        height: 100px;
+        top: 10px;
+        left: 10px;
+        border-radius: 50%;
+        z-index: 3;
+        border: 7px solid #C8E6C9;
+        box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+        transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+    }
+
+    .purposeCard:hover .profile-pic img {
+        transform: scale(1.0);
+        object-position: -20px 0px;
+        transition: all 0.5s ease-in-out;
+    }
+}

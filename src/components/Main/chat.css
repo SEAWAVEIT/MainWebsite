@@ -1,0 +1,134 @@
+*,
+*::before {
+    box-sizing: border-box;
+}
+
+.chat {
+
+    overflow: hidden;
+    /* gap: 80px; */
+    font: .85rem/1.5 Arial;
+    color: #313131;
+    position: relative;
+    /* height: 100%; */
+    padding: 1rem;
+    /* Added padding to ensure spacing on smaller screens */
+}
+
+.chat::before {
+    content: "";
+    position: absolute;
+    background-image: url("");
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, white 20%, rgba(255, 255, 255, 0)) repeat-x;
+}
+
+.chat p {
+    margin: 0;
+    padding: 0;
+}
+
+.chat__content {
+    flex: 0 1 auto;
+    padding: 1rem;
+    margin: 0 0.5rem;
+    background: var(--bgcolor);
+    border-radius: var(--radius);
+}
+
+.chat__message {
+    width: 100%;
+    /* Adjusted to take full width and be responsive */
+    max-width: 500px;
+    /* Ensure it doesn't exceed a reasonable width */
+    display: flex;
+    align-items: flex-start;
+    transform-origin: 0 0;
+    padding-top: 0;
+    transform: scale(0);
+    max-height: 200px;
+    /* Set a fixed height */
+    overflow: hidden;
+    animation: message 0.15s ease-out 0s forwards;
+    animation-delay: var(--delay);
+    --bgcolor: #d8d8d8;
+    --radius: 8px 8px 8px 0;
+    margin: 0.5rem 0;
+    /* Added margin for spacing between messages */
+}
+
+.chat__message_B {
+    flex-direction: row;
+    text-align: right;
+    align-self: flex-end;
+    transform-origin: 100% 0;
+    --bgcolor: #c2e7f8;
+    --radius: 8px 8px 0 8px;
+}
+
+.chat__message_A {
+    --bgcolor: #d8d8d8;
+    --radius: 8px 8px 8px 0;
+}
+
+.chat__message__circle {
+    flex: 0 0 auto;
+    /* Ensure circle doesn't grow or shrink */
+    width: 40px;
+    /* Consistent size */
+    height: 40px;
+    /* Consistent size */
+    margin-right: 0.5rem;
+    /* Spacing between image and content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat__message__circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure image covers the circle */
+    border-radius: 50%;
+    /* Keep the image circular */
+}
+
+@keyframes message {
+    0% {
+        transform: translateY(0);
+        max-height: 0;
+        opacity: 0;
+    }
+
+    80% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        max-height: 600px;
+        overflow: visible;
+        padding-top: 1rem;
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .chat__message {
+        width: 100%;
+        max-width: none;
+        /* Allow full width on smaller screens */
+    }
+
+    .chat__message__circle {
+        width: 30px;
+        /* Smaller circle on smaller screens */
+        height: 30px;
+        /* Smaller circle on smaller screens */
+    }
+}

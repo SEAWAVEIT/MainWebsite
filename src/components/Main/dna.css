@@ -1,0 +1,253 @@
+/** Loader styles */
+.loader-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(248, 248, 248, 0.3);
+    z-index: 0;
+}
+
+.spinnerPairHolder {
+    display: grid;
+    position: absolute;
+    width: 100%;
+    /* Increased width to accommodate more circles */
+    height: 50%;
+    top: 20%;
+    left: 0%;
+    transform: translate(-20%, 0%);
+    z-index: 1;
+    grid-template-columns: repeat(10, 1fr);
+    /* Updated to 10 columns */
+    gap: 10px;
+    transform: rotate(15deg)
+        /* Adjust spacing between circles */
+}
+
+.spinnerPairHolder .spinnerPair {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.spinnerPairHolder .spinnerPair .spinnerPairCercle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    opacity: 70%;
+    top: 0;
+    left: 50%;
+    border-radius: 999px;
+    transform: translateX(-50%);
+    animation: loaderBallsSpin 2s infinite ease-in-out;
+}
+
+/** Ball 1 */
+.spinnerPairHolder .spinnerPair .spinnerPairCercle:nth-child(1) {
+    background-image: linear-gradient(to top right, #a11562 15%, #fa2b51);
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(1) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(2) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(3) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(4) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 0.6s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(5) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 0.8s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(6) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(7) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 1.2s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(8) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 1.4s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(9) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 1.6s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(10) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 1.8s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(11) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 2.0s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(12) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 2.2s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(13) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 2.4s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(14) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 2.6s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(15) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 2.8s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(16) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 3.0s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(17) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 3.2s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(18) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 3.4s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(19) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 3.6s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(20) .spinnerPairCercle:nth-child(1) {
+    animation-delay: 3.8s;
+}
+
+
+
+
+
+/** Ball 2 */
+.spinnerPairHolder .spinnerPair .spinnerPairCercle:nth-child(2) {
+    background-image: linear-gradient(to top right, #0d5a7e 15%, #0ccee7);
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(1) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(2) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 1.2s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(3) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 1.4s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(4) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 1.6s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(5) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 1.8s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(6) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(7) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 2.2s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(8) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 2.4s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(9) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 2.6s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(10) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 2.8s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(11) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 3.0s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(12) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 3.2s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(13) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 3.4s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(14) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 3.6s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(15) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 3.8s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(16) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 4.0s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(17) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 4.2s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(18) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 4.4s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(19) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 4.6s;
+}
+
+.spinnerPairHolder .spinnerPair:nth-child(20) .spinnerPairCercle:nth-child(2) {
+    animation-delay: 4.8s;
+}
+
+
+@keyframes loaderBallsSpin {
+    0% {
+        top: 0%;
+        z-index: 2;
+    }
+
+    25% {
+        transform: translateX(-10%) scale(1.2, 1.2);
+    }
+
+    50% {
+        top: calc(100% - 25px);
+    }
+
+    75% {
+        transform: translateX(-80%) scale(0.8, 0.8);
+    }
+
+    100% {
+        top: 0%;
+        z-index: 1;
+    }
+}
+
+/** Ensure Hero01 content is above the loader */
+.Hero01 {
+    position: relative;
+    z-index: 10;
+    /* Ensure content is above the loader */
+}
