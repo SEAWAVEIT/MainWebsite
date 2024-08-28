@@ -50,7 +50,8 @@ function JobDetails() {
                     {job.position}
                 </h3>
                 <div className="text-center mb-6 border-y-2 border-gray-300 py-2">
-                    <span className="text-gray-600 font-medium">
+
+                    <span className="text-gray-600 font-medium"><span className='text-blue-800 font-semibold'>Posted On :{" "}</span>
                         {job.createdAt
                             ? format(job.createdAt, 'MMMM d, yyyy') // Format date
                             : 'No date available'}

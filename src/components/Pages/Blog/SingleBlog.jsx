@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { db, getDoc, doc } from "../../../firebase/firebase";
-import Loader from "../../Items/Loader"
+import { getStorage, ref, getDownloadURL } from 'firebase/storage';
+import Loader from "../../Items/Loader";
 import { format } from 'date-fns';
 
 function SingleBlog() {
@@ -17,13 +18,17 @@ function SingleBlog() {
                 if (docSnap.exists()) {
                     const data = docSnap.data();
                     const createdAt = data.createdAt?.toDate();
+                    const storage = getStorage();
 
-                    console.log('CreatedAt:', createdAt);
+                    const profilePhotoUrl = data.profilePhoto ? await getDownloadURL(ref(storage, data.profilePhoto)) : null;
+                    const mainPhotoUrl = data.mainPhoto ? await getDownloadURL(ref(storage, data.mainPhoto)) : null;
 
                     setPost({
                         id: docSnap.id,
                         ...data,
-                        createdAt
+                        createdAt,
+                        profilePhoto: profilePhotoUrl,
+                        mainPhoto: mainPhotoUrl,
                     });
                 } else {
                     console.log("No such document!");
@@ -41,21 +46,41 @@ function SingleBlog() {
     }
 
     return (
-        <div className="bg-white h-auto pt-8 py-8 px-12 ">
-            <div className='SingleBlog rounded-xl'>
-                <div className='BlogTopic md:text-5xl text-2xl font-semibold mb-4 text-center'>
-                    <h1>{post.topic}</h1>
+        <div className="bg-gray-100 py-12 px-6 md:px-12">
+            <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                {post.mainPhoto && (
+                    <div className="relative">
+                        <img
+                            src={post.mainPhoto}
+                            alt="Main"
+                            className="w-full h-60 object-cover"
+                        />
+                    </div>
+                )}
+                <div className="p-6">
+                    <div className="text-center mb-6">
+                        <h1 className="text-3xl font-bold text-gray-900">{post.topic}</h1>
+                    </div>
+                    <div className="flex items-center justify-center mb-6 border-b border-gray-200 pb-4">
+                        {post.profilePhoto && (
+                            <img
+                                src={post.profilePhoto}
+                                alt="Profile"
+                                className="w-16 h-16 rounded-full object-cover mr-4"
+                            />
+                        )}
+                        <div className="text-center">
+                            <p className="text-xl font-semibold text-blue-700">{post.name}</p>
+                            <p className="text-gray-600 text-sm">
+                                {post.createdAt ? format(post.createdAt, 'MMMM d, yyyy') : 'No date available'}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="text-gray-800 mb-6">
+                        <p className="text-lg font-light mb-4">{post.description}</p>
+                        <p className="text-lg font-light">{post.message}</p>
+                    </div>
                 </div>
-                <div className='BlogAuthor text-center mb-8 border-y-2 border-spacing-6 py-2 my-1'>
-                    <h1 className='inline text-blue-700 font-semibold mr-6'>{post.name}</h1>
-                    <span className='text-slate-700 font-normal text-lg'>
-                        {post.createdAt
-                            ? format(post.createdAt, 'MMMM d, yyyy') // Format date
-                            : 'No date available'}
-                    </span>
-                </div>
-                <div className='BlogDescription mb-4 md:text-lg text-sm text-slate-800 font-serif' >{post.description}</div>
-                <div className='BlogMessage md:text-lg text-sm text-slate-800 font-serif'>{post.message}</div>
             </div>
         </div>
     );

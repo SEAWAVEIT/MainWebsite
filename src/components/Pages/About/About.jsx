@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import logo from './../../../assets/seawave/seawaveblacktextlogo.png';
+import Mam from './../../../assets/founders/Mam.jpg';
 
 function About() {
   const AboutEffect = useRef();
@@ -17,41 +18,41 @@ function About() {
     // Sequence the animations in the desired order
     tl.from(AboutEffect.current, {
       opacity: 0,
-      duration: 0.5,  // Reduced duration
+      duration: 0.4,  // Reduced duration
       y: 20,
-      delay: 0.1,     // Reduced delay
+      delay: 0.12,     // Reduced delay
     })
       .from(logoRef.current, {
         opacity: 0,
-        duration: 0.5,  // Reduced duration
+        duration: 0.4,  // Reduced duration
         x: -40,
-        delay: 0.2,     // Reduced delay
+        delay: 0.22,     // Reduced delay
       })
       .from(truck1Ref.current, {
         opacity: 0,
-        duration: 0.5,  // Reduced duration
+        duration: 0.4,  // Reduced duration
         x: 20,
         y: -20,
-        delay: 0.3,     // Reduced delay
+        delay: 0.32,     // Reduced delay
       })
       .from(truck2Ref.current, {
         opacity: 0,
-        duration: 0.5,  // Reduced duration
+        duration: 0.4,  // Reduced duration
         x: -45,
         y: -25,
-        delay: 0.4,     // Reduced delay
+        delay: 0.42,     // Reduced delay
       })
       .from(personRef.current, {
         opacity: 0,
-        duration: 0.5,  // Reduced duration
+        duration: 0.4,  // Reduced duration
         x: -20,
-        delay: 0.5,     // Reduced delay
+        delay: 0.52,     // Reduced delay
       })
       .from(HeadingEffect.current, {
         opacity: 0,
-        duration: 0.5,  // Reduced duration
+        duration: 0.4,  // Reduced duration
         x: 45,
-        delay: 0.6,     // Reduced delay
+        delay: 0.62,     // Reduced delay
       });
   });
 
@@ -119,21 +120,58 @@ function About() {
       </div>
       <div className='px-1 md:px-16 py-8'>
         <div className='flex flex-col gap-2 justify-center items-center'>
-          <h4 className='text-xl md:text-2xl font-normal'>About Our Managing Director</h4>
+          <h4 className='text-xl md:text-3xl GradientText font-semibold '>About Our Managing Directors</h4>
           <div className='lino my-4'></div>
+        </div>
+        <div>
+          <span className='font-semibold '><p className='text-center text-2xl my-2'>Mr. Nalinikant Mishra </p></span>
         </div>
         <div className='flex flex-col md:flex-row justify-between px-4'>
           <div className='flex justify-center items-center my-6'>
             <img className='w-full md:w-[500px] h-auto' src='https://www.seawave.in/images/message-from-founders/md-message.webp' alt='Managing Director' />
           </div>
-          <div className='w-full md:w-1/2 flex flex-col gap-2 font-light'>
-            <p><span className='font-semibold'>Nalinikant Mishra - The Managing Director</span> - <span className='GradientText font-medium'>SEAWAVE FORWARDING AND LOGISTICS PVT LTD</span> is one of the most renowned names in the logistics industry today. With a B.E. (Civil) degree to his credit, he started his career with Asia Foundation & Constructions Limited (AFCONS) as a Site Engineer, where he was exposed to make strategy, planning, and implementation.</p>
+          <div className='w-full md:w-1/2 flex flex-col gap-2 font-light my-8'>
+            <p><span className='GradientText font-medium'>SEAWAVE FORWARDING AND LOGISTICS PVT LTD</span> is one of the most renowned names in the logistics industry today. With a B.E. (Civil) degree to his credit, he started his career with Asia Foundation & Constructions Limited (AFCONS) as a Site Engineer, where he was exposed to make strategy, planning, and implementation.</p>
             <p>Thereafter, he switched to the role of an EXIM Consultant to develop strategic layouts and design regarding logistics and custom clearance with his learnings, experience, and qualified mind.</p>
             <p>In 1996, after adequate working experience, learning, and implementation practice with several top-notch companies, he started practicing as a CHA Agent with a temporary license, and in 2004 he incorporated his own company.</p>
             <p><span className='font-semibold'>Mr. N.K. Mishra</span>, believes that he has the responsibility to return what he has gained from society in a better form. He is associated with Rotary International as well as is an active member of ACIC and so forth have connected his life’s work to build a fruitful and better environment for all the individuals of the society and <span className='font-semibold'>Director of M/S-Indo-Latin American Chamber of Commerce</span> for Mumbai zone.</p>
           </div>
         </div>
       </div>
+
+
+
+      <div className='flex flex-col justify-center items-center'>
+        <div className='lino m'></div>
+      </div>
+      <div className='px-1 md:px-16 py-8'>
+        <div>
+          <span className='font-semibold '><p className='text-center text-2xl my-2'>Mrs. Sanyukta Mishra</p></span>
+        </div>
+        <div className='flex flex-col md:flex-row justify-between items-center px-4'>
+          <div className='flex  justify-center items-center my-6'>
+            <img className='w-full md:w-[500px]   h-auto' src={Mam} alt='Managing Director' />
+          </div>
+          <div className='w-full md:w-1/2 flex flex-col gap-2 font-light'>
+
+            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.09027 11.63H3.40027C3.48027 6.95997 4.40026 6.18996 7.27026 4.48996C7.60026 4.28996 7.71025 3.86996 7.51025 3.52996C7.31025 3.19996 6.89023 3.08997 6.55023 3.28997C3.17023 5.28997 1.99023 6.50995 1.99023 12.33V17.72C1.99023 19.43 3.38026 20.81 5.08026 20.81H8.08026C9.84026 20.81 11.1702 19.48 11.1702 17.72V14.72C11.1802 12.96 9.85027 11.63 8.09027 11.63Z" fill="#292D32"></path> <path opacity="0.4" d="M18.9105 11.63H14.2205C14.3005 6.95997 15.2206 6.18996 18.0906 4.48996C18.4206 4.28996 18.5306 3.86996 18.3306 3.52996C18.1306 3.19996 17.7105 3.08997 17.3705 3.28997C13.9905 5.28997 12.8105 6.50995 12.8105 12.33V17.72C12.8105 19.43 14.2006 20.81 15.9006 20.81H18.9006C20.6606 20.81 21.9905 19.48 21.9905 17.72V14.72C22.0005 12.96 20.6705 11.63 18.9105 11.63Z" fill="#292D32"></path> </g></svg>
+
+            <p className='md:text-2xl text-md'>
+              I am proud to lead such a talented and dedicated team. Our mission is with a clear focus on our Long-Term Vision and Impact, and I am committed to ensuring we achieve this vision. Together, we will continue to push boundaries and make a lasting difference.
+            </p>
+
+            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.09027 11.63H3.40027C3.48027 6.95997 4.40026 6.18996 7.27026 4.48996C7.60026 4.28996 7.71025 3.86996 7.51025 3.52996C7.31025 3.19996 6.89023 3.08997 6.55023 3.28997C3.17023 5.28997 1.99023 6.50995 1.99023 12.33V17.72C1.99023 19.43 3.38026 20.81 5.08026 20.81H8.08026C9.84026 20.81 11.1702 19.48 11.1702 17.72V14.72C11.1802 12.96 9.85027 11.63 8.09027 11.63Z" fill="#292D32"></path> <path opacity="0.4" d="M18.9105 11.63H14.2205C14.3005 6.95997 15.2206 6.18996 18.0906 4.48996C18.4206 4.28996 18.5306 3.86996 18.3306 3.52996C18.1306 3.19996 17.7105 3.08997 17.3705 3.28997C13.9905 5.28997 12.8105 6.50995 12.8105 12.33V17.72C12.8105 19.43 14.2006 20.81 15.9006 20.81H18.9006C20.6606 20.81 21.9905 19.48 21.9905 17.72V14.72C22.0005 12.96 20.6705 11.63 18.9105 11.63Z" fill="#292D32"></path> </g></svg>
+
+            <p className='md:py-2 text-sm md:text-lg'><span className='font-semibold'>Mrs. Sanyukta Mishra</span> brings a wealth of knowledge and expertise to our organization. As our director, she is responsible for Core Values and Principles. Under Her leadership, our team has achieved notable accomplishments.</p>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
       <div className='px-1 md:px-16'>
         <div className='flex flex-col items-center'>
           <h4 className='text-xl md:text-2xl font-normal'>OUR AFFILIATIONS</h4>

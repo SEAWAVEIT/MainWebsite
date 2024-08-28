@@ -1,25 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function SortBy({ onSort }) {
-    const [selectedOption, setSelectedOption] = useState('');
-
-    const handleChange = (event) => {
-        const value = event.target.value;
-        setSelectedOption(value);
-        onSort(value);
-    };
-
+function SortBy({ sortOption, onSortChange }) {
     return (
-        <div className='sortByContainer'>
-            <label htmlFor="sortBy">Sort By:</label>
+        <div className="md:mb-6 md:mt-4 my-2 flex items-center space-x-4">
+            <label htmlFor="sortBy" className="text-gray-700 font-medium">Sort by:</label>
             <select
-                className='rounded border-gray-300 p-2 ml-2 border'
-                value={selectedOption}
-                onChange={handleChange}
-                id="sortBy">
-                <option value="">Select...</option>
-                <option value="date-newest">Date: Newest First</option>
-                <option value="date-oldest">Date: Oldest First</option>
+                id="sortBy"
+                value={sortOption}
+                onChange={(e) => onSortChange(e.target.value)}
+                className="select select-bordered select-sm w-32 max-w-xs">
+                <option value="latest">Latest</option>
+                <option value="oldest">Oldest</option>
             </select>
         </div>
     );

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { db, collection, addDoc, auth } from "../../../firebase/firebase";
+import { db, collection, addDoc, auth, storage } from "../../../firebase/firebase";
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { useAuth } from "../UserAuthentication/AuthProvider";
 import SignIn from '../UserAuthentication/SignIn';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 function AdminBlogPostAllowance() {
     const [name, setName] = useState("");
     const [topic, setTopic] = useState("");
     const [description, setDescription] = useState("");
     const [message, setMessage] = useState("");
-    const [error, setError] = useState(""); // State for error message
+    const [error, setError] = useState("");
+    const [mainPhoto, setMainPhoto] = useState(null);
+    const [profilePhoto, setProfilePhoto] = useState(null);
+
     const navigate = useNavigate();
     const { user } = useAuth();
 
@@ -29,21 +33,48 @@ function AdminBlogPostAllowance() {
         }
     };
 
+    const handleFileChange = (e, setFile) => {
+        const file = e.target.files[0];
+        if (file) {
+            setFile(file);
+        }
+    };
+
+    const uploadImage = async (file) => {
+        if (!file) return null;
+
+        const storageRef = ref(storage, `images/${file.name}`);
+        try {
+            await uploadBytes(storageRef, file);
+            const url = await getDownloadURL(storageRef);
+            return url;
+        } catch (error) {
+            console.error('Upload Error', error);
+            return null;
+        }
+    };
+
     const addPost = async (e) => {
         e.preventDefault();
 
-        // Validation: Check if all fields are filled
-        if (!name || !topic || !description || !message) {
+        if (!name || !topic || !description || !message || !mainPhoto || !profilePhoto) {
             alert("Please fill out all fields.");
             return; // Prevent form submission if validation fails
         }
 
         try {
+            // Upload photos and get their URLs
+            const mainPhotoUrl = await uploadImage(mainPhoto);
+            const profilePhotoUrl = await uploadImage(profilePhoto);
+
+            // Add the post to Firestore
             const docRef = await addDoc(collection(db, 'posts'), {
                 name,
                 topic,
                 description,
                 message,
+                mainPhoto: mainPhotoUrl,
+                profilePhoto: profilePhotoUrl,
                 createdAt: new Date(),
             });
 
@@ -52,6 +83,8 @@ function AdminBlogPostAllowance() {
             setTopic("");
             setDescription("");
             setMessage("");
+            setMainPhoto(null);
+            setProfilePhoto(null);
             setError("");
 
             console.log(name, topic, description, message, docRef.id);
@@ -130,6 +163,28 @@ function AdminBlogPostAllowance() {
                                 placeholder="Message"
                                 className="w-full h-40 py-2 px-4 rounded-lg bg-white border border-gray-400 border-opacity-40 text-gray-800 font-semibold focus:border-cyan-500 focus:outline-none"
                             ></textarea>
+                        </div>
+
+                        <div className="">
+                            <label htmlFor="MainPhoto" className="block text-lg font-medium text-gray-700 mb-2">Main Photo</label>
+                            <input
+                                type="file"
+                                id="mainphoto"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg file:border-none file:bg-blue-100 file:text-blue-700 file:py-2 file:px-4 file:rounded-lg file:cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                onChange={(e) => handleFileChange(e, setMainPhoto)}
+                            />
+                            <span className='text-xs text-slate-600'>*add Main photo</span>
+                        </div>
+
+                        <div className="">
+                            <label htmlFor="profilePhoto" className="block text-lg font-medium text-gray-700 mb-2">Profile Photo</label>
+                            <input
+                                type="file"
+                                id="profilephoto"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg file:border-none file:bg-blue-100 file:text-blue-700 file:py-2 file:px-4 file:rounded-lg file:cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                onChange={(e) => handleFileChange(e, setProfilePhoto)}
+                            />
+                            <span className='text-xs text-slate-600'>*add Profile Photo</span>
                         </div>
 
                         <button

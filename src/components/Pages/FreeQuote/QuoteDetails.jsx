@@ -48,7 +48,7 @@ function QuoteDetails() {
                     <h1 className="text-4xl font-semibold text-gray-800">{quote.companyName}</h1>
                 </div>
                 <div className="text-center mb-6 border-t-2 border-b-2 border-gray-200 py-4">
-                    <h2 className="text-2xl font-semibold text-blue-700">{servicesDisplay}</h2>
+                    <h2 className="text-2xl font-semibold text-pink-700">{servicesDisplay}</h2>
                     <p className="text-gray-600 text-lg mt-2">
                         {quote.createdAt ? format(quote.createdAt, 'MMMM d, yyyy') : 'No date available'}
                     </p>

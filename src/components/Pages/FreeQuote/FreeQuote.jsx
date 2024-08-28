@@ -61,7 +61,7 @@ function FreeQuote() {
 		try {
 			const quoteRef = collection(db, "quotes");
 			await addDoc(quoteRef, {
-				name, email, contactNumber, companyName, companyAddress, services, comments
+				name, email, contactNumber, companyName, companyAddress, services, comments, createdAt: new Date(),
 			});
 			alert("Quote Sent!");
 			setName("");

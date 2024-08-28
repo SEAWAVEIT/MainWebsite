@@ -48,6 +48,7 @@ function ApplicantDetail() {
                     <h2 className="text-2xl font-semibold text-blue-700">{applicant.name}</h2>
                     <p className="text-gray-600 text-lg mt-2">
                         {applicant.createdAt ? format(applicant.createdAt, 'MMMM d, yyyy') : 'No date available'}
+
                     </p>
                 </div>
                 <div className="space-y-4">

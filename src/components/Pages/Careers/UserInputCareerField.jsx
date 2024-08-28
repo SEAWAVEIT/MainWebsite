@@ -54,7 +54,7 @@ function UserInputCareerField() {
             const resumeURL = await getDownloadURL(resumeRef);
             const applicantRef = collection(db, "applicants");
             await addDoc(applicantRef, {
-                name, email, number, position, relocate, experience, resumeURL
+                name, email, number, position, relocate, experience, resumeURL, createdAt: new Date(),
             });
 
             // // Call Firebase function to send email
