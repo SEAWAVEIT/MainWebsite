@@ -223,7 +223,7 @@ body {
 .centerHeroWhole {
 	position: relative;
 	overflow: hidden;
-	height: 91vh;
+	height: 100vh;
 	width: 100%;
 	background-image: url("./assets/backgroundImages/1.webp");
 	background-size: cover;
@@ -783,6 +783,7 @@ body {
 
 /* Faq */
 /* General Faq Styles */
+/* 
 .faq-details {
 	transition: all 0.45s ease;
 }
@@ -800,35 +801,25 @@ body {
 
 .faq-details[open] .answer {
 	color: white;
-	/* background-color: black; */
 }
 
-/* Mobile-specific styles */
 @media only screen and (max-width: 600px) {
 	.container {
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}
-
-	/* Adjust the width of FAQ details for mobile */
 	.faq-details {
 		width: 100%;
 	}
-
 	.faq-details .question {
 		font-size: 1.2rem;
-		/* Adjust font size if needed */
 	}
-
 	.faq-details .answer {
 		font-size: 1rem;
-		/* Adjust font size if needed */
 	}
 }
 
 @media (min-width: 601px) {
-
-	/* Desktop-specific styles */
 	.container {
 		padding-left: 2rem;
 		padding-right: 2rem;
@@ -836,11 +827,9 @@ body {
 
 	.faq-details {
 		width: 80%;
-		/* Adjust width for desktop */
 		max-width: 800px;
-		/* Limit max-width */
 	}
-}
+} */
 
 /* =========================================================================================================== */
 

@@ -58,7 +58,7 @@ function AllBlogs() {
     }, [sortOption]);
 
     if (loading) return <Loader />;
-    if (error) return <div className='text-center text-red-500'>{error}</div>;
+    if (error) return <div className='text-center text-red-500 '>{error}</div>;
 
     return (
         <div className="flex flex-col bg-white py-16 px-6 md:px-12 mx-auto max-w-7xl">
@@ -67,25 +67,27 @@ function AllBlogs() {
                 <SortBy sortOption={sortOption} onSortChange={handleSortChange} />
             </div>
             {posts.length > 0 ? (
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-6 ">
                     {posts.map((post) => (
                         <div
                             aria-label={`View ${post.name}`}
                             onClick={() => navigateTo(`/blog/${post.id}`)}
                             key={post.id}
-                            className="relative flex flex-col p-4 border border-gray-300 rounded-lg shadow-lg bg-white hover:bg-gray-100 transition duration-200 ease-in-out cursor-pointer"
+                            className="relative flex flex-col p-4 border-b-[1px] border-36 border-gray-200   bg-white  transition duration-200 ease-in-out cursor-pointer"
                         >
-                            <div className="flex items-start mb-4">
-                                {post.profilePhoto && (
-                                    <img
-                                        src={post.profilePhoto}
-                                        alt="Profile"
-                                        className="w-16 h-16 rounded-full object-cover mr-4"
-                                    />
-                                )}
+                            <div className="flex flex-col items-start mb-4">
+                                <div className='flex '>
+                                    {post.profilePhoto && (
+                                        <img
+                                            src={post.profilePhoto}
+                                            alt="Profile"
+                                            className="w-6 h-6 rounded-full object-cover mr-4"
+                                        />
+                                    )}
+                                    <h3 className="text-md text-gray-600 mb-2">{post.name}</h3>
+                                </div>
                                 <div className="flex-1">
-                                    <h2 className="text-xl font-semibold text-gray-900 mb-2">{post.topic}</h2>
-                                    <h3 className="text-lg text-gray-600 mb-2">{post.name}</h3>
+                                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">{post.topic}</h2>
                                     <span className="text-gray-500 text-sm">
                                         {post.createdAt ? format(post.createdAt, 'MMMM d, yyyy') : 'No date available'}
                                     </span>
@@ -95,7 +97,7 @@ function AllBlogs() {
                     ))}
                 </div>
             ) : (
-                <div className="text-center text-gray-500">No posts available.</div>
+                <div className="text-center h-screen text-gray-500">No posts available.</div>
             )}
         </div>
     );

@@ -46,7 +46,7 @@ function Contact() {
 
 	return (
 		<>
-			<div className="scrollable-content h-auto p-4 sm:p-8 w-full bg-white flex flex-col gap-4 text-black">
+			<div id="contact" className="scrollable-content h-auto p-4 sm:p-8 w-full bg-white flex flex-col gap-4 text-black">
 				<div className="flex flex-col gap-4 justify-center items-center">
 					<h1 className="text-2xl md:text-5xl">Contact Us</h1>
 					<div className="lino"></div>

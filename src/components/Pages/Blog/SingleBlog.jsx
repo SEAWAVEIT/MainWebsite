@@ -46,38 +46,45 @@ function SingleBlog() {
     }
 
     return (
-        <div className="bg-gray-100 py-12 px-6 md:px-12">
-            <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-                {post.mainPhoto && (
-                    <div className="relative">
-                        <img
-                            src={post.mainPhoto}
-                            alt="Main"
-                            className="w-full h-60 object-cover"
-                        />
-                    </div>
-                )}
-                <div className="p-6">
-                    <div className="text-center mb-6">
-                        <h1 className="text-3xl font-bold text-gray-900">{post.topic}</h1>
-                    </div>
-                    <div className="flex items-center justify-center mb-6 border-b border-gray-200 pb-4">
+        <div className="py-8 md:py-16 px-6 md:px-12 ">
+            <div className="max-w-4xl mx-auto bg-white   overflow-hidden">
+                <div className="text-left mb-6">
+                    <h1 className="text-4xl font-bold py-8 text-gray-900">{post.topic}</h1>
+                    <div className="flex items-center justify-start mb-6 border-b border-gray-200 pb-4">
                         {post.profilePhoto && (
                             <img
                                 src={post.profilePhoto}
                                 alt="Profile"
-                                className="w-16 h-16 rounded-full object-cover mr-4"
+                                className="w-12 h-12 rounded-full object-cover mr-4"
                             />
                         )}
-                        <div className="text-center">
-                            <p className="text-xl font-semibold text-blue-700">{post.name}</p>
+                        <div className="text-start">
+                            <p className="text-lg font-semibold text-blue-700">{post.name}</p>
                             <p className="text-gray-600 text-sm">
                                 {post.createdAt ? format(post.createdAt, 'MMMM d, yyyy') : 'No date available'}
                             </p>
                         </div>
                     </div>
+
                     <div className="text-gray-800 mb-6">
                         <p className="text-lg font-light mb-4">{post.description}</p>
+
+                    </div>
+                </div>
+                <div>
+                    {post.mainPhoto && (
+                        <div className="relative">
+                            <img
+                                src={post.mainPhoto}
+                                alt="Main"
+                                className="w-full h-60 object-cover"
+                            />
+                        </div>
+                    )}
+                </div>
+                <div className="p-6">
+                    <div className="text-gray-800 mb-6">
+
                         <p className="text-lg font-light">{post.message}</p>
                     </div>
                 </div>

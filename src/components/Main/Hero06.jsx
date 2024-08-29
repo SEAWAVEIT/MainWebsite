@@ -18,7 +18,7 @@ function Hero06() {
 						<p>for enhancing your logistics and</p>
 						<p>ensuring smooth operations.</p>
 					</div>
-					<div>
+					{/* <div>
 						<Link
 							to="#"
 							className="relative inline-block md:px-4 md:py-2 m-8 px-2 py-1 font-medium group"
@@ -31,7 +31,7 @@ function Hero06() {
 								</div>
 							</span>
 						</Link>
-					</div>
+					</div> */}
 				</div>
 			</div>
 			<div className="md:w-[60%] flex md:flex-row flex-col md:p-4 p-2 px-8">

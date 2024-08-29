@@ -10,21 +10,25 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const menuRef = useRef(null);
   const servicesRef = useRef(null);
-
+  const [prevState, setprevState] = useState(false)
   const toggleMenu = () => setIsOpen(prevOpen => !prevOpen);
   const closeMenu = () => setIsOpen(false);
 
   const animateMenu = (open) => {
     const menu = menuRef.current;
     const tl = gsap.timeline({ defaults: { ease: "power1.inOut" } });
-    if (open) {
-      tl.to(menu, { duration: 0.3, height: "auto", top: 70, width: 220, opacity: 1 });
-    } else {
-      tl.to(menu, { duration: 0.3, height: 0, opacity: 0 });
+    if (menu) {
+      if (open) {
+        tl.to(menu, { duration: 0.3, height: "auto", top: 70, width: 220, opacity: 1 });
+      } else {
+        tl.to(menu, { duration: 0.3, height: 0, opacity: 0 });
+      }
     }
   };
 
-  const toggleServicesDropdown = () => setIsServicesOpen(prevState => !prevState);
+  const toggleServicesDropdown = () => {
+    setIsServicesOpen(prevState => !prevState);
+  };
 
   useEffect(() => {
     animateMenu(isOpen);
@@ -38,27 +42,31 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
+    toggleServicesDropdown();
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
+
     const handleClickOutside = (event) => {
+      // Close menu and services dropdown if clicked outside
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         closeMenu();
-        setIsServicesOpen(false); // Close services dropdown if clicked outside
       }
       if (servicesRef.current && !servicesRef.current.contains(event.target)) {
         setIsServicesOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleLinkClick = () => {
     closeMenu();
+    setIsServicesOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -67,7 +75,7 @@ const Header = () => {
       <div className="navbar flex items-center justify-between">
         <div className="navbar-start">
           <Link to="/" className="btn btn-ghost text-xl" onClick={handleLinkClick}>
-            <img src={navLogo} alt="Logo" className="h-8 " />
+            <img src={navLogo} alt="Logo" className="h-8" />
           </Link>
         </div>
 
@@ -84,17 +92,11 @@ const Header = () => {
               </button>
               <ul className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} ${isMobile ? "z-50" : ""}`} ref={servicesRef}>
                 <li><Link to="/customclearance" onClick={handleLinkClick}>Custom Clearance</Link></li>
-                <div className="borderDivider"><div className="serviceBorder"> </div></div>
                 <li><Link to="/freightforwarding" onClick={handleLinkClick}>Freight Forwarding</Link></li>
-                <div className="borderDivider"><div className="serviceBorder"> </div></div>
                 <li><Link to="/transportation" onClick={handleLinkClick}>Transportation</Link></li>
-                <div className="borderDivider"><div className="serviceBorder"> </div></div>
                 <li><Link to="/warehousing" onClick={handleLinkClick}>Warehousing</Link></li>
-                <div className="borderDivider"><div className="serviceBorder"> </div></div>
                 <li><Link to="/logisticsdesign" onClick={handleLinkClick}>Logistics Design</Link></li>
-                <div className="borderDivider"><div className="serviceBorder"> </div></div>
                 <li><Link to="/eximconsultancy" onClick={handleLinkClick}>Exim Consultancy</Link></li>
-                <div className="borderDivider"><div className="serviceBorder"> </div></div>
               </ul>
             </li>
             <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
@@ -136,17 +138,11 @@ const Header = () => {
                 </button>
                 <ul className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} z-50`} ref={servicesRef}>
                   <li><Link to="/customclearance" onClick={handleLinkClick}>Custom Clearance</Link></li>
-                  <div className="borderDivider"><div className="serviceBorder"> </div></div>
                   <li><Link to="/freightforwarding" onClick={handleLinkClick}>Freight Forwarding</Link></li>
-                  <div className="borderDivider"><div className="serviceBorder"> </div></div>
                   <li><Link to="/transportation" onClick={handleLinkClick}>Transportation</Link></li>
-                  <div className="borderDivider"><div className="serviceBorder"> </div></div>
                   <li><Link to="/warehousing" onClick={handleLinkClick}>Warehousing</Link></li>
-                  <div className="borderDivider"><div className="serviceBorder"> </div></div>
                   <li><Link to="/logisticsdesign" onClick={handleLinkClick}>Logistics Design</Link></li>
-                  <div className="borderDivider"><div className="serviceBorder"> </div></div>
                   <li><Link to="/eximconsultancy" onClick={handleLinkClick}>Exim Consultancy</Link></li>
-                  <div className="borderDivider"><div className="serviceBorder"> </div></div>
                 </ul>
               </li>
               <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>

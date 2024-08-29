@@ -166,14 +166,14 @@ function AdminBlogPostAllowance() {
                         </div>
 
                         <div className="">
-                            <label htmlFor="MainPhoto" className="block text-lg font-medium text-gray-700 mb-2">Main Photo</label>
+                            <label htmlFor="MainPhoto" className="block text-lg font-medium text-gray-700 mb-2">Blog Photo</label>
                             <input
                                 type="file"
                                 id="mainphoto"
                                 className="w-full px-3 py-2 border border-gray-300 rounded-lg file:border-none file:bg-blue-100 file:text-blue-700 file:py-2 file:px-4 file:rounded-lg file:cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 onChange={(e) => handleFileChange(e, setMainPhoto)}
                             />
-                            <span className='text-xs text-slate-600'>*add Main photo</span>
+                            <span className='text-xs text-slate-600'>*add Blog Post photo</span>
                         </div>
 
                         <div className="">

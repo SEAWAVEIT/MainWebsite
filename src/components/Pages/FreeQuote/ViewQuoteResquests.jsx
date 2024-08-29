@@ -55,7 +55,7 @@ function ViewQuoteRequests() {
     }, [sortOption]);
 
     if (loading) return <Loader />;
-    if (error) return <div className='text-center text-red-500'>{error}</div>;
+    if (error) return <div className='text-center h-screen font-semibold text-2xl mt-80 text-red-500'>{error}</div>;
 
     return (
         <div className="flex flex-col bg-white h-auto px-6 py-12 md:px-12 mx-auto">

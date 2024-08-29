@@ -39,7 +39,7 @@ function HeroDisplayPage() {
     }, []);
 
     return (
-        <div className="centerHeroWhole" ref={MainHeadingEffect}>
+        <div className="centerHeroWhole h-screen" ref={MainHeadingEffect}>
             <div className="background-layer"></div>
             <div className="background-layer"></div>
             <div className="background-layer"></div>
