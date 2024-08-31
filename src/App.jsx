@@ -6,6 +6,7 @@ import Admin from "./components/Admin/Admin";
 import AdminBlogPostAllowance from "./components/Pages/Blog/AdminBlogPostAllowance";
 import AdminCareerPostAllowance from "./components/Pages/Careers/AdminCareerPostAllowance";
 import Footer from "./components/Footer/Footer";
+import ServiceFooter from "./components/Footer/ServiceFooter";
 import DisplayPage from "./components/Main/HeroDisplayPage";
 import Main1 from "./components/Main/Hero01";
 import Main2 from "./components/Main/Hero02";
@@ -108,7 +109,7 @@ function App() {
       </Routes>
       <ScrollToTopButton />
       <ChatButton />
-      <Footer />
+      <ServiceFooter />
     </AuthProvider>
   );
 }
