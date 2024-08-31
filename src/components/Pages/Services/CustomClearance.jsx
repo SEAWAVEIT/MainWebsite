@@ -11,29 +11,23 @@ function CustomClearance() {
 
 			<div className="px-4 md:px-20 mb-6 md:mb-8">
 				<p className="mb-4">
-					<span className="GradientText">SEAWAVE's</span> own Clearing
+					<span className="GradientText font-semibold">SEAWAVE's</span> own Clearing
 					& Forwarding Division,{" "}
-					<span className="GradientText">
+					<span className="GradientText font-semibold">
 						SEAWAVE FORWARDING AND LOGISTICS PVT LTD
 					</span>{" "}
 					is an authorised{" "}
 					<span className="font-normal">
-						CUSTOM HOUSE AGENT (CHA)
+						CUSTOM HOUSE AGENT (CHA) specializing in customs clearance for general and project cargo.
 					</span>
 					.
 				</p>
 				<p className="mb-4">
-					This division specializes in custom clearance of general and
-					project cargo. The team comprises experienced and qualified
-					personnel who have thorough knowledge of tariff schedules,
-					customs regulations, and keep abreast of frequent changes in
-					custom laws, import-export policies, etc.
-				</p>
-				<p className="mb-4">
-					Document studies are carried out well before the arrival of
-					shipment to allow for error correction and avoid unnecessary
-					delays.
-				</p>
+				The team is skilled in tariff schedules and customs regulations, staying updated on changes in laws and policies. They ensure timely document preparation before shipments arrive to prevent delays and simplify administrative procedures for clients.</p>
+				{ <p className="mb-4">
+					 Additionally, <span className="GradientText font-semibold">SEAWAVE</span> provides assistance with licenses, project imports, exports, and post-shipment processing.
+				
+				</p>/*
 				<p className="mb-4">
 					Convenience of customers is ensured by finalizing paperwork,
 					documents, etc., and saving clients from complex
@@ -44,7 +38,7 @@ function CustomClearance() {
 					<span className="GradientText">SEAWAVE</span>, including
 					assistance with applications for licenses, project imports,
 					exports, and post-shipment processing of various goods.
-				</p>
+				</p> */}
 			</div>
 
 

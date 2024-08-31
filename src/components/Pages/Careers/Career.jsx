@@ -35,6 +35,9 @@ function Career() {
             <div className='flex justify-center '>
                 <img src={career} alt="Career" className='object-fit md:w-2/5 md:h-96 rounded-lg ' />
             </div>
+            <div>
+                <h2 className='text-center font-semibold text-2xl'>Share Your Resume : <Link to='hr@seawave.in'>hr@seawave.in</Link></h2>
+            </div>
             <div className='text-center text-lg md:text-xl text-gray-700 mb-8 mx-auto max-w-3xl'>
                 <p>Together, all the way. We're a global leader in container trade and logistics, and we're embarking on an industry-defining transformation that will change the way the world moves. It’s a big moment for all of us – and we all have our part to play. Are you ready?</p>
             </div>

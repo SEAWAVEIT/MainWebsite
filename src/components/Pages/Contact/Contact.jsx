@@ -119,8 +119,8 @@ function Contact() {
 								{
 									src: whatsapp,
 									label: "Whatsapp",
-									text: "+91-9136618731",
-									link: "https://wa.me/+919136618731",
+									text: "+91-8655642421",
+									link: "https://wa.me/+918655642421",
 								},
 								{
 									src: mobile,

@@ -11,24 +11,24 @@ function Warehousing() {
 
 			<div className="px-4 md:px-20 mb-6 md:mb-8">
 				<div className="mb-6 md:mb-8">
+					
+				</div>
+
+
+				<div className="mt-6 md:mt-8 flex flex-col justify-between items-center md:flex-row">
+					<div className="w-full md:w-1/2 order-1">
 					<p>
-						<span className="GradientText">
+						<span className="GradientText font-semibold">
 							SEAWAVE FORWARDING & LOGISTICS PVT. LTD.
 						</span>{" "}
-						had identified warehouse as one of the key components of
-						national and international trade. With this focus,
-						<span className="GradientText">SEAWAVE</span> had set up
-						large warehouses at strategic locations in and around
-						the port. The Company commands over 19,000 sq. ft of
-						warehousing space in and around Mumbai (Bombay). It
-						also has warehouses at Panvel, Bhiwandi, and outskirts of
-						Pune. Non-hazardous cargo meant for exports and
-						imported cargo pending final consumption and those that
-						are to be further distributed within the country are
-						kept in the warehouses. Some of these warehouses are
-						equipped with electrical cranes to cater to specific
-						handling requirements of the clients.
+						has established large warehouses at strategic locations around ports, recognizing warehousing as a key component of trade. With over 19,000 sq. ft of space in and around Mumbai, and additional warehouses in Panvel, Bhiwandi, and near Pune, they store non-hazardous export cargo, imported goods awaiting consumption, and items for domestic distribution. Some warehouses are equipped with electrical cranes to meet specific client handling needs.
 					</p>
+					</div>
+					<div className="w-full md:w-1/2 order-2">
+						<div className="px-4 md:px-20 mb-6 md:mb-8 flex justify-center">
+							<video src={warehousevideo} autoPlay loop muted className="w-full md:w-96 h-auto rounded-lg " />
+						</div>
+					</div>
 				</div>
 
 
@@ -59,24 +59,16 @@ function Warehousing() {
 				</div>
 
 				<div className="mt-6 md:mt-8 flex flex-col justify-between items-center md:flex-row">
-					<div className="w-full md:w-1/2 order-2">
+					<div className="w-full ">
 						<p className="text-center ">
-							We provide high-level professional warehousing services
-							and care that is the assurance of the safe arrival of
-							your product anywhere, anytime. Through our integrated
-							inventory management system, we not only provide control
-							on a worldwide basis but also allow customers to
-							supplement and redistribute cargo. This approach reduces
-							cycle time while assuring constant availability of
-							product. We offer special warehousing facilities for
-							containerized, refrigerated, and hazardous materials.
+						<span className="GradientText font-semibold">SEAWAVE</span> offers professional warehousing services, ensuring the safe arrival of products globally. Their integrated inventory management system provides worldwide control, enabling customers to supplement and redistribute cargo, reducing cycle time and ensuring product availability. Special facilities are available for containerized, refrigerated, and hazardous materials.
 						</p>
 					</div>
-					<div className="w-full md:w-1/2 order-1">
+					{/* <div className="w-full md:w-1/2 order-1">
 						<div className="px-4 md:px-20 mb-6 md:mb-8 flex justify-center">
 							<video src={warehousevideo} autoPlay loop muted className="w-full md:w-96 h-auto rounded-lg " />
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

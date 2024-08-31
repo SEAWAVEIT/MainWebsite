@@ -54,26 +54,7 @@ function FreightForwarding() {
                 <div className="flex flex-col-reverse md:flex-row md:gap-4 items-center">
                     <div className="w-full md:w-1/2 flex flex-col md:pr-6 mb-4 md:mb-0">
                         <p className="mb-4">
-                            Air Freight is one of the valuable parts of our
-                            services which is insured to reach the cargo at
-                            destination safely & timely.{" "}
-                            <span className="GradientText">SEAWAVE</span> is an
-                            air cargo agent to provide timely accurate and
-                            customized services for all type of air cargo.
-                            Export shipments are dispatched to all the five
-                            continents. Therefore,{" "}
-                            <span className="GradientText">SEAWAVE</span>{" "}
-                            generates considerable activities throughout the
-                            world in order to pave the export ways for industry
-                            and commerce. In addition it is necessary to be well
-                            acquainted with the regulations in the individual
-                            countries and to have a good knowledge of the
-                            facilities everywhere. Apart from General Cargo,{" "}
-                            <span className="GradientText">SEAWAVE</span> is
-                            capable of handling Vehicles, Heavy Weight and Odd
-                            Dimensional Cargo by air to any destinations. Expect
-                            the most competitive airfreight rates and
-                            unmatchable service standards.
+                        <span className="GradientText font-semibold">SEAWAVE</span> provides insured air freight services, ensuring safe and timely delivery of cargo worldwide. As an air cargo agent, <span className="GradientText font-semibold">SEAWAVE</span> offers customized services for all types of air cargo, including general cargo, vehicles, heavy weight, and odd-dimensional items. With extensive knowledge of regulations and facilities in various countries, <span className="GradientText font-semibold">SEAWAVE</span> facilitates global exports across all five continents, offering competitive airfreight rates and exceptional service standards.
                         </p>
                         <div>
                             <h2 className="text-lg md:text-xl my-2">
@@ -110,23 +91,7 @@ function FreightForwarding() {
                     </div>
                     <div className="w-full md:w-1/2 flex flex-col md:pl-2">
                         <p className="mb-4">
-                            Air Freight is one of the valuable parts of our
-                            services which is insured to reach the cargo at
-                            destination safely & timely.{" "}
-                            <span className="GradientText">SEAWAVE</span>{" "}
-                            accepts following types of cargo and offer complete
-                            services for moving the export cargo right from the
-                            shippers' location to any port. Ocean Freight
-                            Forwarding Services for export consignments are
-                            provided.{" "}
-                            <span className="GradientText">SEAWAVE</span> have
-                            established its name in the shipping industry,
-                            having rate negotiation skills and special
-                            arrangements with leading liners. Freight services
-                            are provided for moving LCL, FCL and Break-Bulk
-                            Cargo, further supported by a fleet of container
-                            vehicles and trucks available for offering inland
-                            movement of containers and loose cargo.
+                        <span className="GradientText font-semibold">SEAWAVE</span> offers comprehensive sea freight services, handling various types of cargo from the shipper's location to any port. Known for its strong presence in the shipping industry, <span className="GradientText font-semibold">SEAWAVE</span> excels in rate negotiations and has special arrangements with leading liners. They provide ocean freight services for LCL, FCL, and Break-Bulk Cargo, supported by a fleet of container vehicles and trucks for inland transportation.
                         </p>
                         <div>
                             <h2 className="text-lg md:text-xl my-2">

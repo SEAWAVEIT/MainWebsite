@@ -23,9 +23,9 @@ function ServiceFooter() {
                         <h2 className="text-xl font-serif font-light">
                             Seawave Forwarding & Logistics Pvt. Ltd.
                         </h2>
-                        <h3 className="italic font-light text-sm my-2"><h2>Address:</h2>
-                            Unit No. 232 Bldg No. 1 Edison Raheja Tesla Industrial Plot GEN-2/1/C/Part D Block MIDC Industrial Area Sanpada, TTC Industrial Area, Shiravane, Juinagar, Navi Mumbai, Maharashtra 400705
-                        </h3>
+                        <div className="italic font-light text-sm my-2"><h2>Address:</h2>
+                           <h3> Unit No. 232 Bldg No. 1 Edison Raheja Tesla Industrial Plot GEN-2/1/C/Part D Block MIDC Industrial Area Sanpada,TTC Industrial Area, Shiravane, Juinagar, Navi Mumbai, Maharashtra 400705</h3>
+                        </div>
                         <h3 className="italic font-light text-sm my-2">Contact Number : +912268727904/906/911/922</h3>
                         <div className="my-2">
                             <h3 className="italic font-ligh text-sm ">info@seawave.in</h3>

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/Pages/UserAuthentication/AuthProvider";
 import Header from "./components/Header/Header";
-import Navbar from "./components/Header/Navbar";
+// import Navbar from "./components/Header/Navbar";
 import Admin from "./components/Admin/Admin";
 import AdminBlogPostAllowance from "./components/Pages/Blog/AdminBlogPostAllowance";
 import AdminCareerPostAllowance from "./components/Pages/Careers/AdminCareerPostAllowance";
@@ -59,9 +59,9 @@ function Home() {
       <Main6 />
       <Main7 />
       <Main8 />
-      {/* <Contact /> */}
       <Main9 />
-      <HeroContact />
+      <Contact />
+      {/* <HeroContact /> */}
       <Main10 />
     </div>
   );

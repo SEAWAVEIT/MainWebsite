@@ -97,7 +97,7 @@ function Transport() {
 				<div className="flex flex-col-reverse md:flex-row md:gap-4 items-center">
 					<div className="w-full md:w-1/2 flex justify-center items-center mb-4 md:mb-0">
 						<img
-							src="https://seawave.in/images/inner-pages/sea-freight.webp"
+							src="https://seawave.in/images/inner-pages/vehicle-operation.webp"
 							className="h-[300px] md:h-[450px] w-[320px] md:w-[480px] rounded-lg filter drop-shadow-md"
 							alt="Sea Freight"
 						/>
