@@ -54,6 +54,7 @@ function ViewQuoteRequests() {
         fetchQuotes();
     }, [sortOption]);
 
+
     if (loading) return <Loader />;
     if (error) return <div className='text-center h-screen font-semibold text-2xl mt-80 text-red-500'>{error}</div>;
 
@@ -65,27 +66,31 @@ function ViewQuoteRequests() {
             </div>
             {quotes.length > 0 ? (
                 <div className="grid grid-cols-1 gap-6">
-                    {quotes.map((quote) => (
-                        <div
-                            key={quote.id}
-                            aria-label={`View ${quote.companyName}`}
-                            className="relative flex flex-col p-6 border border-gray-300 rounded-lg shadow-lg bg-white hover:bg-pink-50 transition-transform transform hover:-translate-y-1"
-                        >
-                            <div className="flex-1 flex flex-col">
-                                <h2 className="text-2xl font-semibold text-gray-900">{quote.companyName}</h2>
-                                <h3 className="text-lg text-gray-600 mt-1 truncate">{quote.services}</h3>
-                                <span className="mt-2 truncate w-full text-green-600 text-start">
-                                    {quote.createdAt ? format(quote.createdAt, 'MMMM d, yyyy') : 'No date available'}
-                                </span>
-                            </div>
-                            <button
-                                onClick={() => navigateTo(`/quoteDetails/${quote.id}`)}
-                                className="mt-4 bg-pink-500 hover:bg-pink-700 text-white font-medium w-20 py-2 px-4 rounded-lg transition-colors duration-300"
+                    {quotes.map((quote) => {
+                        const serviceDisplay = quote.services ? quote.services.map(service => service.toUpperCase()).join(" - ") : "No Services Mentioned"
+
+                        return (
+                            <div
+                                key={quote.id}
+                                aria-label={`View ${quote.companyName}`}
+                                className="relative flex flex-col p-6 border border-gray-300 rounded-lg shadow-lg bg-white hover:bg-pink-50 transition-transform transform hover:-translate-y-1"
                             >
-                                View
-                            </button>
-                        </div>
-                    ))}
+                                <div className="flex-1 flex flex-col">
+                                    <h2 className="text-2xl font-semibold text-gray-900">{quote.companyName}</h2>
+                                    <h3 className="text-lg text-gray-600 mt-1 truncate">{serviceDisplay}</h3>
+                                    <span className="mt-2 truncate w-full text-green-600 text-start">
+                                        {quote.createdAt ? format(quote.createdAt, 'MMMM d, yyyy') : 'No date available'}
+                                    </span>
+                                </div>
+                                <button
+                                    onClick={() => navigateTo(`/quoteDetails/${quote.id}`)}
+                                    className="mt-4 bg-pink-500 hover:bg-pink-700 text-white font-medium w-20 py-2 px-4 rounded-lg transition-colors duration-300"
+                                >
+                                    View
+                                </button>
+                            </div>
+                        )
+                    })}
                 </div>
             ) : (
                 <div className="text-center text-gray-500">No <span className="text-red-600">quotes</span> available.</div>

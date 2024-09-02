@@ -38,7 +38,7 @@ function QuoteDetails() {
         return <Loader />;
     }
     const servicesDisplay = quote.services
-        ? quote.services.map(service => service.toUpperCase()).join(' | ')
+        ? quote.services.map(service => service.toUpperCase()).join(' , ')
         : 'No services available';
 
     return (

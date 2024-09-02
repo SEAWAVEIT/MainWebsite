@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { db, getDocs, collection } from "../../../firebase/firebase";
+import { db, getDocs, collection, doc, deleteDoc } from "../../../firebase/firebase";
 import Loader from '../../Items/Loader';
 import { format } from 'date-fns';
-import DatePicker from "../../Items/DatePicker"
+import DatePicker from "../../Items/DatePicker";
 
 function ViewApplicants() {
     const [sortedApplicants, setSortedApplicants] = useState([]);
@@ -50,6 +50,20 @@ function ViewApplicants() {
         setSortedApplicants(filteredArray);
     };
 
+    const handleDelete = async (applicantId) => {
+        try {
+            const confirmDelete = window.confirm("Are you sure you want to delete this applicant ?");
+            if (confirmDelete) {
+                await deleteDoc(doc(db, "applicants", applicantId))
+                setApplicants(applicants.filter(applicant => applicant.id !== applicantId))
+                setSortedApplicants(sortedApplicants.filter(applicant => applicant.id !== applicantId))
+            }
+        }
+        catch (err) {
+            console.error('Error Deleteing Applicant: ', err)
+        }
+    }
+
     return (
         <div className="bg-white px-6 py-16 md:px-12 mx-auto">
             <div className="text-center mb-8">
@@ -68,9 +82,19 @@ function ViewApplicants() {
                             <div className="flex-1 mb-4">
                                 <h2 className="text-2xl font-semibold">{applicant.name}</h2>
                                 <h3 className="text-lg mt-1 truncate">{applicant.position}</h3>
-                                <span className="text-gray-500 mt-2 truncate w-full text-end">
-                                    {applicant.createdAt ? format(applicant.createdAt, 'MMMM d, yyyy') : 'No date available'}
-                                </span>
+                                <div>
+                                    <span className="text-gray-500 mt-2 truncate w-full text-end" >
+                                        {applicant.createdAt ? format(applicant.createdAt, 'MMMM d, yyyy') : 'No date available'}
+                                    </span>
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation()
+                                            handleDelete(applicant.id)
+                                        }}
+                                        className='btn btn-sm  ml-8 btn-outline btn-error'>
+                                        Delete
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     ))}

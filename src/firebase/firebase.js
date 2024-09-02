@@ -1,6 +1,6 @@
 // firebase.js
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDoc, getDocs, doc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, getDoc, deleteDoc, getDocs, doc } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
@@ -21,7 +21,7 @@ const googleProvider = new GoogleAuthProvider();
 
 const storage = getStorage(app);
 
-export { db, auth, googleProvider, signInWithPopup, collection, getDoc, storage, getDocs, addDoc, doc };
+export { db, auth, googleProvider, signInWithPopup, collection, getDoc, storage, getDocs, addDoc, deleteDoc, doc };
 
 
 

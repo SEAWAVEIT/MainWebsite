@@ -3,7 +3,7 @@ import footerLogo from "../../assets/seawave/seawavewhitetextlogo.png";
 
 function Footer() {
 	return (
-		<div className="bg-black h-auto text-white md:p-8 py-6">
+		<div className="FooterImage bg-black h-auto text-white md:p-8 py-6">
 			<div className="flex flex-col py-16 gap-4 justify-center items-center">
 				<div>
 					<img className="md:h-20 h-14" src={footerLogo} alt="Seawave Logo" />

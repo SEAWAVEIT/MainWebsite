@@ -105,6 +105,7 @@ function Admin() {
                         <div className="card-actions justify-end">
                             <button onClick={allapplicants} className="btn btn-sm btn-primary py-2 px-4">View</button>
                         </div>
+
                     </div>
                 </div>
                 <div className="card z-0 bg-base-100 image-full md:w-96 w-80 h-40 shadow-xl">

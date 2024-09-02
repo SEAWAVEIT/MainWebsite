@@ -46,7 +46,7 @@ function Contact() {
 
 	return (
 		<>
-			<div id="contact" className="scrollable-content h-auto p-4 sm:p-8 w-full bg-white flex flex-col gap-4 text-black">
+			<div id="contact-section" className="scrollable-content h-auto p-4 sm:p-8 w-full bg-white flex flex-col gap-4 text-black">
 				<div className="flex flex-col gap-4 justify-center items-center">
 					<h1 className="text-2xl md:text-5xl">Contact Us</h1>
 					<div className="lino"></div>
@@ -63,24 +63,11 @@ function Contact() {
 						</div>
 						<div className="flex flex-col items-center md:items-center w-full md:w-1/2 md:pl-8">
 							<div className="mt-8  md:mt-40">
-								<h2 className="text-xl md:text-3xl font-semibold">
-									Routes we cover
+								<h2 className="text-sm font-base md:text-lg md:font-medium">
+									Seawave Logistics, a leading provider of comprehensive logistics solutions, boasts a robust presence across India. With strategically located offices in major cities like Delhi, Mumbai, Surat, Chennai, Kolkata, and Sonauli (Uttar Pradesh), we offer seamless connectivity to various regions within the country. Our extensive network, coupled with our expertise in customs clearance, freight forwarding, transportation, warehousing, logistics design, and exim consultancy, ensures efficient and reliable services for businesses of all sizes.
 								</h2>
 							</div>
-							<div className="text-center md:text-left">
-								<h4 className="text-xl md:text-2xl font-medium my-2">
-									A - B - C - D
-								</h4>
-								<h4 className="text-xl md:text-2xl font-medium my-2">
-									A - B
-								</h4>
-								<h4 className="text-xl md:text-2xl font-medium my-2">
-									A - B
-								</h4>
-								<h4 className="text-xl md:text-2xl font-medium my-2">
-									A - B - C
-								</h4>
-							</div>
+
 						</div>
 					</div>
 				</div>

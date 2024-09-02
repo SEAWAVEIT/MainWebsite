@@ -210,6 +210,16 @@ body {
 	/* Slightly increase size on hover */
 }
 
+.socialIcon svg {
+	transition: transform 0.3s;
+}
+
+.socialIcon svg:hover {
+	transform: scale(1.5);
+	/* Slightly increase size on hover */
+
+}
+
 .footerDividerLine {
 	height: 1px;
 	width: 75vw;

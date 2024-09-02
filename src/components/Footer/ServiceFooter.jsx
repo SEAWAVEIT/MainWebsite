@@ -3,12 +3,12 @@ import footerLogo from "../../assets/seawave/seawavewhitetextlogo.png";
 
 function ServiceFooter() {
     return (
-        <div className="FooterImage bg-black h-auto text-white md:p-8 py-6">
-            <div className="flex flex-col py-16 gap-4 justify-center items-center">
-                <div className="flex flex-row justify-between px-28 gap-12">
-                    <div className="w-96">
-                        <div className="font-serif text-xl whitespace-nowrap">At SEAWAVE, we define ourselves as:</div>
-                        <div>
+        <div className="FooterImage bg-black h-auto text-white md:p-8 p-4">
+            <div className="flex flex-col py-12 gap-6 md:gap-8 justify-center items-center">
+                <div className="flex flex-col md:flex-row justify-center md:justify-between px-4 md:px-8 gap-6 md:gap-12">
+                    <div className="w-full md:w-1/3">
+                        <div className="font-serif text-lg md:text-xl whitespace-nowrap">At SEAWAVE, we define ourselves as:</div>
+                        <div className="text-sm md:text-base">
                             <ul>S: Sea</ul>
                             <ul>E: Earth</ul>
                             <ul>A: Air</ul>
@@ -18,37 +18,31 @@ function ServiceFooter() {
                             <ul>E: Exactly</ul>
                         </div>
                     </div>
-                    <div><img className="w-[50em] " src={footerLogo} alt="Seawave Logo" /></div>
-                    <div>
-                        <h2 className="text-xl font-serif font-light">
-                            Seawave Forwarding & Logistics Pvt. Ltd.
-                        </h2>
-                        <div className="italic font-light text-sm my-2"><h2>Address:</h2>
-                           <h3> Unit No. 232 Bldg No. 1 Edison Raheja Tesla Industrial Plot GEN-2/1/C/Part D Block MIDC Industrial Area Sanpada,TTC Industrial Area, Shiravane, Juinagar, Navi Mumbai, Maharashtra 400705</h3>
+                    <div className="w-full md:w-1/3 flex justify-center">
+                        <img className="md:h-24 h-16" src={footerLogo} alt="Seawave Logo" />
+                    </div>
+                    <div className="w-full md:w-1/3 text-center md:text-left">
+                        <h2 className="text-lg md:text-xl font-serif font-light">Seawave Forwarding & Logistics Pvt. Ltd.</h2>
+                        <div className="italic font-light text-xs md:text-sm my-2">
+                            <h2>Address:</h2>
+                            <h3>Unit No. 232 Bldg No. 1 Edison Raheja Tesla Industrial Plot GEN-2/1/C/Part D Block MIDC Industrial Area Sanpada, TTC Industrial Area, Shiravane, Juinagar, Navi Mumbai, Maharashtra 400705</h3>
                         </div>
-                        <h3 className="italic font-light text-sm my-2">Contact Number : +912268727904/906/911/922</h3>
+                        <h3 className="italic font-light text-xs md:text-sm my-2">Contact Number: +912268727904/906/911/922</h3>
                         <div className="my-2">
-                            <h3 className="italic font-ligh text-sm ">info@seawave.in</h3>
-                            <h3 className="italic font-light text-sm ">Mon - Sat 9.30 - 19.00</h3>
+                            <h3 className="italic font-light text-xs md:text-sm">info@seawave.in</h3>
+                            <h3 className="italic font-light text-xs md:text-sm">Mon - Sat 9.30 - 19.00</h3>
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center gap-2 md:gap-1 flex-col items-center text-white my-8">
-                    {/* <div>
-                        <h5 className="font-light text-sm md:text-base text-center italic">
-                            SEAWAVE COVERS SEA, EARTH & AIR THROUGH LOGISTICS SOLUTION TO
-                            ACHIEVE OUR VISION FLAWLESSLY.
-                        </h5>
-                    </div> */}
+                <div className="flex justify-center gap-4 md:gap-6 flex-col items-center text-white my-6">
                     <div>
-                        <h5 className="font-light text-sm md:text-base text-center italic">
-                            Our Branches: West Bengal (Kolkata), Nepal Borders (Jogbani,
-                            Raxaul & Sonauli)
+                        <h5 className="font-light text-xs md:text-sm text-center italic">
+                            Our Branches: West Bengal (Kolkata), Nepal Borders (Jogbani, Raxaul & Sonauli)
                         </h5>
                     </div>
                 </div>
                 <div className="flex justify-center items-center gap-6">
-                    <a href="https://www.facebook.com/seawavelogistics" target="_blank" rel="noopener noreferrer">
+                    <a className="socialIcon" href="https://www.facebook.com/seawavelogistics" target="_blank" rel="noopener noreferrer">
                         <svg
                             width="30px"
                             height="30px"
@@ -63,7 +57,7 @@ function ServiceFooter() {
                         </svg>
                     </a>
 
-                    <a href="https://www.instagram.com/seawavelogistics/" target="_blank" rel="noopener noreferrer">
+                    <a className="socialIcon" href="https://www.instagram.com/seawavelogistics/" target="_blank" rel="noopener noreferrer">
                         <svg
                             width="30px"
                             height="30px"
@@ -104,7 +98,7 @@ function ServiceFooter() {
                         </svg>
                     </a>
 
-                    <a href="https://www.linkedin.com/company/seawave-forwarding-logistics-pvt-ltd/" target="_blank" rel="noopener noreferrer">
+                    <a className="socialIcon" href="https://www.linkedin.com/company/seawave-forwarding-logistics-pvt-ltd/" target="_blank" rel="noopener noreferrer">
                         <svg width="37px" height="37px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="2" width="28" height="28" rx="14" fill="#1275B1"></rect>
                             <path d="M12.6186 9.69215C12.6186 10.6267 11.8085 11.3843 10.8093 11.3843C9.81004 11.3843 9 10.6267 9 9.69215C9 8.7576 9.81004 8 10.8093 8C11.8085 8 12.6186 8.7576 12.6186 9.69215Z" fill="white"></path>
@@ -114,21 +108,8 @@ function ServiceFooter() {
                     </a>
                 </div>
             </div>
-            <div className="">
-                <div className="flex justify-center">
-                    <div className="footerDividerLine my-2"> </div>
-                </div>
-                <div className="flex flex-col text-center md:flex-row justify-between md:px-40 text-sm">
-                    <p className="md:text-base text-xs font-light">
-                        © Copyright SEAWAVE. All Rights Reserved
-                    </p>
-                    <p className="md:text-base text-xs font-extralight">
-                        ~ Developed by C Connect Technology.
-                    </p>
-                </div>
-            </div>
         </div>
     );
 }
 
-export default ServiceFooter
+export default ServiceFooter;

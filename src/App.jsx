@@ -7,6 +7,7 @@ import AdminBlogPostAllowance from "./components/Pages/Blog/AdminBlogPostAllowan
 import AdminCareerPostAllowance from "./components/Pages/Careers/AdminCareerPostAllowance";
 import Footer from "./components/Footer/Footer";
 import ServiceFooter from "./components/Footer/ServiceFooter";
+import SwitchFooter from "./components/Footer/SwitchFooter";
 import DisplayPage from "./components/Main/HeroDisplayPage";
 import Main1 from "./components/Main/Hero01";
 import Main2 from "./components/Main/Hero02";
@@ -75,7 +76,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Contact />} />
         <Route path="/getafreequote" element={<FreeQuote />} />
         <Route path="/viewquoterequests" element={<ViewQuoteResquests />} />
         <Route path="/quoteDetails/:quoteId" element={<QuoteDetails />} />
@@ -109,7 +110,8 @@ function App() {
       </Routes>
       <ScrollToTopButton />
       <ChatButton />
-      <ServiceFooter />
+      <SwitchFooter />
+
     </AuthProvider>
   );
 }
