@@ -46,6 +46,8 @@ import ViewQuoteResquests from "./components/Pages/FreeQuote/ViewQuoteResquests"
 import ScrollToTopButton from "./components/Items/ScrollToTopButton"
 import ChatButton from "./components/Items/ChatButton"
 import HeroContact from "./components/Main/HeroContact";
+import EditBlogs from "./components/Pages/Blog/EditBlogs";
+import EditSingleBlog from "./components/Pages/Blog/EditSingleBlog";
 
 function Home() {
   return (
@@ -97,6 +99,8 @@ function App() {
 
         <Route path="/signin" element={<SignIn />} />
         <Route path="/allblogs" element={<AllBlog />} />
+        <Route path="/editblogs" element={<EditBlogs />} />
+        <Route path="/blogedit/:postId" element={<EditSingleBlog />} />
         <Route path="/blog/:postId" element={<SingleBlog />} />
         <Route path="/careers" element={<Career />} />
         <Route path="/careerinputfield" element={<UserCareerInputField />} />

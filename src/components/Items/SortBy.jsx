@@ -9,8 +9,8 @@ function SortBy({ sortOption, onSortChange }) {
                 value={sortOption}
                 onChange={(e) => onSortChange(e.target.value)}
                 className="select select-bordered select-sm w-32 max-w-xs">
-                <option value="latest">Latest</option>
-                <option value="oldest">Oldest</option>
+                <option value="latest" >Latest</option>
+                <option value="oldest" >Oldest</option>
             </select>
         </div>
     );

@@ -4,6 +4,7 @@ import { useAuth } from '../Pages/UserAuthentication/AuthProvider.jsx';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.js';
 import SignIn from "../Pages/UserAuthentication/SignIn.jsx"
+import EditBlogs from '../Pages/Blog/EditBlogs.jsx';
 
 function Admin() {
     const navigate = useNavigate();
@@ -44,6 +45,9 @@ function Admin() {
     const postBlog = () => {
         navigateTo('/adminblogpostallowance');
     };
+    const editBlog = () => {
+        navigateTo('/editblogs')
+    }
 
     const allapplicants = () => {
         navigateTo('/allapplicants');
@@ -86,8 +90,13 @@ function Admin() {
                     <div className="card-body text-start">
                         <h2 className="card-title text-xl text-purple-300 font-semibold">Blog</h2>
                         <p>Create Blog</p>
-                        <div className="card-actions justify-end">
-                            <button onClick={postBlog} className="btn btn-sm btn-primary py-2 px-4">Add</button>
+                        <div className='flex justify-end gap-4'>
+                            <div className="card-actions justify-end">
+                                <button onClick={editBlog} className="btn btn-sm  bg-red-700 bg-opacity-35 text-white py-2 hover:bg-red-800 px-4">Edit</button>
+                            </div>
+                            <div className="card-actions justify-end">
+                                <button onClick={postBlog} className="btn btn-sm btn-primary py-2 px-4">Add</button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -8,8 +8,10 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isHoveringServices, setIsHoveringServices] = useState(false);
   const menuRef = useRef(null);
   const servicesRef = useRef(null);
+  const servicesButtonRef = useRef(null);
 
   const toggleMenu = () => setIsOpen(prevOpen => !prevOpen);
   const closeMenu = () => setIsOpen(false);
@@ -45,7 +47,7 @@ const Header = () => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         closeMenu();
       }
-      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+      if (servicesRef.current && !servicesRef.current.contains(event.target) && !servicesButtonRef.current.contains(event.target)) {
         setIsServicesOpen(false);
       }
     };
@@ -68,6 +70,26 @@ const Header = () => {
     }
   };
 
+  const handleServicesMouseEnter = () => {
+    setIsServicesOpen(true);
+    setIsHoveringServices(true);
+  };
+
+  const handleServicesMouseLeave = () => {
+    if (!isHoveringServices) {
+      setIsServicesOpen(false);
+    }
+  };
+
+  const handleDropdownMouseEnter = () => {
+    setIsHoveringServices(true);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    setIsHoveringServices(false);
+    setIsServicesOpen(false);
+  };
+
   return (
     <div className={`px-4 z-10 relative header ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar flex items-center justify-between">
@@ -81,21 +103,26 @@ const Header = () => {
           <ul className="whitespace-nowrap menu menu-horizontal px-1">
             <li><Link to="/" onClick={() => handleLinkClick()}>Home</Link></li>
             <li><Link to="/about" onClick={() => handleLinkClick()}>About</Link></li>
-            <li className="relative group">
+            <li
+              className="relative group"
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
+            >
               <button
                 className="w-full text-left hover:text-white-500"
-                onClick={() => setIsServicesOpen(prev => !prev)}
-                onMouseEnter={() => !isMobile && setIsServicesOpen(true)}
-                onMouseLeave={() => !isMobile && setIsServicesOpen(false)}
+                ref={servicesButtonRef}
+                onClick={handleServicesMouseEnter}
               >
                 Services
-                <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 inline ml-2 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 inline ml-2 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="white">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <ul
                 className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} ${isMobile ? "z-50" : ""}`}
                 ref={servicesRef}
+                onMouseEnter={handleDropdownMouseEnter}
+                onMouseLeave={handleDropdownMouseLeave}
               >
                 <li><Link to="/customclearance" onClick={() => handleLinkClick()}>Custom Clearance</Link></li>
                 <li><Link to="/freightforwarding" onClick={() => handleLinkClick()}>Freight Forwarding</Link></li>
@@ -135,19 +162,26 @@ const Header = () => {
             >
               <li><Link to="/" onClick={() => handleLinkClick()}>Home</Link></li>
               <li><Link to="/about" onClick={() => handleLinkClick()}>About</Link></li>
-              <li className="relative group">
+              <li
+                className="relative group"
+                onMouseEnter={handleServicesMouseEnter}
+                onMouseLeave={handleServicesMouseLeave}
+              >
                 <button
                   className="w-full text-left hover:text-white-500"
-                  onClick={() => setIsServicesOpen(prev => !prev)}
+                  ref={servicesButtonRef}
+                  onClick={handleServicesMouseEnter}
                 >
                   Services
-                  <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 inline ml-2 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 inline ml-2 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="white">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
                 <ul
                   className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} z-50`}
                   ref={servicesRef}
+                  onMouseEnter={handleDropdownMouseEnter}
+                  onMouseLeave={handleDropdownMouseLeave}
                 >
                   <li><Link to="/customclearance" onClick={() => handleLinkClick()}>Custom Clearance</Link></li>
                   <li><Link to="/freightforwarding" onClick={() => handleLinkClick()}>Freight Forwarding</Link></li>
