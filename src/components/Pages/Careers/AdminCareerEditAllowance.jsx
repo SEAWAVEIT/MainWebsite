@@ -1,76 +1,84 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import { db, getDocs, collection, doc, deleteDoc } from 'firebase/firestore';
-import { getStorage, ref, getDownloadURL } from 'firebase/storage';
-import { format } from 'date-fns';
+import { useNavigate } from "react-router-dom";
+import { collection, doc, updateDoc, onSnapshot } from 'firebase/firestore';
 import Loader from '../../Items/Loader';
-
+import { db } from "../../../firebase/firebase";
 
 function AdminCareerEditAllowance() {
     const [jobs, setJobs] = useState([]);
-    const navigate = useNavigate()
+    const [blockedJobs, setBlockedJobs] = useState(new Set());
+    const navigate = useNavigate();
 
-    const navigateTo = (path) => {
-        window.scrollTo(0, 0)
-        navigate(path)
-    }
     useEffect(() => {
-        const fetchJobs = async () => {
-            try {
-                const querySnapshot = await getDocs(collection(db, 'jobvacancy'));
-                const jobLists = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-                setJobs(jobLists);
-            } catch (error) {
-                console.error('Error fetching jobs:', error);
-            }
-        };
+        const unsubscribe = onSnapshot(collection(db, 'jobvacancy'), (querySnapshot) => {
+            const jobLists = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            setJobs(jobLists);
+            const blockedJobIds = jobLists.filter(job => job.isBlocked).map(job => job.id);
+            setBlockedJobs(new Set(blockedJobIds));
+        }, (error) => {
+            console.error('Error fetching jobs:', error);
+        });
 
-        fetchJobs();
+        return () => unsubscribe();
     }, []);
 
-
-
-
+    const toggleBlock = async (jobId) => {
+        try {
+            const jobRef = doc(db, "jobvacancy", jobId);
+            const job = jobs.find(job => job.id === jobId);
+            if (job) {
+                const newStatus = !job.isBlocked;
+                await updateDoc(jobRef, { isBlocked: newStatus });
+                setBlockedJobs(prev => {
+                    const newBlockedJobs = new Set(prev);
+                    newStatus ? newBlockedJobs.add(jobId) : newBlockedJobs.delete(jobId);
+                    return newBlockedJobs;
+                });
+            }
+        } catch (error) {
+            console.error('Error toggling block status:', error);
+        }
+    };
 
     return (
-        <div className='h-auto py-20'>  {
-            jobs.length > 0 ? (
+        <div className='h-auto py-20'>
+            {jobs.length > 0 ? (
                 <div className='max-w-5xl mx-auto'>
                     <h2 className='text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center'>Edit Career Posts</h2>
-                    <div className=' grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
+                    <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
                         {jobs.map((job) => (
-                            <div key={job.id} className="bg-gray-30 flex flex-col p-6 border border-gray-300 rounded-lg shadow-lg  hover:bg-gray-100 transition-transform transform hover:scale-105">
-                                <h3 className="text-xl font-semibold text-gray-900">{job.position}</h3>
-                                <p className="text-md text-gray-600 mt-2">{job.department}</p>
-                                {/* <Link
-                            to={`/jobdetails/${job.id}`} className="">
-                            <button className="w-16 mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm py-1 px-2 px-none rounded-lg transition-colors duration-300">
-                                View
-                            </button>
-                        </Link> */}
+                            <div
+                                key={job.id}
+                                className={`relative flex flex-col p-6 border border-gray-300 rounded-lg shadow-lg transition-transform transform ${blockedJobs.has(job.id) ? 'bg-gray-200' : 'bg-gray-50'}`}
+                            >
+                                {blockedJobs.has(job.id) && (
+                                    <div className='absolute inset-0 flex items-center justify-center bg-opacity-75 bg-gray-500 text-white text-xl font-bold'>
+                                        Blocked
+                                    </div>
+                                )}
+                                <h3 className={`text-xl font-semibold ${blockedJobs.has(job.id) ? 'text-gray-400' : 'text-gray-900'}`}>
+                                    {job.position}
+                                </h3>
+                                <p className={`text-md ${blockedJobs.has(job.id) ? 'text-gray-300' : 'text-gray-600'} mt-2`}>
+                                    {job.department}
+                                </p>
                                 <div className='flex flex-row gap-4'>
                                     <button
-                                        // aria-label={`View ${post.name}`}
-                                        onClick={() => navigateTo(`/jobdetails/${job.id}`)}
-                                        className="w-16 mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm py-1 px-2 px-none rounded-lg transition-colors duration-300">
-
-                                        Edit
+                                        onClick={() => toggleBlock(job.id)}
+                                        className={`w-20 mt-4 ${blockedJobs.has(job.id) ? 'bg-green-600 hover:bg-green-700' : 'bg-red-600 hover:bg-red-700'} text-white text-sm py-1 px-2 rounded-lg transition-colors duration-300`}
+                                    >
+                                        {blockedJobs.has(job.id) ? 'Unblock' : 'Block'}
                                     </button>
-                                    <button
-                                        // aria-label={`View ${post.name}`}
-                                        onClick={() => navigateTo(`/jobdetails/${job.id}`)}
-                                        className="w-16 mt-4 bg-red-600 hover:bg-red-700 text-white text-sm py-1 px-2 px-none rounded-lg transition-colors duration-300">
-                                        Block
-                                    </button></div>
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
             ) : (
                 <Loader />
-            )
-        }</div>
-    )
+            )}
+        </div>
+    );
 }
 
-export default AdminCareerEditAllowance
+export default AdminCareerEditAllowance;
