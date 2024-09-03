@@ -1,16 +1,16 @@
-import React from 'react'
-import { Route, Navigate } from "react-router-dom"
-import { useAuth } from "../Pages/UserAuthentication/AuthProvider"
+import React from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../Pages/UserAuthentication/AuthProvider';
 
 function ProtectedRoute({ element: Component, ...rest }) {
-    const { user, isAdmin } = useAuth()
+    const { user, isAdmin } = useAuth();
+    const location = useLocation();
 
-    return (
-        <Route
-            {...rest}
-            element={user && isAdmin ? Component : <Navigate to="/signin" />}
-        />
-    )
+    if (!user || !isAdmin) {
+        return <Navigate to="/signin" state={{ from: location }} replace />;
+    }
+
+    return Component;
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;

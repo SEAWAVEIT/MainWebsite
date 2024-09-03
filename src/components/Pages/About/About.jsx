@@ -93,8 +93,7 @@ function About() {
         </div>
       </div>
       <div className='px-1 md:px-16 md:py-4 py-1'>
-        <p><span className='GradientText font-medium'>SEAWAVE FORWARDING AND LOGISTICS PVT LTD</span> has the ability to meet the everyday changes in the industry must be attributed to its dedicated and experienced staff.</p>
-        <p><span className='GradientText font-medium'>SEAWAVE</span> is more than just another freight forwarding company. It is a dynamic organization that meets the challenges of the ever-changing freight industry.</p>
+        <p><span className='GradientText font-medium'>SEAWAVE FORWARDING AND LOGISTICS PVT LTD</span> has the ability to meet the everyday changes in the industry must be attributed to its dedicated and experienced staff. <span className='GradientText font-medium'>SEAWAVE</span> is more than just another freight forwarding company. It is a dynamic organization that meets the challenges of the ever-changing freight industry.</p>
         <p>The company's efficient staff takes charge of the entire process of planning, implementing, and controlling the efficient and cost-effective flow of goods and related information from the point of origin to the final destination, for the purpose of confirming to customer requirements. The management team of <span className='GradientText font-medium'>SEAWAVE</span> is made up of highly experienced freight forwarding professionals who share SEAWAVE's commitment to achieving the highest standards of excellence.</p>
       </div>
       <div className='my-4 px-4 md:px-16 flex flex-col items-center'>
