@@ -48,6 +48,7 @@ import ChatButton from "./components/Items/ChatButton"
 import HeroContact from "./components/Main/HeroContact";
 import EditBlogs from "./components/Pages/Blog/EditBlogs";
 import EditSingleBlog from "./components/Pages/Blog/EditSingleBlog";
+import AdminCareerEditAllowance from "./components/Pages/Careers/AdminCareerEditAllowance";
 
 function Home() {
   return (
@@ -80,7 +81,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Contact />} />
         <Route path="/getafreequote" element={<FreeQuote />} />
-        <Route path="/viewquoterequests" element={<ViewQuoteResquests />} />
+        <Route path="/adminviewquoterequests" element={<ViewQuoteResquests />} />
         <Route path="/quoteDetails/:quoteId" element={<QuoteDetails />} />
         <Route path="/customclearance" element={<CustomClearance />} />
         <Route path="/freightforwarding" element={<FreightForwarding />} />
@@ -96,17 +97,21 @@ function App() {
           path="/admincareerpostallowance"
           element={<AdminCareerPostAllowance />}
         />
+        <Route
+          path="/admincareereditallowance"
+          element={<AdminCareerEditAllowance />}
+        />
 
         <Route path="/signin" element={<SignIn />} />
         <Route path="/allblogs" element={<AllBlog />} />
-        <Route path="/editblogs" element={<EditBlogs />} />
+        <Route path="/admineditblogs" element={<EditBlogs />} />
         <Route path="/blogedit/:postId" element={<EditSingleBlog />} />
         <Route path="/blog/:postId" element={<SingleBlog />} />
         <Route path="/careers" element={<Career />} />
         <Route path="/careerinputfield" element={<UserCareerInputField />} />
         <Route path="/jobdetails/:jobId" element={<JobDetails />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/allapplicants" element={<AllApplicants />} />
+        <Route path="/adminallapplicants" element={<AllApplicants />} />
         <Route
           path="/applicantDetail/:applicantId"
           element={<ApplicantDetails />}

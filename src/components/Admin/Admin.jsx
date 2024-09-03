@@ -41,20 +41,23 @@ function Admin() {
     const postCareer = () => {
         navigateTo('/admincareerpostallowance');
     };
+    const editCareer = () => {
+        navigateTo('/admincareereditallowance');
+    };
 
     const postBlog = () => {
         navigateTo('/adminblogpostallowance');
     };
     const editBlog = () => {
-        navigateTo('/editblogs')
+        navigateTo('/admineditblogs')
     }
 
     const allapplicants = () => {
-        navigateTo('/allapplicants');
+        navigateTo('/adminallapplicants');
     };
 
     const viewQuotes = () => {
-        navigateTo('/viewquoterequests');
+        navigateTo('/adminviewquoterequests');
     };
 
     return (
@@ -73,9 +76,14 @@ function Admin() {
                     </figure>
                     <div className="card-body text-start">
                         <h2 className="card-title text-xl text-purple-300 font-semibold">Careers</h2>
-                        <p>Post Requirement</p>
-                        <div className="card-actions justify-end">
-                            <button onClick={postCareer} className="btn btn-sm btn-primary py-2 px-4">Add</button>
+                        <p>Post Job And Block Job</p>
+                        <div className='flex justify-end gap-4'>
+                            <div className="card-actions justify-end">
+                                <button onClick={editCareer} className="btn btn-sm  bg-red-700 bg-opacity-35 text-white py-2 hover:bg-red-800 px-4">Edit</button>
+                            </div>
+                            <div className="card-actions justify-end">
+                                <button onClick={postCareer} className="btn btn-sm btn-primary py-2 px-4">Add</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,7 +97,7 @@ function Admin() {
                     </figure>
                     <div className="card-body text-start">
                         <h2 className="card-title text-xl text-purple-300 font-semibold">Blog</h2>
-                        <p>Create Blog</p>
+                        <p>Create,Edit or Delete Blog</p>
                         <div className='flex justify-end gap-4'>
                             <div className="card-actions justify-end">
                                 <button onClick={editBlog} className="btn btn-sm  bg-red-700 bg-opacity-35 text-white py-2 hover:bg-red-800 px-4">Edit</button>

@@ -8,7 +8,7 @@ const Hero09 = () => {
     <div className='bg-white mx-auto'>
       <div className='FAQChat mx-auto w-full md:px-24 py-8 bg-white h-auto'>
         <div className='text-center py-8'>
-          <h2 className='GradientText md:text-6xl text-3xl mb-2'>Frequently Asked Questions</h2>
+          <h2 className='GradientText md:text-6xl text-3xl pb-2'>Frequently Asked Questions</h2>
           <div className="flex items-center justify-center my-6">
             <div className="lino "></div>
           </div>
