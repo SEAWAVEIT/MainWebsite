@@ -1,5 +1,10 @@
 import React from "react";
 import "./Hero05.css";
+import founder1 from "../../assets/messageFromFounders/1.webp"
+import founder2 from "../../assets/messageFromFounders/2.webp"
+import director1 from "../../assets/messageFromFounders/3.webp"
+import director2 from "../../assets/messageFromFounders/4.webp"
+
 
 function Headquote() {
 	return (
@@ -118,25 +123,25 @@ function Hero05() {
 			<div className="bg-white flex gap-12 md:px-12 px-4 py-8 flex-wrap justify-center">
 				{[
 					{
-						image: "https://www.seawave.in/images/message-from-founders/1.webp",
+						image: founder1,
 						quote: "Never mind starting anything from zero, have patience & trust. Your hardwork will say your success story.",
 						name: "Late Shri Nandkumar Mishra",
 						position: "Founder",
 					},
 					{
-						image: "https://www.seawave.in/images/message-from-founders/2.webp",
+						image: founder2,
 						quote: "Believe in your ideas. Be Focused, Determined & Loyal towards yourself and your work it will ultimately lead you to success. Hard + Smart works always wins.",
 						name: "Late Shri Rajanikant N. Mishra",
 						position: "Founder",
 					},
 					{
-						image: "https://www.seawave.in/images/message-from-founders/3.webp",
+						image: director1,
 						quote: "Successful Entrepreneurs are Givers and not Takers of Positive Energy",
 						name: "Mr. Nalinikant N. Mishra",
 						position: "Founder & Managing Director",
 					},
 					{
-						image: "https://www.seawave.in/images/message-from-founders/4.webp",
+						image: director2,
 						quote: "Attract what you expect, reflect what you desire, become what you respect and mirror what you admire.",
 						name: "Mrs. Sanyukta Mishra",
 						position: "Director",

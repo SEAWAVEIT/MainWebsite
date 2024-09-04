@@ -3,7 +3,8 @@ import freightForward from "../../../assets/services/freightForward.jpg";
 import ServiceItem from "./ServiceItem";
 import ServiceHead from "../../Items/ServiceHeroComponent"
 import freight from "../../../assets/video/FREIGHTFORWARDING.mp4"
-
+import airfreight from "../../../assets/freightforwarding/air-freight.webp"
+import seafreight from "../../../assets/freightforwarding/sea-freight.webp"
 
 
 function FreightForwarding() {
@@ -54,7 +55,7 @@ function FreightForwarding() {
                 <div className="flex flex-col-reverse md:flex-row md:gap-4 items-center">
                     <div className="w-full md:w-1/2 flex flex-col md:pr-6 mb-4 md:mb-0">
                         <p className="mb-4">
-                        <span className="GradientText font-semibold">SEAWAVE</span> provides insured air freight services, ensuring safe and timely delivery of cargo worldwide. As an air cargo agent, <span className="GradientText font-semibold">SEAWAVE</span> offers customized services for all types of air cargo, including general cargo, vehicles, heavy weight, and odd-dimensional items. With extensive knowledge of regulations and facilities in various countries, <span className="GradientText font-semibold">SEAWAVE</span> facilitates global exports across all five continents, offering competitive airfreight rates and exceptional service standards.
+                            <span className="GradientText font-semibold">SEAWAVE</span> provides insured air freight services, ensuring safe and timely delivery of cargo worldwide. As an air cargo agent, <span className="GradientText font-semibold">SEAWAVE</span> offers customized services for all types of air cargo, including general cargo, vehicles, heavy weight, and odd-dimensional items. With extensive knowledge of regulations and facilities in various countries, <span className="GradientText font-semibold">SEAWAVE</span> facilitates global exports across all five continents, offering competitive airfreight rates and exceptional service standards.
                         </p>
                         <div>
                             <h2 className="text-lg md:text-xl my-2">
@@ -66,7 +67,7 @@ function FreightForwarding() {
                     </div>
                     <div className="w-full md:w-1/2 flex justify-center items-center">
                         <img
-                            src="https://seawave.in/images/inner-pages/air-freight.webp"
+                            src={airfreight}
                             className="rounded-lg filter drop-shadow-md"
                             alt="Air Freight"
                         />
@@ -84,14 +85,14 @@ function FreightForwarding() {
                 <div className="flex flex-col-reverse md:flex-row md:gap-4 items-center">
                     <div className="w-full md:w-1/2 flex justify-center items-center mb-4 md:mb-0">
                         <img
-                            src="https://seawave.in/images/inner-pages/sea-freight.webp"
+                            src={seafreight}
                             className="h-[300px] md:h-[450px] w-[320px] md:w-[480px] rounded-lg filter drop-shadow-md"
                             alt="Sea Freight"
                         />
                     </div>
                     <div className="w-full md:w-1/2 flex flex-col md:pl-2">
                         <p className="mb-4">
-                        <span className="GradientText font-semibold">SEAWAVE</span> offers comprehensive sea freight services, handling various types of cargo from the shipper's location to any port. Known for its strong presence in the shipping industry, <span className="GradientText font-semibold">SEAWAVE</span> excels in rate negotiations and has special arrangements with leading liners. They provide ocean freight services for LCL, FCL, and Break-Bulk Cargo, supported by a fleet of container vehicles and trucks for inland transportation.
+                            <span className="GradientText font-semibold">SEAWAVE</span> offers comprehensive sea freight services, handling various types of cargo from the shipper's location to any port. Known for its strong presence in the shipping industry, <span className="GradientText font-semibold">SEAWAVE</span> excels in rate negotiations and has special arrangements with leading liners. They provide ocean freight services for LCL, FCL, and Break-Bulk Cargo, supported by a fleet of container vehicles and trucks for inland transportation.
                         </p>
                         <div>
                             <h2 className="text-lg md:text-xl my-2">

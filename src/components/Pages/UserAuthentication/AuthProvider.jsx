@@ -14,13 +14,15 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser)
+            setUser(currentUser);
         });
-        return () => unsubscribe;
+        return () => unsubscribe();
     }, []);
-    const value = { user }
+
+    const value = { user };
+
     return (
-        <AuthContext.Provider value={{ user }}>
+        <AuthContext.Provider value={value}>
             {children}
         </AuthContext.Provider>
     );

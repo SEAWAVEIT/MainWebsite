@@ -3,6 +3,20 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import logo from './../../../assets/seawave/seawaveblacktextlogo.png';
 import Mam from './../../../assets/founders/Mam.jpg';
+import Sir from '../../../assets/about/Sir.webp';
+import truck1 from '../../../assets/about/truck1.png'
+import truck2 from '../../../assets/about/truck2.png'
+import person1 from '../../../assets/about/person1.png'
+import specialExpertise from '../../../assets/about/special-expertise.webp'
+import affiliation1 from "../../../assets/affiliation/1.webp"
+import affiliation2 from "../../../assets/affiliation/2.webp"
+import affiliation3 from "../../../assets/affiliation/3.webp"
+import affiliation4 from "../../../assets/affiliation/4.webp"
+import affiliation5 from "../../../assets/affiliation/5.webp"
+import affiliation6 from "../../../assets/affiliation/6.webp"
+
+
+
 
 function About() {
   const AboutEffect = useRef();
@@ -15,44 +29,43 @@ function About() {
   useGSAP(() => {
     let tl = gsap.timeline();
 
-    // Sequence the animations in the desired order
     tl.from(AboutEffect.current, {
       opacity: 0,
-      duration: 0.4,  // Reduced duration
+      duration: 0.4,
       y: 20,
-      delay: 0.12,     // Reduced delay
+      delay: 0.12,
     })
       .from(logoRef.current, {
         opacity: 0,
-        duration: 0.4,  // Reduced duration
+        duration: 0.4,
         x: -40,
-        delay: 0.22,     // Reduced delay
+        delay: 0.22,
       })
       .from(truck1Ref.current, {
         opacity: 0,
-        duration: 0.4,  // Reduced duration
+        duration: 0.4,
         x: 20,
         y: -20,
-        delay: 0.32,     // Reduced delay
+        delay: 0.32,
       })
       .from(truck2Ref.current, {
         opacity: 0,
-        duration: 0.4,  // Reduced duration
+        duration: 0.4,
         x: -45,
         y: -25,
-        delay: 0.42,     // Reduced delay
+        delay: 0.42,
       })
       .from(personRef.current, {
         opacity: 0,
-        duration: 0.4,  // Reduced duration
+        duration: 0.4,
         x: -20,
-        delay: 0.52,     // Reduced delay
+        delay: 0.52,
       })
       .from(HeadingEffect.current, {
         opacity: 0,
-        duration: 0.4,  // Reduced duration
+        duration: 0.4,
         x: 45,
-        delay: 0.62,     // Reduced delay
+        delay: 0.62,
       });
   });
 
@@ -69,17 +82,17 @@ function About() {
               <img src={logo} className='w-full md:w-[500px]' alt='Logo' />
             </div>
             <div className='md:w-1/2 md:inline hidden'>
-              <img ref={truck1Ref} src='https://uploads-ssl.webflow.com/63ede56f5ceca72669fcaced/63f1f1dde1e45ab1ef4ad094_mini%20track.png' alt='Truck 1' className='w-full' />
+              <img ref={truck1Ref} src={truck1} alt='Truck 1' className='w-full' />
             </div>
           </div>
           <div className='section2 flex flex-col md:flex-row items-center justify-between mx-auto md:py-2 py-2'>
             <div className='flex flex-col md:flex-row'>
               <div className='flex justify-center md: md:flex-row md:1/2'>
                 <div ref={personRef} className='md:pr-8  md:pt-6'>
-                  <img className='md:h-20 h-12 w-full' src='https://uploads-ssl.webflow.com/63ede56f5ceca72669fcaced/63f2f5ea222b9b7f59eacfc7_logi%20man.png' alt='Person' />
+                  <img className='md:h-20 h-12 w-full' src={person1} alt='Person' />
                 </div>
                 <div ref={truck2Ref} className='md:w-1/2'>
-                  <img className='md:h-52 md:w-80 w-28 h-24' src='https://uploads-ssl.webflow.com/63ede56f5ceca72669fcaced/63f1f1de63ea2217e333ebca_track.png' alt='Truck 2' />
+                  <img className='md:h-52 md:w-80 w-28 h-24' src={truck2} alt='Truck 2' />
                 </div>
               </div>
               <div ref={HeadingEffect} className='md:order-2 text-center mx-auto md:mb-0 mb-2'>
@@ -113,7 +126,7 @@ function About() {
             <p>We use our sector-specific knowledge and understanding of company requirements to ensure clients achieve their objectives.</p>
           </div>
           <div className='flex justify-center items-center'>
-            <img className='w-full md:w-[482px] h-auto' src='https://www.seawave.in/images/inner-pages/special-expertise.webp' alt='Special Expertise' />
+            <img className='w-full md:w-[482px] h-auto' src={specialExpertise} alt='Special Expertise' />
           </div>
         </div>
       </div>
@@ -127,7 +140,7 @@ function About() {
         </div>
         <div className='flex flex-col md:flex-row justify-between px-4'>
           <div className='flex justify-center items-center my-6'>
-            <img className='w-full md:w-[500px] h-auto' src='https://www.seawave.in/images/message-from-founders/md-message.webp' alt='Managing Director' />
+            <img className='w-full md:w-[500px] h-auto' src={Sir} alt='Managing Director' />
           </div>
           <div className='w-full md:w-1/2 flex flex-col gap-2 font-light my-8'>
             <p><span className='GradientText font-medium'>SEAWAVE FORWARDING AND LOGISTICS PVT LTD</span> is one of the most renowned names in the logistics industry today. With a B.E. (Civil) degree to his credit, he started his career with Asia Foundation & Constructions Limited (AFCONS) as a Site Engineer, where he was exposed to make strategy, planning, and implementation.</p>
@@ -190,14 +203,14 @@ function About() {
         </div>
         <div className='flex md:flex-row flex-col items-center justify-center'>
           <div className='flex gap-6'>
-            <img src='https://www.seawave.in/images/affiliation/1.webp' alt='Affiliation 1' className='p-2 md:w-32 w-16' />
-            <img src='https://www.seawave.in/images/affiliation/2.webp' alt='Affiliation 2' className='p-2 md:w-32 w-16' />
-            <img src='https://www.seawave.in/images/affiliation/3.webp' alt='Affiliation 3' className='p-2 md:w-32 w-16' />
+            <img src={affiliation1} alt='Affiliation 1' className='p-2 md:w-32 w-16' />
+            <img src={affiliation2} alt='Affiliation 2' className='p-2 md:w-32 w-16' />
+            <img src={affiliation3} alt='Affiliation 3' className='p-2 md:w-32 w-16' />
           </div>
           <div className='flex gap-6'>
-            <img src='https://www.seawave.in/images/affiliation/4.webp' alt='Affiliation 4' className='p-2 md:w-32 w-16' />
-            <img src='https://www.seawave.in/images/affiliation/5.webp' alt='Affiliation 5' className='p-2 md:w-32 w-16' />
-            <img src='https://www.seawave.in/images/affiliation/6.webp' alt='Affiliation 6' className='p-2 md:w-32 w-16' />
+            <img src={affiliation4} alt='Affiliation 4' className='p-2 md:w-32 w-16' />
+            <img src={affiliation5} alt='Affiliation 5' className='p-2 md:w-32 w-16' />
+            <img src={affiliation6} alt='Affiliation 6' className='p-2 md:w-32 w-16' />
           </div>
         </div>
       </div>

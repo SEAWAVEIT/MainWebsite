@@ -50,6 +50,15 @@ import EditBlogs from "./components/Pages/Blog/EditBlogs";
 import EditSingleBlog from "./components/Pages/Blog/EditSingleBlog";
 import AdminCareerEditAllowance from "./components/Pages/Careers/AdminCareerEditAllowance";
 
+
+
+
+
+import ProtectedRoute from "./components/Admin/ProtectedRoute";
+
+
+
+
 function Home() {
   return (
     <div>
@@ -81,7 +90,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Contact />} />
         <Route path="/getafreequote" element={<FreeQuote />} />
-        <Route path="/adminviewquoterequests" element={<ViewQuoteResquests />} />
         <Route path="/quoteDetails/:quoteId" element={<QuoteDetails />} />
         <Route path="/customclearance" element={<CustomClearance />} />
         <Route path="/freightforwarding" element={<FreightForwarding />} />
@@ -89,32 +97,59 @@ function App() {
         <Route path="/warehousing" element={<Warehousing />} />
         <Route path="/eximconsultancy" element={<EximConsultancy />} />
         <Route path="/logisticsdesign" element={<LogisticsDesign />} />
+        <Route path="/allblogs" element={<AllBlog />} />
+
+
+
+
+
         <Route
           path="/adminblogpostallowance"
-          element={<AdminBlogPostAllowance />}
+          element={
+            <ProtectedRoute element={<AdminBlogPostAllowance />} />
+          }
+        />
+        <Route path="/adminviewquoterequests"
+          element={
+            <ProtectedRoute element={<ViewQuoteResquests />} />
+          }
         />
         <Route
           path="/admincareerpostallowance"
-          element={<AdminCareerPostAllowance />}
+          element={
+            <ProtectedRoute element={<AdminCareerPostAllowance />} />
+          }
         />
         <Route
           path="/admincareereditallowance"
-          element={<AdminCareerEditAllowance />}
+          element={
+            <ProtectedRoute element={<AdminCareerEditAllowance />} />
+          }
         />
-
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/allblogs" element={<AllBlog />} />
-        <Route path="/admineditblogs" element={<EditBlogs />} />
-        <Route path="/blogedit/:postId" element={<EditSingleBlog />} />
-        <Route path="/blog/:postId" element={<SingleBlog />} />
+        <Route
+          path="/admineditblogs"
+          element={<ProtectedRoute element={<EditBlogs />} />} />
+        <Route
+          path="/blogedit/:postId"
+          element={<ProtectedRoute element={<EditSingleBlog />} />} />
+
+        <Route
+          path="/blog/:postId"
+          element={<SingleBlog />} />
+
         <Route path="/careers" element={<Career />} />
         <Route path="/careerinputfield" element={<UserCareerInputField />} />
-        <Route path="/jobdetails/:jobId" element={<JobDetails />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/adminallapplicants" element={<AllApplicants />} />
+        <Route
+          path="/jobdetails/:jobId"
+          element={<JobDetails />}
+        />
+        <Route path="/admin" element={<ProtectedRoute element={<Admin />} />} />
+        <Route path="/adminallapplicants" element={<ProtectedRoute element={<AllApplicants />} />} />
         <Route
           path="/applicantDetail/:applicantId"
-          element={<ApplicantDetails />}
+          element={<ProtectedRoute element={<ApplicantDetails />} />}
+
         />
       </Routes>
       <ScrollToTopButton />

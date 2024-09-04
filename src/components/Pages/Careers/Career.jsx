@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import career from "../../../assets/career/career.jpg";
+import career from "../../../assets/career/Hero.png";
 import { Link, useNavigate } from "react-router-dom";
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from "../../../firebase/firebase";
@@ -32,10 +32,12 @@ function Career() {
                 <h1 className='text-4xl md:text-6xl font-semibold text-gray-800'>Career</h1>
             </div>
             <div className='flex justify-center'>
-                <img src={career} alt="Career" className='object-fit md:w-2/5 md:h-96 rounded-lg' />
+                <img src={career} alt="Career" className='object-fit h-96 py-8 rounded-lg' />
             </div>
             <div>
-                <h2 className='text-center font-semibold text-2xl'>Share Your Resume: <Link to='mailto:hr@seawave.in'>hr@seawave.in</Link></h2>
+                <h2 className='text-center font-semibold text-2xl'>Share Your Resume: <Link to='mailto:hr@seawave.in'>
+                    <span className='text-blue-600'>hr@seawave.in</span>
+                </Link></h2>
             </div>
             <div className='text-center text-lg md:text-xl text-gray-700 mb-8 mx-auto max-w-3xl'>
                 <p>Together, all the way. We're a global leader in container trade and logistics, and we're embarking on an industry-defining transformation that will change the way the world moves. It’s a big moment for all of us – and we all have our part to play. Are you ready?</p>
@@ -58,7 +60,7 @@ function Career() {
                                     {job.department}
                                 </p>
                                 <button
-                                    onClick={() => navigate(`/jobdetails/${job.id}`)}
+                                    onClick={() => navigateTo(`/jobdetails/${job.id}`)}
                                     className={`w-16 mt-4 ${job.isBlocked ? 'bg-gray-600 hover:bg-gray-700' : 'bg-blue-600 hover:bg-blue-700'} text-white text-sm py-1 px-2 rounded-lg transition-colors duration-300`}
                                     disabled={job.isBlocked}
                                 >

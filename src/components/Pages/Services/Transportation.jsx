@@ -3,6 +3,9 @@ import ServiceItem from "./ServiceItem";
 import landFreight from "../../../assets/services/landFreight.jpg";
 import ServiceHead from "../../Items/ServiceHeroComponent"
 import transportvideo from "../../../assets/video/TRANSPORATION.mp4"
+import container1 from "../../../assets/transportation/container1.jpg"
+import container2 from "../../../assets/transportation/container2.jpg"
+
 
 function Transport() {
 	return (
@@ -61,7 +64,6 @@ function Transport() {
 							<ServiceItem text="Transportation of Sea/Air/Land Cargo" />
 							<ServiceItem text="Custom Cleared in Hinterlands to
 									International Sea/Air ports"/>
-							<ServiceItem text="Fleets of close body" />
 						</div>
 						<div className="flex flex-col gap-2">
 							<p>
@@ -79,9 +81,9 @@ function Transport() {
 					</div>
 					<div className="w-full md:w-1/2 flex justify-center items-center">
 						<img
-							src="https://www.seawave.in/images/inner-pages/transportation.webp"
+							src={container1}
 							className="rounded-lg filter drop-shadow-md"
-							alt="Air Freight"
+							alt="Container1"
 						/>
 					</div>
 				</div>
@@ -97,9 +99,9 @@ function Transport() {
 				<div className="flex flex-col-reverse md:flex-row md:gap-4 items-center">
 					<div className="w-full md:w-1/2 flex justify-center items-center mb-4 md:mb-0">
 						<img
-							src="https://seawave.in/images/inner-pages/vehicle-operation.webp"
-							className="h-[300px] md:h-[450px] w-[320px] md:w-[480px] rounded-lg filter drop-shadow-md"
-							alt="Sea Freight"
+							src={container2}
+							className="md:h-80 h-48 rounded-lg filter drop-shadow-md"
+							alt="Container 2"
 						/>
 					</div>
 					<div className="w-full md:w-1/2  flex flex-col md:pl-1 md:pr-20">
