@@ -53,9 +53,8 @@ import AdminCareerEditAllowance from "./components/Pages/Careers/AdminCareerEdit
 
 
 
-
 import ProtectedRoute from "./components/Admin/ProtectedRoute";
-
+import CSR from "./components/Pages/CSR/CSR";
 
 
 
@@ -98,9 +97,7 @@ function App() {
         <Route path="/eximconsultancy" element={<EximConsultancy />} />
         <Route path="/logisticsdesign" element={<LogisticsDesign />} />
         <Route path="/allblogs" element={<AllBlog />} />
-
-
-
+        <Route path="/csr" element={<CSR />} />
 
 
         <Route

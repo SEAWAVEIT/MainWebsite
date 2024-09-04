@@ -54,7 +54,7 @@ function FreightForwarding() {
                 </div>
                 <div className="flex flex-col-reverse md:flex-row md:gap-4 items-center">
                     <div className="w-full md:w-1/2 flex flex-col md:pr-6 mb-4 md:mb-0">
-                        <p className="mb-4">
+                        <p className="my-2">
                             <span className="GradientText font-semibold">SEAWAVE</span> provides insured air freight services, ensuring safe and timely delivery of cargo worldwide. As an air cargo agent, <span className="GradientText font-semibold">SEAWAVE</span> offers customized services for all types of air cargo, including general cargo, vehicles, heavy weight, and odd-dimensional items. With extensive knowledge of regulations and facilities in various countries, <span className="GradientText font-semibold">SEAWAVE</span> facilitates global exports across all five continents, offering competitive airfreight rates and exceptional service standards.
                         </p>
                         <div>
@@ -75,7 +75,7 @@ function FreightForwarding() {
                 </div>
             </div>
 
-            <div className="mb-6 md:mb-8 md:px-6 md:py-1">
+            <div className="mb-2 md:mb-8 md:px-6 md:py-1">
                 <div className="text-center text-2xl md:text-4xl my-4">
                     Sea Freight
                 </div>
@@ -94,7 +94,7 @@ function FreightForwarding() {
                         <p className="mb-4">
                             <span className="GradientText font-semibold">SEAWAVE</span> offers comprehensive sea freight services, handling various types of cargo from the shipper's location to any port. Known for its strong presence in the shipping industry, <span className="GradientText font-semibold">SEAWAVE</span> excels in rate negotiations and has special arrangements with leading liners. They provide ocean freight services for LCL, FCL, and Break-Bulk Cargo, supported by a fleet of container vehicles and trucks for inland transportation.
                         </p>
-                        <div>
+                        <div className="my-2">
                             <h2 className="text-lg md:text-xl my-2">
                                 Services:
                             </h2>

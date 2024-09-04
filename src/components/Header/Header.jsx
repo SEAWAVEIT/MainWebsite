@@ -135,6 +135,7 @@ const Header = () => {
             <li><Link to="/" onClick={() => handleLinkClick("contact-section")}>Contact</Link></li>
             <li><Link to="/careers" onClick={() => handleLinkClick()}>Career</Link></li>
             <li><Link to="/allblogs" onClick={() => handleLinkClick()}>Blog</Link></li>
+            <li><Link to="/csr" onClick={() => handleLinkClick()}>CSR</Link></li>
           </ul>
         </div>
 
@@ -194,6 +195,7 @@ const Header = () => {
               <li><Link to="/" onClick={() => handleLinkClick("contact-section")}>Contact</Link></li>
               <li><Link to="/careers" onClick={() => handleLinkClick()}>Career</Link></li>
               <li><Link to="/allblogs" onClick={() => handleLinkClick()}>Blog</Link></li>
+              <li><Link to="/csr" onClick={() => handleLinkClick()}>CSR</Link></li>
             </ul>
           )}
         </div>
