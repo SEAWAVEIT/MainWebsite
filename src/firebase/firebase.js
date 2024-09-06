@@ -10,7 +10,8 @@ const firebaseConfig = {
     projectId: "seawavebackend",
     storageBucket: "seawavebackend.appspot.com",
     messagingSenderId: "570751352895",
-    appId: "1:570751352895:web:c732613a1365070a97f88a"
+    appId: "1:570751352895:web:c732613a1365070a97f88a",
+    measurementId: "G-PHCD0P2E12"
 };
 
 const app = initializeApp(firebaseConfig);

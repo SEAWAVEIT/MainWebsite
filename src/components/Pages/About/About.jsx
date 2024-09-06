@@ -14,7 +14,7 @@ import affiliation3 from "../../../assets/affiliation/3.webp"
 import affiliation4 from "../../../assets/affiliation/4.webp"
 import affiliation5 from "../../../assets/affiliation/5.webp"
 import affiliation6 from "../../../assets/affiliation/6.webp"
-
+import { useEffect } from 'react';
 
 
 
@@ -68,6 +68,10 @@ function About() {
         delay: 0.62,
       });
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top when component mounts
+  }, []);
 
   return (
     <div className='h-auto p-8 w-full bg-white text-black'>

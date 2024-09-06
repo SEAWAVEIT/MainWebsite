@@ -3,7 +3,7 @@ import { auth, googleProvider } from '../../../firebase/firebase.js';
 import { signInWithPopup, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
-const ALLOWED_EMAIL = 'vedant.naik15767@sakec.ac.in';
+const ALLOWED_EMAIL = 'eamd.seawave@gmail.com';
 
 function SignIn() {
     const navigate = useNavigate()

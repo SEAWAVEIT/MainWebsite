@@ -5,7 +5,7 @@ function CSR() {
     return (
         <div className='bg-white h-auto p-4 md:p-8 lg:p-12'>
             <div className='flex justify-center items-center mb-8'>
-                <img className='md:h-[80vh] md:w-[90vw] rounded-xl' src={csrImage} alt="CSR" />
+                <img className='md:h-[60vh] md:w-[70vw] rounded-xl' src={csrImage} alt="CSR" />
             </div>
             <div>
                 <p className='text-base md:text-lg lg:text-xl px-4 md:px-6 lg:px-10 font-medium py-4 md:py-6 lg:py-8 text-center'>
