@@ -232,7 +232,7 @@ function Hero07() {
             </div>
             <div className="card-actions justify-center">
               <button
-                onClick={() => navigateTo('/landfreight')}
+                onClick={() => navigateTo('/transportation')}
                 ref={transportButtonRef}
                 onMouseEnter={transportAnimateButtonOver}
                 onMouseLeave={transportAnimateButtonOut}

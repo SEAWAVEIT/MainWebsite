@@ -55,6 +55,7 @@ import AdminCareerEditAllowance from "./components/Pages/Careers/AdminCareerEdit
 
 import ProtectedRoute from "./components/Admin/ProtectedRoute";
 import CSR from "./components/Pages/CSR/CSR";
+import HeroAbout from "./components/Main/HeroAbout";
 
 
 
@@ -64,6 +65,7 @@ function Home() {
       <DisplayPage />
       <Main1 />
       <Main2 />
+      <HeroAbout />
       <HeroMissionCard />
       <Main3 />
       {/* <Main4 /> */}

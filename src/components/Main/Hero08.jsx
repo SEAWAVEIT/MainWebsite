@@ -11,7 +11,7 @@ function Hero08() {
     return (
         <div className='Hero08 bg-white h-auto px-20 p-4 m-auto'>
             <div className='text-center py-8'>
-                <h2 className='GradientText md:text-6xl text-3xl mb-2'>Specialization</h2>
+                <h2 className='GradientText text-4xl mb-2'>Specialization</h2>
                 <div className="flex items-center justify-center my-6">
                     <div className="lino "></div>
                 </div>

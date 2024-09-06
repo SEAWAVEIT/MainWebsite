@@ -3,7 +3,7 @@ import csrImage from "../../../assets/csr/csr.jpg";
 
 function CSR() {
     return (
-        <div className='p-4 md:p-8 lg:p-12'>
+        <div className='bg-white h-auto p-4 md:p-8 lg:p-12'>
             <div className='flex justify-center items-center mb-8'>
                 <img className='md:h-[80vh] md:w-[90vw] rounded-xl' src={csrImage} alt="CSR" />
             </div>

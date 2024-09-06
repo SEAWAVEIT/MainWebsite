@@ -32,7 +32,7 @@ function Career() {
                 <h1 className='text-4xl md:text-6xl font-semibold text-gray-800'>Career</h1>
             </div>
             <div className='flex justify-center'>
-                <img src={career} alt="Career" className='object-fit h-96 py-8 rounded-lg' />
+                <img src={career} alt="Career" className='object-fit md:h-96 h-64  py-8 rounded-lg' />
             </div>
             <div>
                 <h2 className='text-center font-semibold text-2xl'>Share Your Resume: <Link to='mailto:hr@seawave.in'>

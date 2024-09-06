@@ -3,7 +3,7 @@ import footerLogo from "../../assets/seawave/seawavewhitetextlogo.png";
 
 function ServiceFooter() {
     return (
-        <div className="FooterImage bg-black h-auto text-white md:p-8 p-4">
+        <div className="FooterImage bg-black  h-auto text-white md:p-8 p-4">
             <div className="flex flex-col py-12 gap-6 md:gap-8 justify-center items-center">
                 <div className="flex flex-col md:flex-row justify-center md:justify-between px-4 md:px-8 gap-6 md:gap-12">
                     <div className="w-full md:w-1/3">
