@@ -6,7 +6,7 @@ function ProtectedRoute({ element: Component, ...rest }) {
     const { user } = useAuth();
     const location = useLocation();
 
-    const ALLOWED_EMAIL = 'vedant.naik15767@sakec.ac.in';
+    const ALLOWED_EMAIL = 'eamd.seawave@gmail.com';
 
     if (!user || user.email !== ALLOWED_EMAIL) {
         return <Navigate to="/signin" state={{ from: location }} replace />;

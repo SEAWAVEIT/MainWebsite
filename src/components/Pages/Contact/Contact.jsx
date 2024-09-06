@@ -65,24 +65,40 @@ function Contact() {
 						</div>
 						<div className="flex flex-col items-center md:items-center w-full md:w-1/2 md:pl-8">
 							<div className="mt-8  md:mt-40">
-								<div className="text-sm text-start  font-base md:text-lg md:font-medium">
-
-									<ServiceItem text="Seawave Logistics, a leading provider of comprehensive logistics solutions, boasts a robust presence across India." />
-									<ServiceItem text="With strategically located offices in major cities like Delhi, Mumbai, Surat, Chennai, Kolkata, and Sonauli (Uttar Pradesh), we offer seamless connectivity to various regions within the country." />
-
-								</div>
-								<ServiceItem text="Our extensive network, coupled with our expertise in customs clearance, freight forwarding, transportation, warehousing, logistics design, and exim consultancy, ensures efficient and reliable services for businesses of all sizes." />
-
-								<div className="flex justify-center">
+								<div className="flex ">
 									<div>
-										<svg width="44px" height="64px" viewBox="0 -4 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>arrow-right</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Vivid.JS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Vivid-Icons" transform="translate(-515.000000, -651.000000)"> <g id="Icons" transform="translate(37.000000, 169.000000)"> <g id="arrow-right" transform="translate(468.000000, 468.000000)"> <g transform="translate(10.000000, 14.000000)" id="Shape"> <polygon fill="#FF6E6E" points="0 12 20 12 15 17 18 20 28 10 18 0 15 3 20 8 0 8"> </polygon> <polygon fill="#0C0058" points="8 8 8 12 0 12 0 8"> </polygon> </g> </g> </g> </g> </g> </g></svg>
+										<svg width="34px" height="64px" viewBox="0 -4 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>arrow-right</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Vivid.JS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Vivid-Icons" transform="translate(-515.000000, -651.000000)"> <g id="Icons" transform="translate(37.000000, 169.000000)"> <g id="arrow-right" transform="translate(468.000000, 468.000000)"> <g transform="translate(10.000000, 14.000000)" id="Shape"> <polygon fill="#FF6E6E" points="0 12 20 12 15 17 18 20 28 10 18 0 15 3 20 8 0 8"> </polygon> <polygon fill="#0C0058" points="8 8 8 12 0 12 0 8"> </polygon> </g> </g> </g> </g> </g> </g></svg>
 									</div>
 									<div>
-										<p className="text-sm">
+										<p className="text-lg mt-4 text-start ml-2">
+											Seawave Logistics, a leading provider of comprehensive logistics solutions, boasts a robust presence across India.
+										</p>
+									</div>
+								</div>
+								<div className="flex justify-center">
+									<div>
+										<svg width="34px" height="64px" viewBox="0 -4 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>arrow-right</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Vivid.JS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Vivid-Icons" transform="translate(-515.000000, -651.000000)"> <g id="Icons" transform="translate(37.000000, 169.000000)"> <g id="arrow-right" transform="translate(468.000000, 468.000000)"> <g transform="translate(10.000000, 14.000000)" id="Shape"> <polygon fill="#FF6E6E" points="0 12 20 12 15 17 18 20 28 10 18 0 15 3 20 8 0 8"> </polygon> <polygon fill="#0C0058" points="8 8 8 12 0 12 0 8"> </polygon> </g> </g> </g> </g> </g> </g></svg>
+									</div>
+									<div>
+										<p className="text-lg mt-4 text-start ml-2">
+											With strategically located offices in major cities like Delhi, Mumbai, Surat, Chennai, Kolkata, and Sonauli (Uttar Pradesh), we offer seamless connectivity to various regions within the country.
+										</p>
+									</div>
+								</div>
+								<div className="flex justify-center">
+									<div>
+										<svg width="34px" height="64px" viewBox="0 -4 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>arrow-right</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Vivid.JS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Vivid-Icons" transform="translate(-515.000000, -651.000000)"> <g id="Icons" transform="translate(37.000000, 169.000000)"> <g id="arrow-right" transform="translate(468.000000, 468.000000)"> <g transform="translate(10.000000, 14.000000)" id="Shape"> <polygon fill="#FF6E6E" points="0 12 20 12 15 17 18 20 28 10 18 0 15 3 20 8 0 8"> </polygon> <polygon fill="#0C0058" points="8 8 8 12 0 12 0 8"> </polygon> </g> </g> </g> </g> </g> </g></svg>
+									</div>
+									<div>
+										<p className="text-lg mt-4 text-start ml-2">
 											Our extensive network, coupled with our expertise in customs clearance, freight forwarding, transportation, warehousing, logistics design, and exim consultancy, ensures efficient and reliable services for businesses of all sizes.
 										</p>
 									</div>
 								</div>
+
+
+
+
 							</div>
 
 						</div>
