@@ -19,8 +19,34 @@ const Header = () => {
   const animateMenu = (open) => {
     const menu = menuRef.current;
     const tl = gsap.timeline({ defaults: { ease: "power1.inOut" } });
+
     if (menu) {
-      tl.to(menu, { duration: 0.3, height: open ? "auto" : 0, top: open ? 70 : 0, width: open ? 220 : 0, opacity: open ? 1 : 0 });
+      const menuWidth = '250px'; // Set your desired width here
+      const topSpacing = '70px'; // Adjust top spacing from the navbar here
+
+      if (open) {
+        // Slide in from right with opacity fade-in
+        tl.set(menu, {
+          autoAlpha: 1,
+          width: menuWidth,
+          visibility: 'visible',
+          x: menuWidth,
+          top: topSpacing
+        })
+          .to(menu, {
+            duration: 0.3,
+            x: 0,
+            opacity: 1
+          });
+      } else {
+        // Slide out to the right with opacity fade-out
+        tl.to(menu, {
+          duration: 0.3,
+          x: menuWidth,
+          opacity: 0,
+          onComplete: () => menu.style.visibility = 'hidden'
+        });
+      }
     }
   };
 
@@ -29,10 +55,21 @@ const Header = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1024);
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Initialize state on mount
-    return () => window.removeEventListener("resize", handleResize);
+    const handleResize = () => {
+      const menu = menuRef.current;
+      if (menu) {
+        const windowHeight = window.innerHeight;
+        const menuHeight = menu.offsetHeight;
+        if (windowHeight < menuHeight) {
+          menu.style.top = `${windowHeight - menuHeight}px`;
+        } else {
+          menu.style.top = '70px';
+        }
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -90,6 +127,14 @@ const Header = () => {
     setIsServicesOpen(false);
   };
 
+  const handleServicesClick = () => {
+    setIsServicesOpen(!isServicesOpen);
+  };
+
+  const handleMenuClick = () => {
+    toggleMenu();
+  };
+
   return (
     <div className={`px-4 z-10 relative header ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar flex items-center justify-between">
@@ -107,11 +152,12 @@ const Header = () => {
               className="relative group"
               onMouseEnter={handleServicesMouseEnter}
               onMouseLeave={handleServicesMouseLeave}
+              onClick={isMobile ? handleServicesClick : null}
             >
               <button
                 className="w-full text-left hover:text-white-500"
                 ref={servicesButtonRef}
-                onClick={handleServicesMouseEnter}
+                onClick={isMobile ? handleServicesClick : handleServicesMouseEnter}
               >
                 Services
                 <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 inline ml-2 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="white">
@@ -119,7 +165,7 @@ const Header = () => {
                 </svg>
               </button>
               <ul
-                className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} ${isMobile ? "z-50" : ""}`}
+                className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} ${isMobile ? "z-5000" : ""}`}
                 ref={servicesRef}
                 onMouseEnter={handleDropdownMouseEnter}
                 onMouseLeave={handleDropdownMouseLeave}
@@ -151,7 +197,7 @@ const Header = () => {
         </div>
 
         <div className="navbar-end lg:hidden">
-          <button className="btn btn-ghost" onClick={toggleMenu} aria-label="Toggle Menu">
+          <button className="btn btn-ghost" onClick={handleMenuClick} aria-label="Toggle Menu">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="white">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
@@ -163,15 +209,15 @@ const Header = () => {
             >
               <li><Link to="/" onClick={() => handleLinkClick()}>Home</Link></li>
               <li><Link to="/about" onClick={() => handleLinkClick()}>About</Link></li>
-              <li
-                className="relative group"
+              <li className="relative group"
                 onMouseEnter={handleServicesMouseEnter}
                 onMouseLeave={handleServicesMouseLeave}
+                onClick={isMobile ? handleServicesClick : null}
               >
                 <button
                   className="w-full text-left hover:text-white-500"
                   ref={servicesButtonRef}
-                  onClick={handleServicesMouseEnter}
+                  onClick={isMobile ? handleServicesClick : handleServicesMouseEnter}
                 >
                   Services
                   <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 inline ml-2 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="white">
@@ -179,7 +225,7 @@ const Header = () => {
                   </svg>
                 </button>
                 <ul
-                  className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} z-50`}
+                  className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg  ${isServicesOpen ? "block" : "hidden"} ${isMobile ? "z-5000" : ""}`}
                   ref={servicesRef}
                   onMouseEnter={handleDropdownMouseEnter}
                   onMouseLeave={handleDropdownMouseLeave}

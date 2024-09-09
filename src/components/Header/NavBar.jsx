@@ -1,49 +1,58 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/Logo.png";
+import navLogo from "../../assets/seawave/seawavewhitetextlogo.png";
 import Button from "../Button";
-// import NavLinks from "./NavLinks";
+import "./NavBar.css";
+
 const Navbar = () => {
-    const [open, setOpen] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
+
     return (
-        <nav className="bg-black  text-white">
-            <div className="flex items-center font-medium justify-around">
-                <div className="z-50 p-5 md:w-auto w-full flex justify-between">
-                    <img src={Logo} alt="logo" className="md:cursor-pointer h-9" />
-                    <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
-                        <ion-icon name={`${open ? "close" : "menu"}`}></ion-icon>
-                    </div>
+        <div>
+            <nav>
+                <input id="nav-toggle" type="checkbox" checked={mobileMenuOpen} onChange={toggleMobileMenu} />
+                <div className="logo ">
+                    <img src={navLogo} className="h-8 md:h-12" alt="" />
                 </div>
-                <ul className="md:flex hidden uppercase items-center gap-8 font-[Poppins]">
-                    <li>
-                        <Link to="/" className="py-7 px-3 inline-block">
-                            Home
-                        </Link>
+                <ul className={`links ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+                    <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link></li>
+                    <li><Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link></li>
+                    <li className="dropdown-container">
+                        <a href="#" onClick={toggleDropdown}>Services </a>
+                        <span
+                            className={`dropdown-icon ${dropdownOpen ? 'active' : ''}`}
+                            onClick={toggleDropdown}
+                        ></span>
+                        <div className={`dropdown whitespace-nowrap ${dropdownOpen ? 'show' : ''}`}>
+                            <a href="/customclearance" className="dropdown-item">Custom Clearance</a>
+                            <a href="/freightforwarding" className="dropdown-item">Freight Forwarding</a>
+                            <a href="/transportation" className="dropdown-item">Transportation</a>
+                            <a href="/warehousing" className="dropdown-item">Warehousing</a>
+                            <a href="/logisticsdesign" className="dropdown-item">Logistics Design</a>
+                            <a href="/eximconsultancy" className="dropdown-item">Exim Consultancy</a>
+                        </div>
                     </li>
-                    <NavLinks />
+                    <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link></li>
+                    <li><Link to="/careers" onClick={() => window.scrollTo(0, 0)}>Career</Link></li>
+                    <li><Link to="/allblogs" onClick={() => window.scrollTo(0, 0)}>Blog</Link></li>
+                    <li><Link to="/csr" onClick={() => window.scrollTo(0, 0)}>CSR</Link></li>
                 </ul>
-                <div className="md:block hidden">
-                    <Button />
-                </div>
-                {/* Mobile nav */}
-                <ul
-                    className={`
-        md:hidden bg-white fixed w-full top-0 overflow-y-auto bottom-0 py-24 pl-4
-        duration-500 ${open ? "left-0" : "left-[-100%]"}
-        `}
-                >
-                    <li>
-                        <Link to="/" className="py-7 px-3 inline-block">
-                            Home
-                        </Link>
-                    </li>
-                    <NavLinks />
-                    <div className="py-5">
-                        <Button />
-                    </div>
-                </ul>
-            </div>
-        </nav>
+                <label htmlFor="nav-toggle" className="icon-burger">
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                </label>
+            </nav>
+        </div>
     );
 };
 

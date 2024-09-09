@@ -37,6 +37,11 @@ function CSR() {
                         fighting against cancer.
                     </p>
 
+                    <div className='my-4 flex justify-center items-center rounded-md'>
+                        <div>
+                            <iframe className='md:w-[80vw] md:h-[70vh] rounded-lg' src="https://www.youtube.com/embed/HBW9opy6rJc?si=ix6zsW_QVwNx1Tut" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
                     <div className='my-4'>
                         <p className='text-lg font-medium mb-2'>Our CSR actions have:</p>
                         <ul className='list-disc list-inside pl-4'>
