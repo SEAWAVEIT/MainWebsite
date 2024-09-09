@@ -121,6 +121,20 @@ body {
 	} */
 }
 
+/* Add this to your CSS file */
+.menu-sm.dropdown-content {
+	z-index: 1000;
+	/* Add this line */
+}
+
+/* Add this to your CSS file */
+@media only screen and (max-width: 1024px) {
+	.navbar-end .menu-sm.dropdown-content {
+		z-index: 5000;
+		/* Add this line */
+	}
+}
+
 body {
 	margin-top: 60px;
 	overflow-x: hidden;

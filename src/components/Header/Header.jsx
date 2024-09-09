@@ -165,7 +165,7 @@ const Header = () => {
                 </svg>
               </button>
               <ul
-                className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} ${isMobile ? "z-5000" : ""}`}
+                className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} ${isMobile ? "z-50" : ""}`}
                 ref={servicesRef}
                 onMouseEnter={handleDropdownMouseEnter}
                 onMouseLeave={handleDropdownMouseLeave}
@@ -225,7 +225,7 @@ const Header = () => {
                   </svg>
                 </button>
                 <ul
-                  className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg  ${isServicesOpen ? "block" : "hidden"} ${isMobile ? "z-5000" : ""}`}
+                  className={`absolute left-0 top-full mt-2 w-48 p-2 bg-black text-sm whitespace-nowrap text-white rounded-lg ${isServicesOpen ? "block" : "hidden"} ${isMobile ? "z-50" : ""}`}
                   ref={servicesRef}
                   onMouseEnter={handleDropdownMouseEnter}
                   onMouseLeave={handleDropdownMouseLeave}
