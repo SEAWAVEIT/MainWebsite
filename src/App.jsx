@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/Pages/UserAuthentication/AuthProvider";
-// import Header from "./components/Header/Header";
 import Navbar from "./components/Header/Navbar";
 import Admin from "./components/Admin/Admin";
 import AdminBlogPostAllowance from "./components/Pages/Blog/AdminBlogPostAllowance";
@@ -84,7 +83,6 @@ function Home() {
 function App() {
   return (
     <AuthProvider >
-      {/* <Header /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
