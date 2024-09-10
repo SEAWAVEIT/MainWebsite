@@ -4,7 +4,7 @@ import ServiceItem from "../Pages/Services/ServiceItem";
 
 function HeroAbout() {
     return (
-        <div className='px-4 py-4 sm:px-8 md:px-16'>
+        <div className='bg-white px-4 py-4 sm:px-8 md:px-16'>
             <div className='flex flex-col items-center gap-4'>
                 <h2 className='text-2xl sm:text-3xl md:text-4xl text-center'>About Us</h2>
                 <div className='lino w-16 sm:w-24 md:w-32'></div>
@@ -25,7 +25,7 @@ function HeroAbout() {
                         </p></div>
                     <div>
                         <Link
-                            to="#"
+                            to="about"
                             className="relative inline-block md:px-4 md:py-2 m-8 px-2 py-1 font-medium group"
                         >
                             <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform -translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>

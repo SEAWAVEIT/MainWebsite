@@ -2,7 +2,7 @@ import React from 'react'
 
 function ServiceHeroComponent({ imageSrc, Text }) {
     return (
-        <div className="relative bg-black rounded-xl overflow-hidden mb-6 md:mb-8">
+        <div className="relative mt-6 bg-black rounded-xl overflow-hidden mb-6 md:mb-8">
             <img
                 className="absolute inset-0 w-full h-full object-cover opacity-30"
                 src={imageSrc}

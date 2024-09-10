@@ -61,7 +61,7 @@ function AllBlogs() {
     if (error) return <div className='text-center text-red-500'>{error}</div>;
 
     return (
-        <div className="flex flex-col bg-white py-16 px-6 md:px-12 mx-auto max-w-7xl">
+        <div className="flex flex-col h-screen bg-white py-16 px-6 md:px-12 mx-auto max-w-7xl">
             <div className="text-center mb-8">
                 <h1 className="text-4xl font-bold text-gray-900 mb-4">Published Blogs</h1>
                 <SortBy sortOption={sortOption} onSortChange={handleSortChange} />
