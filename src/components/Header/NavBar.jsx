@@ -62,7 +62,7 @@ function Navbar() {
                     <button
                         data-collapse-toggle="main-menu"
                         type="button"
-                        className={`inline-flex items-center p-2 w-12 h-12 justify-center text-white rounded-lg md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600`}
+                        className={`inline-flex items-center p-2 w-12 h-12 justify-center text-white rounded-lg md:hidden hover:bg-gray-800 `}
                         aria-controls="main-menu"
                         aria-expanded={mainMenuOpen}
                         onClick={handleMainMenuToggle}
