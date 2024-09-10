@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import navLogo from "../../assets/seawave/seawavewhitetextlogo.png";
-
+import "./NavBar.css"
 function Navbar() {
     const [mainMenuOpen, setMainMenuOpen] = useState(false);
     const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -66,11 +66,27 @@ function Navbar() {
                         aria-controls="main-menu"
                         aria-expanded={mainMenuOpen}
                         onClick={handleMainMenuToggle}
-                    >
-                        <span className="sr-only">Open main menu</span>
+                    > {mainMenuOpen ? (
+
                         <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+
+                            <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1l15 15M16 1L1 16" />
+
                         </svg>
+
+                    ) : (
+
+                        <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+
+                            <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+
+                        </svg>
+
+                    )}
+                        <span className="sr-only">Open main menu</span>
+                        {/* <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+                        </svg> */}
                     </button>
                     <div
                         className={`w-full md:block md:w-auto ${mainMenuOpen ? 'block' : 'hidden'}`}
