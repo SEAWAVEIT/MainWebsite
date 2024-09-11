@@ -53,10 +53,10 @@ function Career() {
                                         Currently Unavailable
                                     </div>
                                 )}
-                                <h3 className={`text-xl font-semibold ${job.isBlocked ? 'text-gray-400' : 'text-gray-900'}`}>
+                                <h3 className={`text-xl  font-semibold ${job.isBlocked ? 'text-gray-400' : 'text-gray-900'}`}>
                                     {job.position}
                                 </h3>
-                                <p className={`text-md ${job.isBlocked ? 'text-gray-300' : 'text-gray-600'} mt-2`}>
+                                <p className={`text-md ${job.isBlocked ? 'text-gray-300' : 'text-gray-600'} mt-2`}>Department : {" "}
                                     {job.department}
                                 </p>
                                 <button

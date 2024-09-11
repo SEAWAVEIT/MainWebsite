@@ -23,6 +23,12 @@ function Navbar() {
             if (contactSection) {
                 window.scrollTo({ top: contactSection.offsetTop, behavior: "smooth" });
             }
+        }
+        else if (sectionId === '#about-section') {
+            const aboutSection = document.getElementById('about-section');
+            if (aboutSection) {
+                window.scrollTo({ top: aboutSection.offsetTop, behavior: "smooth" });
+            }
         } else {
             window.scrollTo({ top: 0, behavior: "smooth" });
             if (sectionId) {
@@ -56,7 +62,7 @@ function Navbar() {
         <div className={`px-4 z-10 relative header ${mainMenuOpen ? "scrolled" : ""}`}>
             <nav className="bg-black fixed top-0 left-0 w-full z-30 border-gray-700 dark:border-gray-700">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <a href="/" className="hidden md:flex items-center space-x-3 rtl:space-x-reverse">
                         <img className='h-8' src={navLogo} alt="Logo" />
                     </a>
                     <button
@@ -105,8 +111,9 @@ function Navbar() {
                             </li>
                             <li>
                                 <Link
-                                    to="/about"
-                                    onClick={handleLinkClick}
+                                    to="/"
+                                    onClick={() => handleLinkClick("about-section")}
+
                                     className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/about') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
                                     aria-current={isActive('/about') ? 'page' : undefined}
                                 >
@@ -115,17 +122,33 @@ function Navbar() {
                             </li>
                             <li className="relative">
                                 <button
+
                                     data-dropdown-toggle="services"
+
+                                    onMouseOver={() => setServicesDropdownOpen(true)}
+
+                                    onMouseLeave={() => setServicesDropdownOpen(false)}
+
                                     onClick={(e) => {
-                                        e.stopPropagation(); // Prevent click event from closing the main menu
+
+                                        e.stopPropagation();
+
                                         handleServicesDropdownToggle();
+
                                     }}
-                                    className={`border-b-2 border-slate-900  flex items-center justify-between w-full py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/services') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-600 md:dark:hover:bg-transparent`}
+
+                                    className={`border-b-2 border-slate-900  flex items-center justify-between w-full py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/services') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-600 md:dark:hover:bg-transparent services-button`}
+
                                 >
+
                                     Services
+
                                     <svg className={`w-2.5 h-2.5 ms-2.5 transition-transform duration-300 ${servicesDropdownOpen ? "rotate-180 text-blue-700" : "text-white"}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+
                                         <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+
                                     </svg>
+
                                 </button>
                                 <div
                                     id="services-dropdown"
@@ -181,8 +204,23 @@ function Navbar() {
                                     CSR
                                 </Link>
                             </li>
+
+
+
+
                         </ul>
                     </div>
+                    <div>
+                        <Link
+                            type="button"
+                            to="getafreequote"
+                            className="text-white whitespace-nowrap bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-2 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-4 py-2 text-center"
+                            onClick={() => handleLinkClick()}
+                        >
+                            Get A Free Quote
+                        </Link>
+                    </div>
+
                 </div>
             </nav>
         </div>

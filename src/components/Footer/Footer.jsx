@@ -23,7 +23,7 @@ function Footer() {
 					</div>
 				</div>
 				<div className="flex justify-center items-center gap-6">
-					<a href="https://www.facebook.com/seawavelogistics" target="_blank" rel="noopener noreferrer">
+					<a className="socialIcon" href="https://www.facebook.com/seawavelogistics" target="_blank" rel="noopener noreferrer">
 						<svg
 							width="30px"
 							height="30px"
@@ -38,7 +38,7 @@ function Footer() {
 						</svg>
 					</a>
 
-					<a href="https://www.instagram.com/seawavelogistics/" target="_blank" rel="noopener noreferrer">
+					<a className="socialIcon" href="https://www.instagram.com/seawavelogistics/" target="_blank" rel="noopener noreferrer">
 						<svg
 							width="30px"
 							height="30px"
@@ -79,7 +79,7 @@ function Footer() {
 						</svg>
 					</a>
 
-					<a href="https://www.linkedin.com/company/seawave-forwarding-logistics-pvt-ltd/" target="_blank" rel="noopener noreferrer">
+					<a className="socialIcon" href="https://www.linkedin.com/company/seawave-forwarding-logistics-pvt-ltd/" target="_blank" rel="noopener noreferrer">
 						<svg width="37px" height="37px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect x="2" y="2" width="28" height="28" rx="14" fill="#1275B1"></rect>
 							<path d="M12.6186 9.69215C12.6186 10.6267 11.8085 11.3843 10.8093 11.3843C9.81004 11.3843 9 10.6267 9 9.69215C9 8.7576 9.81004 8 10.8093 8C11.8085 8 12.6186 8.7576 12.6186 9.69215Z" fill="white"></path>

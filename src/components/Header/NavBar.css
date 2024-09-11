@@ -1,0 +1,15 @@
+@media (min-width: 1024px) {
+    #services-dropdown {
+        display: none;
+    }
+
+    .services-button:hover+#services-dropdown,
+    #services-dropdown:hover {
+        display: block;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .services-button:hover svg {
+        transform: rotate(180deg);
+    }
+}

@@ -97,21 +97,21 @@ function AdminCareerPostAllowance() {
 
                             <div className="w-full">
                                 <label htmlFor="Responsibilities">*Responsibilities</label>
-                                <input
+                                <textarea
                                     value={responsibilities}
                                     onChange={(e) => setResponsibilities(e.target.value)}
-                                    type="text"
                                     className="w-full mt-2 py-2 px-4 rounded-lg bg-white border border-gray-400 border-opacity-40 text-gray-800 font-semibold focus:border-cyan-500 focus:outline-none"
+                                    rows="4"
                                 />
                             </div>
 
                             <div className="w-full">
                                 <label htmlFor="Prerequisite">*Prerequisite</label>
-                                <input
+                                <textarea
                                     value={prerequisite}
                                     onChange={(e) => setPrerequisite(e.target.value)}
-                                    type="text"
                                     className="w-full mt-2 py-2 px-4 rounded-lg bg-white border border-gray-400 border-opacity-40 text-gray-800 font-semibold focus:border-cyan-500 focus:outline-none"
+                                    rows="4"
                                 />
                             </div>
 

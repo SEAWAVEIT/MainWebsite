@@ -8,12 +8,13 @@ import Loader from '../../Items/Loader';
 function JobDetails() {
     const [job, setJob] = useState(null);
     const { jobId } = useParams();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const navigateTo = (path) => {
         window.scrollTo(0, 0)
-        navigate(path)
+        navigate(path);
     }
+
     useEffect(() => {
         const fetchJob = async () => {
             try {
@@ -43,6 +44,19 @@ function JobDetails() {
         return <Loader />;
     }
 
+    // Helper function to render lists from a string
+    const renderList = (text) => {
+        if (!text) return null;
+        const items = text.split('\n').filter(Boolean); // Split by newline and filter out empty items
+        return (
+            <ul className="list-disc list-inside">
+                {items.map((item, index) => (
+                    <li key={index} className="text-gray-700">{item}</li>
+                ))}
+            </ul>
+        );
+    };
+
     return (
         <div className="bg-white h-auto py-8 px-6 sm:px-12 lg:px-24">
             <div className="max-w-3xl mx-auto bg-gray-50 rounded-xl shadow-lg p-6">
@@ -50,8 +64,8 @@ function JobDetails() {
                     {job.position}
                 </h3>
                 <div className="text-center mb-6 border-y-2 border-gray-300 py-2">
-
-                    <span className="text-gray-600 font-medium"><span className='text-blue-800 font-semibold'>Posted On :{" "}</span>
+                    <span className="text-gray-600 font-medium">
+                        <span className='text-blue-800 font-semibold'>Posted On :{" "}</span>
                         {job.createdAt
                             ? format(job.createdAt, 'MMMM d, yyyy') // Format date
                             : 'No date available'}
@@ -71,20 +85,17 @@ function JobDetails() {
                 </div>
                 <div className="mb-4 text-gray-700">
                     <h4 className="text-xl font-semibold mb-2">Responsibilities</h4>
-                    <p className="font-serif">{job.responsibilities}</p>
+                    {renderList(job.responsibilities)}
                 </div>
                 <div className="mb-4 text-gray-700">
                     <h4 className="text-xl font-semibold mb-2">Prerequisites</h4>
-                    <p className="font-serif">{job.prerequisite}</p>
+                    {renderList(job.prerequisite)}
                 </div>
             </div>
             <div className="mt-6 flex justify-center">
-
                 <button onClick={() => navigateTo(`/careerinputfield`)} className="text-sm bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md shadow-md transition duration-200">
                     Apply
                 </button>
-
-
             </div>
         </div>
     );

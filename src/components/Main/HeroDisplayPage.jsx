@@ -52,7 +52,7 @@ function HeroDisplayPage() {
                     <img className="md:h-36 h-20" src={heroLogo} alt="Hero Logo" />
                 </div>
                 <div className="my-2">
-                    <h1 className="md:text-6xl text-xl opacity-80 text-white text-center font-medium">
+                    <h1 className="md:text-6xl text-xl  text-[#9A4278] -opacity-80 text-center font-medium">
                         Welcome to Seawave
                     </h1>
                 </div>
@@ -62,7 +62,7 @@ function HeroDisplayPage() {
                     </h4>
                 </div>
                 <div>
-                    <h5 className="md:text-3xl text-[#9A4278] text-lg text-center">
+                    <h5 className="md:text-3xl text-[#9A4278] opacity-95 text-lg text-center">
                         Providing fast & affordable cargo services SINCE 2005
                     </h5>
                 </div>
@@ -75,7 +75,7 @@ function HeroDisplayPage() {
                         </Link>
                     </div> */}
                     <div className="flex justify-center md:mr-8 opacity-80">
-                        <Link to={brochure} target='_blank' className="relative inline-block px-4 py-2 font-medium group">
+                        <Link to={brochure} target='_blank' className="relative opacity-90 inline-block px-4 py-2 font-medium group">
                             <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                             <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-white"></span>
                             <span className="relative text-black group-hover:text-black">See Brochure</span>

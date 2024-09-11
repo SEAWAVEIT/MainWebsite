@@ -4,7 +4,7 @@ import ServiceItem from "../Pages/Services/ServiceItem";
 
 function HeroAbout() {
     return (
-        <div className='bg-white px-4 py-4 sm:px-8 md:px-16'>
+        <div id="about-section" className='bg-white px-4 py-4 sm:px-8 md:px-16'>
             <div className='flex flex-col items-center gap-4'>
                 <h2 className='text-2xl sm:text-3xl md:text-4xl text-center'>About Us</h2>
                 <div className='lino w-16 sm:w-24 md:w-32'></div>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db, collection, addDoc } from '../../../firebase/firebase';
+import freeQuoteImg from "../../../assets/freequote/logistic_banner.webp"
+
 
 function FreeQuote() {
 	const [name, setName] = useState("");
@@ -83,7 +85,7 @@ function FreeQuote() {
 			<div className="relative bg-black rounded-xl overflow-hidden mb-6 md:mb-8">
 				<img
 					className="absolute inset-0 w-full h-full object-cover opacity-30"
-					src="https://www.seawave.in/images/inner-pages/logistic_banner.webp"
+					src={freeQuoteImg}
 					alt="getafreequote"
 				/>
 				<div className="relative flex justify-center items-center h-60 md:h-96">

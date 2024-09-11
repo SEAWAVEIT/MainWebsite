@@ -88,6 +88,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Contact />} />
+        <Route path="/" element={<HeroAbout />} />
         <Route path="/getafreequote" element={<FreeQuote />} />
         <Route path="/quoteDetails/:quoteId" element={<QuoteDetails />} />
         <Route path="/customclearance" element={<CustomClearance />} />

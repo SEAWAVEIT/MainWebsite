@@ -92,9 +92,9 @@ function UserInputCareerField() {
     };
 
     return (
-        <div className="bg-gray-50 h-auto p-10 max-w-lg mx-auto shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
-                <h1 className="text-3xl font-semibold text-center text-gray-800 mb-6">Apply for a Job</h1>
+        <div className="bg-white h-auto mx-auto flex justify-center items-center ">
+            <form onSubmit={handleSubmit} className="md:w-1/2  bg-gray-50 p-10   shadow-lg space-y-6">
+                <h1 className="text-3xl font-semibold text-center text-blue-600 mb-6">Apply for a Job</h1>
                 <div className="form-group">
                     <label htmlFor="name" className="block text-lg font-medium text-gray-700 mb-2">Name</label>
                     <input

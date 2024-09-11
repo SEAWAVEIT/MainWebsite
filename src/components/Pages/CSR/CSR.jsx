@@ -39,7 +39,7 @@ function CSR() {
 
                     <div className='my-4 flex justify-center items-center rounded-md'>
                         <div>
-                            <iframe className='md:w-[80vw] md:h-[70vh] rounded-lg' src="https://www.youtube.com/embed/HBW9opy6rJc?si=ix6zsW_QVwNx1Tut" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe className='md:w-[80vw] md:h-[70vh] w-80 h-44 rounded-lg' src="https://www.youtube.com/embed/HBW9opy6rJc?si=ix6zsW_QVwNx1Tut" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div className='my-4'>
