@@ -1,8 +1,8 @@
 import React from 'react'
 import ServiceItem from "./ServiceItem";
-import warehouse from "../../../assets/services/warehouse.jpg";
+import warehouse from "../../../assets/services/warehouse.webp";
 import ServiceHead from "../../Items/ServiceHeroComponent"
-import eximvideo from "../../../assets/video/EximConsultancy.mp4"
+import eximvideo from "../../../assets/video/EximConsultancy1.mp4"
 function EximConsultancy() {
     return (
         <div className="bg-white p-4 md:p-8">

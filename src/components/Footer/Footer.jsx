@@ -1,5 +1,5 @@
 import React from "react";
-import footerLogo from "../../assets/seawave/seawavewhitetextlogo.png";
+import footerLogo from "../../assets/seawave/seawavewhitetextlogo.webp";
 
 function Footer() {
 	return (

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import brochure from "../../../broucher/SeawaveBroucher.pdf";
 import { useGSAP } from '@gsap/react';
-import heroLogo from "../../assets/seawave/seawavewhitetextlogo.png";
+import heroLogo from "../../assets/seawave/seawavewhitetextlogo.webp";
 import instagram from "../../assets/socialMedia/instagram.png";
 import facebook from "../../assets/socialMedia/facebook.png";
 import linkedin from "../../assets/socialMedia/linkedin.png";
@@ -63,7 +63,7 @@ function HeroDisplayPage() {
                 </div>
                 <div>
                     <h5 className="md:text-3xl text-[#9A4278] opacity-95 text-lg text-center">
-                        Providing fast & affordable cargo services SINCE 2005
+                        Providing Fast & Affordable Cargo Services SINCE 2005
                     </h5>
                 </div>
                 <div className="my-4 flex justify-center items-center gap-4 md:flex-row flex-col">

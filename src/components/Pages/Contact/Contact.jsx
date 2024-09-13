@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import location from "../../../assets/contact/location.png";
-import whatsapp from "../../../assets/contact/whatsapp.png";
-import mobile from "../../../assets/contact/mobile.png";
-import email from "../../../assets/contact/email2.png";
-import map from "../../../assets/contact/map.jpeg";
+import location from "../../../assets/contact/location.webp";
+import whatsapp from "../../../assets/contact/whatsapp.webp";
+import mobile from "../../../assets/contact/mobile.webp";
+import email from "../../../assets/contact/email2.webp";
+import map from "../../../assets/contact/map.webp";
 import gsap from "gsap";
 import ServiceItem from "../../Pages/Services/ServiceItem"
 

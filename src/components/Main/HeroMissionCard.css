@@ -54,7 +54,6 @@
     left: 3px;
     right: 3px;
     background: inherit;
-    /* Use background color from card type */
     top: 80%;
     border-radius: 29px;
     z-index: 2;
@@ -188,104 +187,5 @@
 }
 
 @media (max-width: 480px) {
-
-    .motivationCard:hover .motivationContent,
-    .visionCard:hover .visionContent,
-    .purposeCard:hover .purposeContent {
-        opacity: 1;
-    }
-
-    .bottom-bottom {
-        position: absolute;
-        bottom: 1rem;
-        left: 1.5rem;
-        right: 1.5rem;
-    }
-
-    /* Mission Card Specific Styles */
-    .missionCard:hover {
-        border-top-left-radius: 55px;
-    }
-
-    .missionCard:hover .motivationBottom {
-        top: 20%;
-        border-radius: 80px 29px 29px 29px;
-        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
-    }
-
-    .missionCard:hover .profile-pic {
-        width: 100px;
-        height: 100px;
-        top: 10px;
-        left: 10px;
-        border-radius: 50%;
-        z-index: 3;
-        border: 7px solid #fbb9b6;
-        box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
-        transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
-    }
-
-    .missionCard:hover .profile-pic img {
-        transform: scale(1.5);
-        object-position: 0px 25px;
-        transition: all 0.5s ease-in-out;
-    }
-
-    /* Vision Card Specific Styles */
-    .visionCard:hover {
-        border-top-left-radius: 55px;
-    }
-
-    .visionCard:hover .visionBottom {
-        top: 20%;
-        border-radius: 80px 29px 29px 29px;
-        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
-    }
-
-    .visionCard:hover .profile-pic {
-        width: 100px;
-        height: 100px;
-        top: 10px;
-        left: 10px;
-        border-radius: 50%;
-        z-index: 3;
-        border: 7px solid #83c3ee;
-        box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
-        transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
-    }
-
-    .visionCard:hover .profile-pic img {
-        transform: scale(1.5);
-        object-position: 0px 8px;
-        transition: all 0.5s ease-in-out;
-    }
-
-    /* Purpose Card Specific Styles */
-    .purposeCard:hover {
-        border-top-left-radius: 55px;
-    }
-
-    .purposeCard:hover .purposeBottom {
-        top: 20%;
-        border-radius: 80px 29px 29px 29px;
-        transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
-    }
-
-    .purposeCard:hover .profile-pic {
-        width: 100px;
-        height: 100px;
-        top: 10px;
-        left: 10px;
-        border-radius: 50%;
-        z-index: 3;
-        border: 7px solid #C8E6C9;
-        box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
-        transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
-    }
-
-    .purposeCard:hover .profile-pic img {
-        transform: scale(1.0);
-        object-position: -20px 0px;
-        transition: all 0.5s ease-in-out;
-    }
+    /* ... */
 }

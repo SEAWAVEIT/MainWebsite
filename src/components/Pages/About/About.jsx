@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import logo from './../../../assets/seawave/seawaveblacktextlogo.png';
-import Mam from './../../../assets/founders/Mam.jpg';
+import logo from './../../../assets/seawave/seawaveblacktextlogo.webp';
+import Mam from './../../../assets/about/Mam.webp';
 import Sir from '../../../assets/about/Sir.webp';
-import truck1 from '../../../assets/about/truck1.png'
-import truck2 from '../../../assets/about/truck2.png'
-import person1 from '../../../assets/about/person1.png'
+import truck1 from '../../../assets/about/truck1.webp'
+import truck2 from '../../../assets/about/truck2.webp'
+import person1 from '../../../assets/about/person1.webp'
 import specialExpertise from '../../../assets/about/special-expertise.webp'
 import affiliation1 from "../../../assets/affiliation/1.webp"
 import affiliation2 from "../../../assets/affiliation/2.webp"

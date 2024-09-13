@@ -1,13 +1,13 @@
 import React from "react";
 import ServiceItem from "./ServiceItem";
-import logisticsDesign from "../../../assets/services/logisticDesign.jpg";
+import logisticsDesign from "../../../assets/services/logisticDesign.webp";
 import ServiceHead from "../../Items/ServiceHeroComponent"
-import logisticsvideo from "../../../assets/video/LogisticsDesign.mp4"
+import logisticsvideo from "../../../assets/video/LogisticsDesign1.mp4"
 
 function LogisticsDesign() {
 	return (
 		<div className="bg-white p-4 md:p-8">
-			<ServiceHead Text={"logistics Design"} imageSrc={logisticsDesign} />
+			<ServiceHead Text={"Logistics Design"} imageSrc={logisticsDesign} />
 			<div className="flex flex-col md:flex-row gap-4 items-center px-4 md:px-20 mb-6 md:mb-8">
 				<div className="md:w-1/2 ">
 					<p>

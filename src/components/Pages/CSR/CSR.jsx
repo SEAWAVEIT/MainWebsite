@@ -1,5 +1,5 @@
 import React from 'react';
-import csrImage from "../../../assets/csr/csr.jpg";
+import csrImage from "../../../assets/csr/csr.webp";
 
 function CSR() {
     return (

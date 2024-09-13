@@ -8,7 +8,7 @@ import EditBlogs from '../Pages/Blog/EditBlogs.jsx';
 import careerImage from "../../assets/admin/career.svg"
 import blogImage from "../../assets/admin/blog.svg"
 import applicantsImage from "../../assets/admin/applicants.svg"
-import quoteImage from "../../assets/admin/quote.jpg"
+import quoteImage from "../../assets/admin/quote.svg"
 
 
 

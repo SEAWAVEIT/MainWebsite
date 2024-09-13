@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { gsap } from "gsap";
-import shipImage from "./../../assets/editedship.png";
-import planeImage from "./../../assets/editedplane.png";
-import truckImage from "./../../assets/editedtruck.png";
+import shipImage from "./../../assets/customVehicles/editedship.png";
+import planeImage from "./../../assets/customVehicles/editedplane.png";
+import truckImage from "./../../assets/customVehicles/editedtruck.png";
 
 function Hero03() {
   const truckRef = useRef(null);

@@ -41,7 +41,7 @@ function SignIn() {
     };
 
     return (
-        <div className='bg-white flex justify-center gap-4 h-[90vh] my-20 items-center flex-col'>
+        <div className='bg-white flex justify-center gap-4 h-[90vh]  items-center flex-col'>
             <h2 className='text-6xl font-medium text-blue-400'>Sign In</h2>
 
             <div className='flex gap-2'>

@@ -1,16 +1,16 @@
 import React from "react";
 import ServiceItem from "./ServiceItem";
-import landFreight from "../../../assets/services/landFreight.jpg";
+import landFreight from "../../../assets/services/landFreight.webp";
 import ServiceHead from "../../Items/ServiceHeroComponent"
-import transportvideo from "../../../assets/video/TRANSPORATION.mp4"
-import container1 from "../../../assets/transportation/container1.jpg"
-import container2 from "../../../assets/transportation/container2.jpg"
+import transportvideo from "../../../assets/video/TRANSPORATION1.mp4"
+import container1 from "../../../assets/transportation/container1.webp"
+import container2 from "../../../assets/transportation/container2.webp"
 
 
 function Transport() {
 	return (
 		<div className="bg-white p-4 md:p-8">
-			<ServiceHead imageSrc={landFreight} Text={"Land Freight"} />
+			<ServiceHead imageSrc={landFreight} Text={"Transportation"} />
 			<div className="px-4 md:px-20 mb-6 md:mb-8">
 				<div className="mb-6 md:mb-8">
 					<p>

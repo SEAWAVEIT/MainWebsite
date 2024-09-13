@@ -1,8 +1,8 @@
 import React from "react";
 import ServiceItem from "./ServiceItem";
-import warehouse from "../../../assets/services/warehouse.jpg";
+import warehouse from "../../../assets/services/warehouse.webp";
 import ServiceHead from "../../Items/ServiceHeroComponent"
-import warehousevideo from "../../../assets/video/WAREHOUSING.mp4"
+import warehousevideo from "../../../assets/video/WAREHOUSING1.mp4"
 
 function Warehousing() {
 	return (
@@ -11,18 +11,18 @@ function Warehousing() {
 
 			<div className="px-4 md:px-20 mb-6 md:mb-8">
 				<div className="mb-6 md:mb-8">
-					
+
 				</div>
 
 
 				<div className="mt-6 md:mt-8 flex flex-col justify-between items-center md:flex-row">
 					<div className="w-full md:w-1/2 order-1">
-					<p>
-						<span className="GradientText font-semibold">
-							SEAWAVE FORWARDING & LOGISTICS PVT. LTD.
-						</span>{" "}
-						has established large warehouses at strategic locations around ports, recognizing warehousing as a key component of trade. With over 19,000 sq. ft of space in and around Mumbai, and additional warehouses in Panvel, Bhiwandi, and near Pune, they store non-hazardous export cargo, imported goods awaiting consumption, and items for domestic distribution. Some warehouses are equipped with electrical cranes to meet specific client handling needs.
-					</p>
+						<p>
+							<span className="GradientText font-semibold">
+								SEAWAVE FORWARDING & LOGISTICS PVT. LTD.
+							</span>{" "}
+							has established large warehouses at strategic locations around ports, recognizing warehousing as a key component of trade. With over 19,000 sq. ft of space in and around Mumbai, and additional warehouses in Panvel, Bhiwandi, and near Pune, they store non-hazardous export cargo, imported goods awaiting consumption, and items for domestic distribution. Some warehouses are equipped with electrical cranes to meet specific client handling needs.
+						</p>
 					</div>
 					<div className="w-full md:w-1/2 order-2">
 						<div className="px-4 md:px-20 mb-6 md:mb-8 flex justify-center">
@@ -61,7 +61,7 @@ function Warehousing() {
 				<div className="mt-6 md:mt-8 flex flex-col justify-between items-center md:flex-row">
 					<div className="w-full ">
 						<p className="text-center ">
-						<span className="GradientText font-semibold">SEAWAVE</span> offers professional warehousing services, ensuring the safe arrival of products globally. Their integrated inventory management system provides worldwide control, enabling customers to supplement and redistribute cargo, reducing cycle time and ensuring product availability. Special facilities are available for containerized, refrigerated, and hazardous materials.
+							<span className="GradientText font-semibold">SEAWAVE</span> offers professional warehousing services, ensuring the safe arrival of products globally. Their integrated inventory management system provides worldwide control, enabling customers to supplement and redistribute cargo, reducing cycle time and ensuring product availability. Special facilities are available for containerized, refrigerated, and hazardous materials.
 						</p>
 					</div>
 					{/* <div className="w-full md:w-1/2 order-1">

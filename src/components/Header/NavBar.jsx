@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import navLogo from "../../assets/seawave/seawavewhitetextlogo.png";
+import navLogo from "../../assets/seawave/seawavewhitetextlogo.webp";
 import "./NavBar.css"
 function Navbar() {
     const [mainMenuOpen, setMainMenuOpen] = useState(false);

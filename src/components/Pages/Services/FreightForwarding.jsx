@@ -1,8 +1,8 @@
 import React from "react";
-import freightForward from "../../../assets/services/freightForward.jpg";
+import freightForward from "../../../assets/services/freightForward.webp";
 import ServiceItem from "./ServiceItem";
 import ServiceHead from "../../Items/ServiceHeroComponent"
-import freight from "../../../assets/video/FREIGHTFORWARDING.mp4"
+import freight from "../../../assets/video/FREIGHTFORWARDING1.mp4"
 import airfreight from "../../../assets/freightforwarding/air-freight.webp"
 import seafreight from "../../../assets/freightforwarding/sea-freight.webp"
 

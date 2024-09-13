@@ -1,8 +1,8 @@
 import React from "react";
-import customClearance from "../../../assets/services/customClearance.jpg";
+import customClearance from "../../../assets/services/customClearance.webp";
 import ServiceItem from "../Services/ServiceItem";
 import ServiceHead from "../../Items/ServiceHeroComponent";
-import customvideo from "../../../assets/video/CUSTOMCLEARANCE.mp4";
+import customvideo from "../../../assets/video/CUSTOMCLEARANCE1.mp4";
 
 function CustomClearance() {
 	return (
@@ -23,10 +23,10 @@ function CustomClearance() {
 					.
 				</p>
 				<p className="mb-4">
-				The team is skilled in tariff schedules and customs regulations, staying updated on changes in laws and policies. They ensure timely document preparation before shipments arrive to prevent delays and simplify administrative procedures for clients.</p>
-				{ <p className="mb-4">
-					 Additionally, <span className="GradientText font-semibold">SEAWAVE</span> provides assistance with licenses, project imports, exports, and post-shipment processing.
-				
+					The team is skilled in tariff schedules and customs regulations, staying updated on changes in laws and policies. They ensure timely document preparation before shipments arrive to prevent delays and simplify administrative procedures for clients.</p>
+				{<p className="mb-4">
+					Additionally, <span className="GradientText font-semibold">SEAWAVE</span> provides assistance with licenses, project imports, exports, and post-shipment processing.
+
 				</p>/*
 				<p className="mb-4">
 					Convenience of customers is ensured by finalizing paperwork,
