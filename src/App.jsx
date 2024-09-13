@@ -35,28 +35,20 @@ import AllApplicants from "./components/Pages/Careers/ViewApplicants";
 import ApplicantDetails from "./components/Pages/Careers/ApplicantDetail";
 import JobDetails from "./components/Pages/Careers/JobDetails";
 import HeroMissionCard from "./components/Main/HeroMissionCard";
-
 import FreeQuote from "./components/Pages/FreeQuote/FreeQuote";
 import QuoteDetails from "./components/Pages/FreeQuote/QuoteDetails";
 import ViewQuoteResquests from "./components/Pages/FreeQuote/ViewQuoteResquests";
-
-
-
-import ScrollToTopButton from "./components/Items/ScrollToTopButton"
-import ChatButton from "./components/Items/ChatButton"
+import ScrollToTopButton from "./components/Items/ScrollToTopButton";
+import ChatButton from "./components/Items/ChatButton";
 import HeroContact from "./components/Main/HeroContact";
 import EditBlogs from "./components/Pages/Blog/EditBlogs";
 import EditSingleBlog from "./components/Pages/Blog/EditSingleBlog";
 import AdminCareerEditAllowance from "./components/Pages/Careers/AdminCareerEditAllowance";
-
-
-
-
 import ProtectedRoute from "./components/Admin/ProtectedRoute";
 import CSR from "./components/Pages/CSR/CSR";
 import HeroAbout from "./components/Main/HeroAbout";
-
-
+import NotFound from "./components/Pages/NotFound/NotFound";
+import { Navigate } from "react-router-dom"; // Import Navigate from react-router-dom
 
 function Home() {
   return (
@@ -82,60 +74,53 @@ function Home() {
 
 function App() {
   return (
-    <AuthProvider >
+    <AuthProvider>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/" element={<Contact />} />
-        <Route path="/" element={<HeroAbout />} />
-        <Route path="/getafreequote" element={<FreeQuote />} />
-        <Route path="/quoteDetails/:quoteId" element={<QuoteDetails />} />
-        <Route path="/customclearance" element={<CustomClearance />} />
-        <Route path="/freightforwarding" element={<FreightForwarding />} />
-        <Route path="/transportation" element={<Transportation />} />
-        <Route path="/warehousing" element={<Warehousing />} />
-        <Route path="/eximconsultancy" element={<EximConsultancy />} />
-        <Route path="/logisticsdesign" element={<LogisticsDesign />} />
-        <Route path="/allblogs" element={<AllBlog />} />
-        <Route path="/csr" element={<CSR />} />
-
-
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/herocontact" element={<Contact />} />
+        <Route exact path="/heroabout" element={<HeroAbout />} />
+        <Route exact path="/getafreequote" element={<FreeQuote />} />
+        <Route exact path="/quoteDetails/:quoteId" element={<QuoteDetails />} />
+        <Route exact path="/customclearance" element={<CustomClearance />} />
+        <Route exact path="/freightforwarding" element={<FreightForwarding />} />
+        <Route exact path="/transportation" element={<Transportation />} />
+        <Route exact path="/warehousing" element={<Warehousing />} />
+        <Route exact path="/eximconsultancy" element={<EximConsultancy />} />
+        <Route exact path="/logisticsdesign" element={<LogisticsDesign />} />
+        <Route exact path="/allblogs" element={<AllBlog />} />
+        <Route exact path="/csr" element={<CSR />} />
+        <Route path="*" element={<NotFound />} />
         <Route
           path="/adminblogpostallowance"
-          element={
-            <ProtectedRoute element={<AdminBlogPostAllowance />} />
-          }
+          element={<ProtectedRoute element={<AdminBlogPostAllowance />} />}
         />
-        <Route path="/adminviewquoterequests"
-          element={
-            <ProtectedRoute element={<ViewQuoteResquests />} />
-          }
+        <Route
+          path="/adminviewquoterequests"
+          element={<ProtectedRoute element={<ViewQuoteResquests />} />}
         />
         <Route
           path="/admincareerpostallowance"
-          element={
-            <ProtectedRoute element={<AdminCareerPostAllowance />} />
-          }
+          element={<ProtectedRoute element={<AdminCareerPostAllowance />} />}
         />
         <Route
           path="/admincareereditallowance"
-          element={
-            <ProtectedRoute element={<AdminCareerEditAllowance />} />
-          }
+          element={<ProtectedRoute element={<AdminCareerEditAllowance />} />}
         />
         <Route path="/signin" element={<SignIn />} />
         <Route
           path="/admineditblogs"
-          element={<ProtectedRoute element={<EditBlogs />} />} />
+          element={<ProtectedRoute element={<EditBlogs />} />}
+        />
         <Route
           path="/blogedit/:postId"
-          element={<ProtectedRoute element={<EditSingleBlog />} />} />
-
+          element={<ProtectedRoute element={<EditSingleBlog />} />}
+        />
         <Route
           path="/blog/:postId"
-          element={<SingleBlog />} />
-
+          element={<SingleBlog />}
+        />
         <Route path="/careers" element={<Career />} />
         <Route path="/careerinputfield" element={<UserCareerInputField />} />
         <Route
@@ -147,13 +132,11 @@ function App() {
         <Route
           path="/applicantDetail/:applicantId"
           element={<ProtectedRoute element={<ApplicantDetails />} />}
-
         />
       </Routes>
       <ScrollToTopButton />
       <ChatButton />
       <SwitchFooter />
-
     </AuthProvider>
   );
 }
