@@ -71,7 +71,23 @@ function Career() {
                     </div>
                 </div>
             ) : (
-                <Loader />
+                <div className='max-w-5xl mx-auto'>
+                    <h2 className='text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center'>We are looking for</h2>
+                    <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
+                        {[...Array(3)].map((_, index) => (
+                            <div key={index} className="bg-gray-200 flex flex-col p-6 border border-gray-300 rounded-lg shadow-lg transition-transform transform hover:scale-105 relative">
+                                <h3 className="text-xl font-semibold skeleton h-6 w-48 mb-2" />
+                                <p className="text-md skeleton h-4 w-48 mt-2" />
+                                <button
+                                    className="w-16 mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-2 rounded-lg transition-colors duration-300 skeleton"
+                                    disabled={true}
+                                >
+                                    View
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             )}
         </div>
     );

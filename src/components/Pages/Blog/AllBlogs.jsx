@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { db, getDocs, collection } from "../../../firebase/firebase";
-import Loader from "../../Items/Loader";
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import { format } from 'date-fns';
 import SortBy from '../../Items/SortBy';
+import Loader from '../../Items/Loader'; // Assuming Loader is a full-page loader
 
 function AllBlogs() {
     const navigate = useNavigate();
@@ -57,7 +57,30 @@ function AllBlogs() {
         fetchPosts();
     }, [sortOption]);
 
-    if (loading) return <Loader />;
+    if (loading) return (
+        <div className="flex flex-col h-screen bg-white py-16 px-6 md:px-12 mx-auto max-w-7xl">
+            <div className="text-center mb-8">
+                <h1 className="text-4xl font-bold text-gray-900 mb-4">Published Blogs</h1>
+                <SortBy sortOption={sortOption} onSortChange={handleSortChange} />
+            </div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {/* Skeleton Loader Placeholder */}
+                {[...Array(3)].map((_, index) => (
+                    <div key={index} className="relative flex flex-col p-4 border border-gray-300 rounded-lg shadow-lg bg-white animate-pulse">
+                        <div className="flex items-start mb-4">
+                            <div className="w-16 h-16 rounded-full bg-gray-200 mr-4" />
+                            <div className="flex-1">
+                                <div className="h-6 bg-gray-200 mb-2" />
+                                <div className="h-5 bg-gray-200 mb-2" />
+                                <div className="h-4 bg-gray-200" />
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+
     if (error) return <div className='text-center text-red-500'>{error}</div>;
 
     return (
@@ -85,7 +108,7 @@ function AllBlogs() {
                                 )}
                                 <div className="flex-1">
                                     <h2 className="text-xl font-semibold text-gray-900 mb-2">{post.topic}</h2>
-                                    <h3 className="text-lg text-gray-600 ">{post.name}</h3>
+                                    <h3 className="text-lg text-gray-600">{post.name}</h3>
                                     <span className="text-gray-500 text-sm">
                                         {post.createdAt ? format(post.createdAt, 'MMMM d, yyyy') : 'No date available'}
                                     </span>

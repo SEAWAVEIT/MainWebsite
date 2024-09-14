@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./components/Pages/UserAuthentication/AuthProvider";
 import Navbar from "./components/Header/Navbar";
 import Admin from "./components/Admin/Admin";

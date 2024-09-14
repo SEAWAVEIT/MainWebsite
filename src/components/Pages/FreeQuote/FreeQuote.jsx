@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db, collection, addDoc } from '../../../firebase/firebase';
-import freeQuoteImg from "../../../assets/freequote/logistic_banner.webp"
-
+import freeQuoteImg from "../../../assets/freequote/logistic_banner.webp";
 
 function FreeQuote() {
 	const [name, setName] = useState("");
@@ -12,6 +11,7 @@ function FreeQuote() {
 	const [companyAddress, setCompanyAddress] = useState("");
 	const [services, setServices] = useState([]);
 	const [comments, setComments] = useState("");
+	const [loading, setLoading] = useState(false); // New loading state
 
 	const navigate = useNavigate();
 
@@ -60,6 +60,8 @@ function FreeQuote() {
 			return;
 		}
 
+		setLoading(true); // Set loading to true when submission starts
+
 		try {
 			const quoteRef = collection(db, "quotes");
 			await addDoc(quoteRef, {
@@ -77,6 +79,8 @@ function FreeQuote() {
 		} catch (error) {
 			console.error("Error: ", error);
 			alert('An error occurred while submitting the request.');
+		} finally {
+			setLoading(false); // Set loading to false after submission completes
 		}
 	}
 
@@ -111,6 +115,7 @@ function FreeQuote() {
 							value={name}
 							id="name"
 							onChange={handleChange}
+							disabled={loading} // Disable input while loading
 						/>
 					</div>
 					<div className="col-span-1 w-full">
@@ -121,6 +126,7 @@ function FreeQuote() {
 							value={email}
 							id="email"
 							onChange={handleChange}
+							disabled={loading} // Disable input while loading
 						/>
 					</div>
 					<div className="col-span-1 w-full">
@@ -131,6 +137,7 @@ function FreeQuote() {
 							value={contactNumber}
 							id="contactNumber"
 							onChange={handleChange}
+							disabled={loading} // Disable input while loading
 						/>
 					</div>
 					<div className="col-span-1 w-full">
@@ -141,6 +148,7 @@ function FreeQuote() {
 							value={companyName}
 							id="companyName"
 							onChange={handleChange}
+							disabled={loading} // Disable input while loading
 						/>
 					</div>
 					<div className="col-span-1 md:col-span-2 w-full">
@@ -151,6 +159,7 @@ function FreeQuote() {
 							value={companyAddress}
 							id="companyAddress"
 							onChange={handleChange}
+							disabled={loading} // Disable input while loading
 						/>
 					</div>
 				</div>
@@ -169,6 +178,7 @@ function FreeQuote() {
 										className="h-4 w-4 text-cyan-600 focus:ring-cyan-500 focus:ring-2"
 										checked={services.includes(service)}
 										onChange={handleChange}
+										disabled={loading} // Disable checkbox while loading
 									/>
 									<label
 										htmlFor={service}
@@ -189,12 +199,42 @@ function FreeQuote() {
 						value={comments}
 						id="comments"
 						onChange={handleChange}
+						disabled={loading} // Disable textarea while loading
 					></textarea>
 				</div>
-				<div className="flex justify-center ">
-					<button className="btn md:btn-md btn-sm btn-info md:w-40 w-28 h-8 md:h-10 text-sm text-white md:text-md">Send</button>
+				<div className="flex justify-center">
+					<button
+						type="submit"
+						className="btn md:btn-md btn-sm btn-info md:w-40 w-28 h-8 md:h-10 text-sm text-white md:text-md"
+						disabled={loading} // Disable button while loading
+					>
+						{loading ? (
+							<span className="loader"></span> // Show loader if submitting
+						) : (
+							"Send"
+						)}
+					</button>
 				</div>
 			</form>
+			<style jsx>{`
+				.loader {
+					border: 4px solid rgba(0, 0, 0, 0.1);
+					border-left: 4px solid #00bcd4;
+					border-radius: 50%;
+					width: 24px;
+					height: 24px;
+					animation: spin 1s linear infinite;
+				}
+
+				@keyframes spin {
+					0% {
+						transform: rotate(0deg);
+					}
+					100% {
+						transform: rotate(360deg);
+					}
+				}
+			`}</style>
 		</div>
 	);
 }

@@ -364,9 +364,9 @@ body {
 	animation: scroll 20s linear infinite;
 }
 
-.group:hover .animate-loop-scroll {
+/* .group:hover .animate-loop-scroll {
 	animation-play-state: paused;
-}
+} */
 
 /* In your CSS file (e.g., styles.css) */
 
