@@ -1394,3 +1394,16 @@ svg text {
 		fill: hsla(189, 68%, 75%, 0%);
 	}
 }
+
+#services-dropdown {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden; /* Hidden by default */
+}
+
+#services-dropdown.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible; /* Make it visible when active */
+}

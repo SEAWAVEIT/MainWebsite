@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { auth, googleProvider } from '../../../firebase/firebase.js';
 import { signInWithPopup, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-
-const ALLOWED_EMAIL = 'eamd.seawave@gmail.com';
+//hr.seawavelogistics@gmail.com
+const ALLOWED_EMAIL = ['eamd.seawave@gmail.com','hr.seawavelogistics@gmail.com'];
 
 function SignIn() {
     const navigate = useNavigate()
@@ -12,7 +12,9 @@ function SignIn() {
             const result = await signInWithPopup(auth, googleProvider);
             const user = result.user;
             console.log('User signed in:', user);
-            if (user.email === ALLOWED_EMAIL) {
+    
+            // Check if the user's email is in the ALLOWED_EMAIL array
+            if (ALLOWED_EMAIL.includes(user.email)) {
                 navigate("/admin");
             } else {
                 // Sign out the user and show an error message if the email is not allowed
@@ -23,12 +25,12 @@ function SignIn() {
             if (error.code === 'auth/popup-closed-by-user') {
                 console.error('Sign-in popup was closed before completion.');
                 alert('Sign-in process was interrupted. Please try again.');
-            }
-            else {
+            } else {
                 console.error('Error signing in with Google:', error.message);
             }
         }
     };
+    
 
     const handleGoogleSignOut = async () => {
         try {

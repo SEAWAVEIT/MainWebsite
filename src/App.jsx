@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./components/Pages/UserAuthentication/AuthProvider";
-import Navbar from "./components/Header/Navbar";
+import Navbar from "./components/Header/NavBar";
 import Admin from "./components/Admin/Admin";
 import AdminBlogPostAllowance from "./components/Pages/Blog/AdminBlogPostAllowance";
 import AdminCareerPostAllowance from "./components/Pages/Careers/AdminCareerPostAllowance";

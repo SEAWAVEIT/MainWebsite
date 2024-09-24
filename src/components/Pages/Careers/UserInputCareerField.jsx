@@ -11,8 +11,13 @@ function UserInputCareerField() {
     const [relocate, setRelocate] = useState('yes');
     const [experience, setExperience] = useState('0-1');
     const [resume, setResume] = useState(null);
-
+    const [loading, setLoading] = useState(false); 
     const navigate = useNavigate();
+    
+    const navigateTo = (path) => {
+        window.scrollTo(0, 0);
+        navigate(path);
+    };
 
     const handleChange = (e) => {
         const { id, value, type, files } = e.target;
@@ -47,8 +52,10 @@ function UserInputCareerField() {
             alert('Please fill in all fields and upload your resume.');
             return;
         }
+
+        setLoading(true); // Start loading
+
         try {
-            // Upload resume and add applicant data to Firestore
             const resumeRef = ref(storage, `resume/${resume.name}`);
             await uploadBytes(resumeRef, resume);
             const resumeURL = await getDownloadURL(resumeRef);
@@ -56,15 +63,6 @@ function UserInputCareerField() {
             await addDoc(applicantRef, {
                 name, email, number, position, relocate, experience, resumeURL, createdAt: new Date(),
             });
-
-            // // Call Firebase function to send email
-            // await fetch('https://us-central1-seawavebackend.cloudfunctions.net/sendApplicantNotification', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({ name, email, number, position, relocate, experience, resumeURL }),
-            // });
 
             alert('Application submitted successfully!');
             setName('');
@@ -74,23 +72,14 @@ function UserInputCareerField() {
             setRelocate('yes');
             setExperience('0-1');
             setResume(null);
-            navigate('/');
+            navigateTo('/');
         } catch (error) {
-            console.log("Eroor : ", error);
+            console.log("Error: ", error);
             alert('An error occurred while submitting the application.');
+        } finally {
+            setLoading(false); // Stop loading
         }
-
-        console.log({
-            name,
-            email,
-            number,
-            position,
-            relocate,
-            experience,
-            resume
-        });
     };
-
     return (
         <div className="bg-white h-auto mx-auto flex justify-center items-center ">
             <form onSubmit={handleSubmit} className="md:w-1/2  bg-gray-50 p-10   shadow-lg space-y-6">
@@ -104,6 +93,7 @@ function UserInputCareerField() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none bg-transparent text-black focus:ring-2 focus:ring-blue-500"
                         value={name}
                         onChange={handleChange}
+                        disabled={loading} 
                     />
                 </div>
 
@@ -116,6 +106,7 @@ function UserInputCareerField() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none bg-transparent text-black focus:ring-2 focus:ring-blue-500"
                         value={email}
                         onChange={handleChange}
+                        disabled={loading} 
                     />
                 </div>
 
@@ -128,6 +119,7 @@ function UserInputCareerField() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none bg-transparent text-black focus:ring-2 focus:ring-blue-500"
                         value={number}
                         onChange={handleChange}
+                        disabled={loading} 
                     />
                 </div>
 
@@ -140,6 +132,7 @@ function UserInputCareerField() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none bg-transparent text-black focus:ring-2 focus:ring-blue-500"
                         value={position}
                         onChange={handleChange}
+                        disabled={loading} 
                     />
                 </div>
 
@@ -154,6 +147,7 @@ function UserInputCareerField() {
                                 value="yes"
                                 checked={relocate === 'yes'}
                                 onChange={handleChange}
+                                disabled={loading} 
                                 className="mr-2"
                             />
                             <span>Yes</span>
@@ -166,6 +160,7 @@ function UserInputCareerField() {
                                 value="no"
                                 checked={relocate === 'no'}
                                 onChange={handleChange}
+                                disabled={loading} 
                                 className="mr-2"
                             />
                             <span>No</span>
@@ -184,6 +179,7 @@ function UserInputCareerField() {
                                 value="0-1"
                                 checked={experience === '0-1'}
                                 onChange={handleChange}
+                                disabled={loading} 
                                 className="mr-2 bg-white"
                             />
                             <span>0-1 years</span>
@@ -196,6 +192,7 @@ function UserInputCareerField() {
                                 value="2-5"
                                 checked={experience === '2-5'}
                                 onChange={handleChange}
+                                disabled={loading} 
                                 className="mr-2"
                             />
                             <span>2-5 years</span>
@@ -208,6 +205,7 @@ function UserInputCareerField() {
                                 value="6+"
                                 checked={experience === '6+'}
                                 onChange={handleChange}
+                                disabled={loading} 
                                 className="mr-2"
                             />
                             <span>6+ years</span>
@@ -222,6 +220,7 @@ function UserInputCareerField() {
                         id="resume"
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg file:border-none file:bg-blue-100 file:text-blue-700 file:py-2 file:px-4 file:rounded-lg file:cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
                         onChange={handleChange}
+                        disabled={loading} 
                     />
                     <span className='text-xs text-slate-600'>*Enter resume name as your first name</span>
                 </div>
@@ -229,12 +228,35 @@ function UserInputCareerField() {
                 <div className="flex justify-center">
                     <button
                         type="submit"
-                        className="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-                    >
-                        Submit
+                        disabled={loading}
+                        className="btn md:btn-md btn-sm btn-info md:w-40 w-28 h-8 md:h-10 text-sm text-white md:text-md"
+>{loading ? (
+                        <span className="loader"></span> // Show loader if submitting
+                    ) : (
+                        "Submit"
+                    )}
                     </button>
                 </div>
             </form>
+            <style jsx>{`
+				.loader {
+					border: 4px solid rgba(0, 0, 0, 0.1);
+					border-left: 4px solid #00bcd4;
+					border-radius: 50%;
+					width: 24px;
+					height: 24px;
+					animation: spin 1s linear infinite;
+				}
+
+				@keyframes spin {
+					0% {
+						transform: rotate(0deg);
+					}
+					100% {
+						transform: rotate(360deg);
+					}
+				}
+			`}</style>
         </div>
     );
 }

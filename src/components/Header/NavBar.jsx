@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import navLogo from "../../assets/seawave/seawavewhitetextlogo.webp";
-import "./NavBar.css"
+import "./NavBar.css";
+
 function Navbar() {
     const [mainMenuOpen, setMainMenuOpen] = useState(false);
     const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -18,34 +19,30 @@ function Navbar() {
     const handleLinkClick = (sectionId) => {
         setMainMenuOpen(false);
         setServicesDropdownOpen(false);
-        if (sectionId === '#contact-section') {
-            const contactSection = document.getElementById('contact-section');
-            if (contactSection) {
-                window.scrollTo({ top: contactSection.offsetTop, behavior: "smooth" });
+        if (sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({ top: section.offsetTop, behavior: "smooth" });
+            } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             }
-        }
-        else if (sectionId === '#about-section') {
-            const aboutSection = document.getElementById('about-section');
-            if (aboutSection) {
-                window.scrollTo({ top: aboutSection.offsetTop, behavior: "smooth" });
-            }
-        } else {
+        }else {
+            // Scroll to top of page when "Get A Free Quote" button is clicked
             window.scrollTo({ top: 0, behavior: "smooth" });
-            if (sectionId) {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    window.scrollTo({ top: section.offsetTop, behavior: "smooth" });
-                }
-            }
-        }
+        }   
+    };
+
+    const handleMouseEnter = () => {
+        setServicesDropdownOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        setServicesDropdownOpen(false);
     };
 
     const handleClickOutside = (event) => {
         if (!event.target.closest('#main-menu') && !event.target.closest('[data-collapse-toggle="main-menu"]')) {
             setMainMenuOpen(false);
-        }
-        if (!event.target.closest('#services-dropdown') && !event.target.closest('[data-dropdown-toggle="services"]')) {
-            setServicesDropdownOpen(false);
         }
     };
 
@@ -68,43 +65,30 @@ function Navbar() {
                     <button
                         data-collapse-toggle="main-menu"
                         type="button"
-                        className={`inline-flex items-center p-2 w-12 h-12 justify-center text-white rounded-lg md:hidden hover:bg-gray-800 `}
+                        className={`inline-flex items-center p-2 w-12 h-12 justify-center text-white rounded-lg md:hidden hover:bg-gray-800`}
                         aria-controls="main-menu"
                         aria-expanded={mainMenuOpen}
                         onClick={handleMainMenuToggle}
-                    > {mainMenuOpen ? (
-
-                        <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-
-                            <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1l15 15M16 1L1 16" />
-
-                        </svg>
-
-                    ) : (
-
-                        <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-
-                            <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-
-                        </svg>
-
-                    )}
-                        <span className="sr-only">Open main menu</span>
-                        {/* <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-                        </svg> */}
-                    </button>
-                    <div
-                        className={`w-full md:block md:w-auto ${mainMenuOpen ? 'block' : 'hidden'}`}
-                        id="main-menu"
                     >
-                        <ul className="flex flex-col font-medium p-4 md:p-0 mt-4  rounded-lg bg-black md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-black">
+                        {mainMenuOpen ? (
+                            <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1l15 15M16 1L1 16" />
+                            </svg>
+                        ) : (
+                            <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        )}
+                        <span className="sr-only">Open main menu</span>
+                    </button>
+                    <div className={`w-full md:block md:w-auto ${mainMenuOpen ? 'block' : 'hidden'}`} id="main-menu">
+                        <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg bg-black md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-black">
                             <li>
                                 <Link
                                     to="/"
                                     onClick={handleLinkClick}
-                                    className={`border-b-2 border-slate-900  block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/about') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
-                                    aria-current={isActive('/about') ? 'page' : undefined}
+                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:border-0 md:hover:bg-transparent text-white   md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
+                                   
                                 >
                                     Home
                                 </Link>
@@ -113,54 +97,41 @@ function Navbar() {
                                 <Link
                                     to="/"
                                     onClick={() => handleLinkClick("about-section")}
-
-                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/about') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
-                                    aria-current={isActive('/about') ? 'page' : undefined}
+                                    
+                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:border-0 md:hover:bg-transparent text-white   md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
+                               
                                 >
                                     About
                                 </Link>
                             </li>
-                            <li className="relative">
+                            <li className="relative"
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
                                 <button
-
                                     data-dropdown-toggle="services"
-
-                                    onMouseOver={() => setServicesDropdownOpen(true)}
-
-                                    onMouseLeave={() => setServicesDropdownOpen(false)}
-
                                     onClick={(e) => {
-
                                         e.stopPropagation();
-
                                         handleServicesDropdownToggle();
-
                                     }}
-
-                                    className={`border-b-2 border-slate-900  flex items-center justify-between w-full py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/services') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-600 md:dark:hover:bg-transparent services-button`}
-
+                                    className={`border-b-2 border-slate-900 flex items-center justify-between w-full py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 text-white   md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-600 md:dark:hover:bg-transparent services-button`}
                                 >
-
                                     Services
-
-                                    <svg className={`w-2.5 h-2.5 ms-2.5 transition-transform duration-300 ${servicesDropdownOpen ? "rotate-180 text-blue-700" : "text-white"}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-
+                                    <svg className={`w-2.5 h-2.5 ms-2.5 transition-transform duration-300 ${servicesDropdownOpen ? "rotate-180 text-[#06b6d4]" : "text-white"}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                         <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-
                                     </svg>
-
                                 </button>
                                 <div
                                     id="services-dropdown"
-                                    className={`absolute z-40 mt-2 ml-40 md:ml-0 w-48 p-2 bg-black divide-y divide-gray-700 rounded-lg shadow ${servicesDropdownOpen ? "block" : "hidden"}`}
+                                    className={`absolute z-40 mt-2 ml-40 md:ml-0 w-48 p-2 bg-black divide-y divide-gray-700 rounded-lg shadow ${servicesDropdownOpen ? "active" : ""}`}
                                 >
                                     <ul className="py-2 text-sm text-white">
-                                        <li><Link to="/customclearance" onClick={handleLinkClick} className="border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700">Custom Clearance</Link></li>
-                                        <li><Link to="/freightforwarding" onClick={handleLinkClick} className="border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700">Freight Forwarding</Link></li>
-                                        <li><Link to="/transportation" onClick={handleLinkClick} className="border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700">Transportation</Link></li>
-                                        <li><Link to="/warehousing" onClick={handleLinkClick} className="border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700">Warehousing</Link></li>
-                                        <li><Link to="/logisticsdesign" onClick={handleLinkClick} className="border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700">Logistics Design</Link></li>
-                                        <li><Link to="/eximconsultancy" onClick={handleLinkClick} className="border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700">Exim Consultancy</Link></li>
+                                        <li><Link to="/customclearance" onClick={handleLinkClick} className={`border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700 text-white `}>Custom Clearance</Link></li>
+                                        <li><Link to="/freightforwarding" onClick={handleLinkClick} className={`border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700 text-white `}>Freight Forwarding</Link></li>
+                                        <li><Link to="/transportation" onClick={handleLinkClick} className={`border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700 text-white `}>Transportation</Link></li>
+                                        <li><Link to="/warehousing" onClick={handleLinkClick} className={`border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700 text-white `}>Warehousing</Link></li>
+                                        <li><Link to="/logisticsdesign" onClick={handleLinkClick} className={`border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700 text-white `}>Logistics Design</Link></li>
+                                        <li><Link to="/eximconsultancy" onClick={handleLinkClick} className={`border-b-2 border-slate-900 block px-4 py-2 hover:bg-gray-700 text-white `}>Exim Consultancy</Link></li>
                                     </ul>
                                 </div>
                             </li>
@@ -168,8 +139,8 @@ function Navbar() {
                                 <Link
                                     to="/"
                                     onClick={() => handleLinkClick("contact-section")}
-                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/contact') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
-                                    aria-current={isActive('/contact') ? 'page' : undefined}
+                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 text-white   md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
+                             
                                 >
                                     Contact
                                 </Link>
@@ -178,8 +149,8 @@ function Navbar() {
                                 <Link
                                     to="/careers"
                                     onClick={handleLinkClick}
-                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/careers') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
-                                    aria-current={isActive('/careers') ? 'page' : undefined}
+                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 text-white   md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
+                                
                                 >
                                     Career
                                 </Link>
@@ -188,8 +159,8 @@ function Navbar() {
                                 <Link
                                     to="/allblogs"
                                     onClick={handleLinkClick}
-                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/allblogs') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
-                                    aria-current={isActive('/allblogs') ? 'page' : undefined}
+                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 text-white   md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
+                           
                                 >
                                     Blog
                                 </Link>
@@ -198,16 +169,12 @@ function Navbar() {
                                 <Link
                                     to="/csr"
                                     onClick={handleLinkClick}
-                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/csr') ? 'text-blue-700' : 'text-white'} md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
-                                    aria-current={isActive('/csr') ? 'page' : undefined}
+                                    className={`border-b-2 border-slate-900 block py-2 px-3 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 ${isActive('/csr') ? 'text-[#06b6d4]' : 'text-white'}   md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-600 dark:hover:text-white md:dark:hover:bg-transparent`}
+                                  
                                 >
                                     CSR
                                 </Link>
                             </li>
-
-
-
-
                         </ul>
                     </div>
                     <div>
@@ -220,7 +187,6 @@ function Navbar() {
                             Get A Free Quote
                         </Link>
                     </div>
-
                 </div>
             </nav>
         </div>

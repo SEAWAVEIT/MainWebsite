@@ -14,7 +14,10 @@ function FreeQuote() {
 	const [loading, setLoading] = useState(false); // New loading state
 
 	const navigate = useNavigate();
-
+	const navigateTo = (path) => {
+        window.scrollTo(0, 0);
+        navigate(path);
+    };
 	const handleChange = (e) => {
 		const { id, value, type, checked } = e.target;
 
@@ -75,7 +78,7 @@ function FreeQuote() {
 			setCompanyAddress("");
 			setServices([]);
 			setComments("");
-			navigate('/');
+			navigateTo('/');
 		} catch (error) {
 			console.error("Error: ", error);
 			alert('An error occurred while submitting the request.');
