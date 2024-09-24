@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { auth, googleProvider } from '../../../firebase/firebase.js';
 import { signInWithPopup, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { ALLOWED_EMAIL } from '../../Admin/contants.js';
+
 //hr.seawavelogistics@gmail.com
-const ALLOWED_EMAIL = ['eamd.seawave@gmail.com','hr.seawavelogistics@gmail.com'];
+
+
+// const ALLOWED_EMAIL = ['eamd.seawave@gmail.com','hr.seawavelogistics@gmail.com'];
 
 {/* <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -31,12 +35,7 @@ function SignIn() {
                 alert('This email is not authorized to sign in.');
             }
         } catch (error) {
-            if (error.code === 'auth/popup-closed-by-user') {
-                console.error('Sign-in popup was closed before completion.');
-                alert('Sign-in process was interrupted. Please try again.');
-            } else {
-                console.error('Error signing in with Google:', error.message);
-            }
+            // ...
         }
     };
     

@@ -1,0 +1,1 @@
+export const ALLOWED_EMAIL = ['eamd.seawave@gmail.com', 'hr.seawavelogistics@gmail.com'];
