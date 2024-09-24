@@ -5,6 +5,15 @@ import { useNavigate } from 'react-router-dom';
 //hr.seawavelogistics@gmail.com
 const ALLOWED_EMAIL = ['eamd.seawave@gmail.com','hr.seawavelogistics@gmail.com'];
 
+{/* <IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule> */}
+
 function SignIn() {
     const navigate = useNavigate()
     const handleGoogleSignIn = async () => {
